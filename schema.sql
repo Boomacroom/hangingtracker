@@ -13,7 +13,8 @@ PRAGMA journal_mode = WAL;
 CREATE TABLE IF NOT EXISTS mortality_agg (
     id              INTEGER PRIMARY KEY,
     dataset         TEXT NOT NULL,      -- WONDER file id, e.g. 'D77'
-    year            INTEGER NOT NULL,
+    year            INTEGER,            -- NULL for pooled multi-year rows
+    period          TEXT,               -- e.g. '2018-2024' when pooled
     state           TEXT,               -- NULL = national
     state_fips      TEXT,
     race            TEXT,               -- as WONDER labels it, unmodified
@@ -26,8 +27,13 @@ CREATE TABLE IF NOT EXISTS mortality_agg (
     crude_rate      REAL,
     suppressed      INTEGER DEFAULT 0,  -- WONDER hides counts under 10
     unreliable      INTEGER DEFAULT 0,  -- WONDER flags rates under 20 deaths
-    fetched_at      TEXT NOT NULL,
-    UNIQUE (dataset, year, state, race, sex, age_group, icd10_code)
+    fetched_at      TEXT NOT NULL
+);
+
+-- COALESCE'd so upserts still dedupe when year/state/race are NULL.
+CREATE UNIQUE INDEX IF NOT EXISTS idx_mortality_key ON mortality_agg (
+    dataset, COALESCE(year, -1), COALESCE(period, ''), COALESCE(state, ''),
+    COALESCE(race, ''), COALESCE(sex, ''), COALESCE(age_group, ''), icd10_code
 );
 
 CREATE INDEX IF NOT EXISTS idx_mortality_lookup
@@ -119,16 +125,17 @@ CREATE INDEX IF NOT EXISTS idx_candidates_triage ON candidates (triage, seendate
 CREATE VIEW IF NOT EXISTS v_undetermined_ratio AS
 SELECT
     year,
+    period,
     state,
     race,
     SUM(CASE WHEN icd10_code LIKE 'X70%' AND suppressed = 0 THEN deaths END) AS suicide_hanging,
     SUM(CASE WHEN icd10_code LIKE 'Y20%' AND suppressed = 0 THEN deaths END) AS undetermined_hanging,
+    SUM(CASE WHEN icd10_code LIKE 'X91%' AND suppressed = 0 THEN deaths END) AS assault_hanging,
     SUM(suppressed) AS suppressed_cells,
-    -- NULL, not 0, when either side is missing or suppressed. A
-    -- suppressed cell means "fewer than 10", never "none".
+    -- NULL, never a guess, when any cell in the group is suppressed.
     CASE WHEN SUM(suppressed) > 0 THEN NULL ELSE
         CAST(SUM(CASE WHEN icd10_code LIKE 'Y20%' THEN deaths END) AS REAL)
         / NULLIF(SUM(CASE WHEN icd10_code LIKE 'X70%' THEN deaths END), 0)
     END AS undetermined_ratio
 FROM mortality_agg
-GROUP BY year, state, race;
+GROUP BY year, period, state, race;
