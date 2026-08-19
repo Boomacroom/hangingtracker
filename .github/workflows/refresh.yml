@@ -1,0 +1,38 @@
+name: refresh
+
+on:
+  schedule:
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -e .
+
+      - name: Ensure db
+        run: test -f data/tracker.db || tracker init
+
+      - name: Collect news candidates
+        run: tracker news --timespan 2d
+        continue-on-error: true
+
+      - name: Export static JSON
+        run: tracker export
+
+      - name: Commit
+        run: |
+          git config user.name "refresh-bot"
+          git config user.email "actions@github.com"
+          git add data/tracker.db site/data || true
+          git diff --staged --quiet || git commit -m "refresh: $(date -u +%F)"
+          git push

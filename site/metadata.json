@@ -1,0 +1,25 @@
+{
+  "title": "Hanging Death Classification Tracker",
+  "description": "How US jurisdictions classify hanging deaths. Records official rulings and documented disputes. Does not assess whether any ruling is correct.",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "databases": {
+    "tracker": {
+      "tables": {
+        "cases": {
+          "description_html": "Individual case records. <strong>verification='unverified' means not yet reviewed.</strong> official_manner records what an authority ruled, as fact. family_contests and org_contests record that a dispute exists and who is making it. Neither is a verdict.",
+          "facets": ["state", "official_manner", "verification"],
+          "sort_desc": "date_found"
+        },
+        "mortality_agg": {
+          "description": "CDC WONDER aggregates. A suppressed cell means fewer than 10 deaths, never zero.",
+          "facets": ["year", "race", "icd10_code"]
+        },
+        "candidates": {
+          "description": "Raw automated news hits awaiting human triage. Not findings.",
+          "facets": ["triage", "domain"]
+        }
+      }
+    }
+  }
+}
