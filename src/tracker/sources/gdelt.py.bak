@@ -30,7 +30,7 @@ GDELT_DOC = "https://api.gdeltproject.org/api/v2/doc/doc"
 
 # Seconds between queries. Raise it if you still see 429s; there is no
 # prize for finishing the pull quickly.
-THROTTLE_SECONDS = 15.0
+THROTTLE_SECONDS = 6.0
 MAX_RETRIES = 4
 
 # Kept broad on purpose. Narrowing here loses cases that got one local

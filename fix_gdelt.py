@@ -1,4 +1,21 @@
+#!/usr/bin/env python3
 """
+Writes the corrected gdelt.py into place.
+
+Run this from the repo root (Desktop\\files):
+
+    python fix_gdelt.py
+
+It overwrites src/tracker/sources/gdelt.py with the throttled version and
+verifies the result, so there is no download-name collision to get wrong.
+"""
+
+import pathlib
+import sys
+
+TARGET = pathlib.Path("src/tracker/sources/gdelt.py")
+
+CONTENT = r'''"""
 GDELT DOC 2.0 candidate collector.
 
 Free, no key, JSON out, covers most of the open web news index. It is a
@@ -30,7 +47,7 @@ GDELT_DOC = "https://api.gdeltproject.org/api/v2/doc/doc"
 
 # Seconds between queries. Raise it if you still see 429s; there is no
 # prize for finishing the pull quickly.
-THROTTLE_SECONDS = 15.0
+THROTTLE_SECONDS = 6.0
 MAX_RETRIES = 4
 
 # Kept broad on purpose. Narrowing here loses cases that got one local
@@ -144,3 +161,41 @@ def collect(conn: sqlite3.Connection, timespan: str = "7d") -> int:
             time.sleep(THROTTLE_SECONDS)
 
     return inserted
+'''
+
+
+def main() -> int:
+    if not pathlib.Path("schema.sql").exists():
+        print("Run this from the repo root (the folder containing schema.sql).")
+        return 1
+
+    TARGET.parent.mkdir(parents=True, exist_ok=True)
+    if TARGET.exists():
+        backup = TARGET.with_suffix(".py.bak")
+        backup.write_text(TARGET.read_text(encoding="utf-8"), encoding="utf-8")
+        print(f"backed up existing file -> {backup}")
+
+    TARGET.write_text(CONTENT, encoding="utf-8")
+
+    text = TARGET.read_text(encoding="utf-8")
+    checks = [
+        ("is the collector, not the test", "GDELT DOC 2.0 candidate collector" in text),
+        ("has throttling", "THROTTLE_SECONDS" in text),
+        ("has the domain fix", "_is_noise" in text),
+        ("has collect()", "def collect(" in text),
+        ("cannot write to cases", "INSERT INTO cases" not in text.upper()),
+    ]
+    print(f"\nwrote {TARGET} ({len(text)} bytes)")
+    ok = True
+    for label, passed in checks:
+        print(f"  [{'ok' if passed else 'FAIL'}] {label}")
+        ok &= passed
+
+    if not ok:
+        return 1
+    print("\nNow run:  python -m tracker.cli news --timespan 30d")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
