@@ -110,6 +110,15 @@ def main():
 
     i_state = col(header, "State")
     i_year = col(header, "Year Code", "Year")
+    # Demographic axes. WONDER's own label is what gets stored: the race
+    # categories differ between the bridged-race and single-race files and
+    # normalising them into a local taxonomy silently collapses a real
+    # discontinuity. Whatever the header says is what lands in the column.
+    i_race = col(header, "Single Race 6", "Single Race 15", "Race",
+                 "Hispanic Origin")
+    i_sex = col(header, "Gender", "Sex")
+    i_age = col(header, "Ten-Year Age Groups", "Five-Year Age Groups",
+                "Age Group", "Single-Year Ages")
     i_code = col(header, "Underlying Cause of death Code")
     i_deaths = col(header, "Deaths")
     i_pop = col(header, "Population")
@@ -124,6 +133,12 @@ def main():
     now = dt.datetime.now(dt.timezone.utc).isoformat()
     dataset = f"WONDER-MCD-expanded:{path.name}"
     loaded = supp = 0
+
+    demo = [h for i, h in ((i_race, "race"), (i_sex, "sex"), (i_age, "age_group"))
+            if i is not None]
+    if demo:
+        print(f"  Note: demographic breakdown present ({', '.join(demo)}). "
+              "Labels stored verbatim.")
 
     for row in data:
         def get(i):
@@ -149,9 +164,10 @@ def main():
         conn.execute(
             """
             INSERT INTO mortality_agg
-                (dataset, year, period, state, race, icd10_code, icd10_label,
-                 deaths, population, crude_rate, suppressed, unreliable, fetched_at)
-            VALUES (?,?,?,?,NULL,?,?,?,?,?,?,0,?)
+                (dataset, year, period, state, race, sex, age_group,
+                 icd10_code, icd10_label, deaths, population, crude_rate,
+                 suppressed, unreliable, fetched_at)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,0,?)
             ON CONFLICT DO UPDATE SET
                 deaths = excluded.deaths,
                 population = excluded.population,
@@ -159,7 +175,8 @@ def main():
                 suppressed = excluded.suppressed,
                 fetched_at = excluded.fetched_at
             """,
-            (dataset, year, period, get(i_state), get(i_code),
+            (dataset, year, period, get(i_state), get(i_race), get(i_sex),
+             get(i_age), get(i_code),
              get(col(header, "Underlying Cause of death")),
              deaths, pop, rate, 1 if is_supp else 0, now),
         )
@@ -170,7 +187,10 @@ def main():
 
     # Provenance: keep the query parameters with the data.
     out = path.with_suffix(".footnotes.txt")
-    out.write_text(ftext, encoding="utf-8")
+    # Explicit LF, same reason as export_site.py: re-loading an unchanged
+    # export should not show up as a modified sidecar.
+    with open(out, "w", encoding="utf-8", newline="\n") as fh:
+        fh.write(ftext)
     print(f"footnotes saved -> {out}")
     print("Commit both. The query parameters are what make the numbers checkable.\n")
     return 0

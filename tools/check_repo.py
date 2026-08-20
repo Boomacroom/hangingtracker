@@ -74,7 +74,8 @@ if check(str(db.relative_to(ROOT)), db.exists(), "run: tracker init"):
     names = {r[0] for r in conn.execute(
         "select name from sqlite_master where type in ('table','view')")}
     for t in ["cases", "case_sources", "candidates",
-              "mortality_agg", "v_undetermined_ratio"]:
+              "mortality_agg", "state_systems",
+              "v_undetermined_ratio", "v_undetermined_by_system"]:
         check(f"  {t}", t in names, "schema didn't fully apply")
 
     n_cases = conn.execute("select count(*) from cases").fetchone()[0]
@@ -116,6 +117,39 @@ if check(str(db.relative_to(ROOT)), db.exists(), "run: tracker init"):
           "Either the source is filed under the wrong case or date_found is wrong.",
           fatal=False)
 
+    # A ruling office implies a ruling. Naming one while official_manner is
+    # 'pending' reads as "the ME called it" to anyone skimming, when what
+    # actually happened is that an office has the case and has said nothing.
+    # The investigating agency is a real fact and belongs in notes; this
+    # column is for who issued a ruling, and stays NULL until one exists.
+    premature = conn.execute("""
+        select count(*) from cases
+        where official_ruled_by is not null and trim(official_ruled_by) <> ''
+          and (official_manner is null or official_manner = 'pending')
+    """).fetchone()[0]
+    check("no ruling office named before a ruling exists", premature == 0,
+          f"{premature} case(s) name an official_ruled_by while official_manner "
+          "is pending or unset. Move the office to notes and leave the column "
+          "NULL until a ruling is actually issued.")
+
+    # Weaker, and deliberately non-fatal: a manner recorded as ruled on the
+    # strength of a police statement. Police are not the certifying
+    # authority in most states, and "preliminary" in the office name is the
+    # tell. Judgment call per case, so this warns rather than fails.
+    police_ruled = [r[0] for r in conn.execute("""
+        select slug from cases
+        where official_manner is not null and official_manner <> 'pending'
+          and (lower(official_ruled_by) like '%police%'
+               or lower(official_ruled_by) like '%preliminary%'
+               or lower(official_ruled_by) like '%sheriff%')
+    """)]
+    check("no manner ruled on a police statement alone", not police_ruled,
+          f"{police_ruled} record a ruling attributed to police. In most states "
+          "the coroner or ME certifies manner, not the police department. If "
+          "only a police statement is reported, the manner is 'pending'. "
+          "Re-read the sources and decide per case.",
+          fatal=False)
+
     orphans = conn.execute("""
         select count(*) from cases c
         where c.official_manner is not null
@@ -123,6 +157,30 @@ if check(str(db.relative_to(ROOT)), db.exists(), "run: tracker init"):
     """).fetchone()[0]
     check("every ruling has a source", orphans == 0,
           f"{orphans} cases assert a ruling with no source URL")
+
+    # state_systems is the one table asserting something about a
+    # jurisdiction's institutions rather than counting deaths, so it gets
+    # the same rule the case records get: no source, no row.
+    unsourced = conn.execute("""
+        select count(*) from state_systems
+        where source_url is null or trim(source_url) = ''
+    """).fetchone()[0]
+    check("every state system row cites a source", unsourced == 0,
+          f"{unsourced} rows in state_systems have no source_url. Who "
+          "certifies deaths in a state is a checkable claim; keep it checkable.")
+
+    # The join is only meaningful if the two tables agree on state names.
+    # A mismatch does not error, it silently drops states out of the
+    # correlation and quietly changes n.
+    unjoined = conn.execute("""
+        select count(distinct state) from mortality_agg
+        where state is not null
+          and state not in (select state from state_systems)
+    """).fetchone()[0]
+    check("every state in the mortality data has a system row", unjoined == 0,
+          f"{unjoined} states would drop out of v_undetermined_by_system, "
+          "changing n without any visible error. Run tools/load_state_systems.py.",
+          fatal=False)
 
     est = conn.execute(
         "select count(*) from cases where days_to_ruling is not null").fetchone()[0]
@@ -140,7 +198,8 @@ check("gdelt.py cannot write to cases",
       "gdelt must only write to `candidates`. Promotion goes through triage.")
 
 schema = (ROOT / "schema.sql").read_text() if (ROOT / "schema.sql").exists() else ""
-banned = ["suspected_lynching", "foul_play", "likely_homicide", "confidence_score"]
+banned = ["suspected_lynching", "foul_play", "likely_homicide", "confidence_score",
+          "system_quality", "coroner_competence"]
 found = [b for b in banned if b in schema.lower()]
 check("no conclusion columns in schema", not found,
       f"found {found}. The dataset records rulings and disputes, not verdicts.")

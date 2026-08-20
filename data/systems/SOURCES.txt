@@ -1,0 +1,24 @@
+Provenance for data/systems/. Retrieved 2026-08-20.
+
+County-Death-Investigation-System-2018-1-9-2024.csv
+  Verbatim, unmodified.
+  CDC Collaborating Office for Medical Examiners and Coroners (COMEC),
+  "Data Table: Medicolegal Death Investigation System by County".
+  Canonical URL:
+    https://www.cdc.gov/nchs/comec/County-Death-Investigation-System-2018-1-9-2024.csv
+  Retrieved via the Internet Archive because cdc.gov refuses non-browser
+  clients from some networks:
+    https://web.archive.org/web/20240726073336id_/https://www.cdc.gov/nchs/comec/County-Death-Investigation-System-2018-1-9-2024.csv
+  3,143 counties, 51 jurisdictions. Reflects systems as of 2018, table
+  dated 2024-01-09.
+
+county-deaths-2023.csv
+  Trimmed from a larger federal file. Five columns kept, no values altered.
+  US Census Bureau, County Population Totals and Components of Change
+  2020-2023, co-est2023-alldata.csv, SUMLEV 050 rows only.
+  Source URL:
+    https://www2.census.gov/programs-surveys/popest/datasets/2020-2023/counties/totals/co-est2023-alldata.csv
+  Used only to weight counties by how many deaths each one certifies.
+  A state's undetermined rate is a property of its death certificates, so
+  county-count shares would let a state's smallest counties outvote the
+  ones issuing most of its certificates.

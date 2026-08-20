@@ -107,9 +107,16 @@ from Colorado 0.56 to Alaska 3.84, roughly sevenfold.
 
 **Mississippi ranks 3rd highest (2.69), not lowest.** If someone proposes
 a feature or framing premised on Southern jurisdictions under-using
-"undetermined," the data contradicts it. Say so. The explanations the data
-cannot distinguish include coroner-vs-ME certification systems, office
-resourcing, local convention, and caution under scrutiny.
+"undetermined," the data contradicts it. Say so.
+
+One candidate explanation has since been **tested and ruled out**:
+certification structure. `state_systems` joins CDC's county-level table of
+who conducts medicolegal death investigation, weighted by deaths certified,
+and there is no relationship with the undetermined rate (Spearman rho =
+-0.10, p = 0.62, n = 29; the highest and lowest states are both medical
+examiner jurisdictions). Do not offer it as an explanation. The ones still
+undistinguished are office resourcing, autopsy rates, local convention, and
+caution under scrutiny.
 
 The spread is a finding about classification practice that warrants
 explanation. It is not itself an explanation, and it says nothing about

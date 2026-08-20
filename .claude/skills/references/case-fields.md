@@ -34,7 +34,7 @@ values as they appear.
 | Field | Standard |
 |---|---|
 | `official_manner` | One of `suicide` / `undetermined` / `homicide` / `pending` / NULL. **Record what was ruled, as fact.** This is the authority's determination, not our assessment of it. |
-| `official_ruled_by` | Name the office: `Cobb County PD`, `MS State Medical Examiner`. Police "indicating" suicide preliminarily is not the same as an ME ruling — if only the former is reported, use `pending` and say so in `notes`. |
+| `official_ruled_by` | **Who issued the ruling — NULL until one exists.** A ruling office implies a ruling, so naming one while `official_manner` is `pending` reads as "the ME called it" when nothing has been called. The investigating agency is a real fact and belongs in `notes` (see `unknown-nc-2026`: "the Office of the Chief Medical Examiner took custody"). Enforced fatally by `check_repo.py`. When a ruling does exist, name the office: `Bolivar County Coroner`, `NC Medical Examiner`. Police "indicating" suicide preliminarily is not an ME ruling — if only that is reported the manner is `pending`, and `check_repo.py` warns on any manner attributed to police, a sheriff, or an office labelled "preliminary". |
 | `autopsy_public` | 1 only if the report itself is public, not if its conclusion was described. |
 | `independent_autopsy` | 1 if a family or org commissioned one, regardless of result. |
 

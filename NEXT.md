@@ -1,153 +1,205 @@
 # NEXT.md
 
-Working notes for picking this up in Claude Code. Delete or rewrite freely;
-this is a handoff, not a spec.
+**The project changed shape. Read this before doing anything else.**
 
-**Start by reading `.claude/skills/hanging-deaths-tracker-dev/SKILL.md`.** It
-has the design rules, the WONDER constraints, and the reasoning behind the
-schema. Everything below assumes it.
+This started as a case tracker. It isn't one, and trying to be one was
+making it worse. What it actually produced is a research finding plus a
+reusable data pipeline, and that's what it should ship as.
 
-## State as of handoff
+Read `.claude/skills/hanging-deaths-tracker-dev/SKILL.md` for the design
+rules and WONDER constraints. Those still apply. The scope below is what
+changed.
 
-Live at https://boomacroom.github.io/hangingtracker/ — Pages builds from
-`publish.yml` on every push to `main`, running `tools/export_site.py` in CI.
+## Why the reframe
 
-- 9 case records, **0 verified**, 61 sources attached
-- 634 rows in `mortality_agg` from three WONDER exports
-- ~150 candidates triaged, most marked
-- `main` is protected: PR required, no force push, no direct pushes
+The case table is nine unverified records, several duplicating JULIAN's
+much larger and better-maintained list. A reporter working the Fortune
+story gets more from ten minutes of searching than from that table. It
+costs credibility rather than adding it.
 
-The finding that holds up: undetermined-intent hangings per 100 ruled
-suicide runs Colorado 0.56 to Alaska 3.84 across 2018-2024 pooled, against
-a national rate of ~1.1. Mississippi is 3rd highest, which cuts against the
-intuitive framing and is stated up front in the README on purpose.
+Meanwhile three things came out of this that nobody else has assembled:
+
+1. **Summing published state-level CDC counts undercounts a rare cause of
+   death by up to 91%**, while common causes are unaffected. Anyone pulling
+   state WONDER data on anything uncommon hits this silently.
+2. **A national baseline**: 1.1 undetermined-intent hangings per 100 ruled
+   suicide, stable 2018-2024.
+3. **A sevenfold state spread** in that rate, with Mississippi 3rd highest,
+   which contradicts the framing that prompted the whole project.
+
+Databases need maintenance forever and rot when triage stops. Analyses get
+read. Ship the analysis, keep the pipeline for annual refresh, stop
+pretending the case list is a product.
 
 ---
 
-## 1. Finish `tools/followup.py` — DONE
+## 1. Explain the state spread (the real work)
 
-`--update` now exposes `notes` (dated append, never overwrite),
-`verification`, `verified_by`/`verified_at`, `autopsy_public`,
-`independent_autopsy`, `date_last_seen`.
+Right now the site publishes a ranked table with no explanation of the
+variance, on a topic where readers will supply their own. That is not
+neutral. "Alaska classifies hanging deaths as undetermined 7x more often
+than Colorado" is true, publishable, and meaningless as it stands.
 
-- Source URL is the **first** prompt. Blank aborts before anything else is
-  typed, instead of after.
-- Attach and update are one transaction. Ctrl-C mid-prompts rolls back the
-  attached sources too.
-- Setting `verification='verified'` requires typing `yes` to a prompt that
-  states what verified means, and warns how many sources still lack an
-  `archived_url`.
+**Join state death-investigation system type.** Some states use elected
+county coroners, often without medical training; some use centralized
+medical examiners; some are mixed. CDC and NAME both publish this. It is a
+small, stable, joinable table, roughly 50 rows, hand-enterable if no clean
+download exists.
 
-The Fortune and Reed developments that dead-ended before are now writable
-as dated notes, which is what they were: an arrest and an attorney
-complaint, neither of them a manner-of-death change.
+The hypothesis worth testing: undetermined rates track certification system
+rather than region. Mississippi uses elected county coroners. California
+uses medical examiners. If that explains the spread, the finding becomes
+*"how a state structures death investigation predicts how often intent is
+left undetermined"*, which is genuinely useful and much harder to misread
+than a regional ranking.
 
-## 2. Verify cases (no tooling can do this)
+If it doesn't explain it, say so. A ruled-out confound is still a result,
+and it makes the remaining variance more interesting rather than less.
 
-Zero of nine are verified. This is the weakest part of the public site and
-the main thing between it and a citable case list.
+Implementation: new table `state_systems (state, system_type, source_url,
+notes)`, a view joining it to `v_undetermined_ratio`, and a section on the
+site. Keep `source_url` per row; this is exactly the kind of table people
+will want to check.
 
-Per case: open every source, check every field against it, archive each URL
-at web.archive.org and store the snapshot in `case_sources.archived_url`,
-then set `verification='verified'` with `verified_by`.
+## 2. National breakdown by race, age, sex
 
-Three verified beats thirty unverified. Start with Fortune (52 sources) and
-Raleigh (case 9, 8 sources) — best-documented.
+Never run, and it is free: **no suppression at the national level.** One
+export, Group By Year + Single Race 6 + Underlying Cause, no state.
 
-Nzita (case 4) is still a near-empty stub with 7 sources attached but no
-date, city, or ruling. Either fill it or mark it `rejected`.
+Whether the undetermined rate differs by race nationally is the question
+underneath this entire topic, and it can be answered cleanly rather than
+inferred from a suppressed state table.
 
-## 3. GDELT query tuning — DONE
+Handle the result honestly whichever way it falls. If there is no
+meaningful difference, publish that; it is a direct, checkable answer to a
+widely circulated claim. If there is one, publish it with the same care as
+everything else and resist over-explaining it.
 
-The quality column in the old version of this section was eyeballed, and it
-had two of the four backwards. Measuring precision against the 160 triaged
-candidates instead:
+Store WONDER's race labels verbatim. Do not normalize.
 
-| query | n | precision | old guess |
-|---|---|---|---|
-| `"independent autopsy" hanging` | 50 | **90%** | "loose" |
-| `"hanging from a tree" (body OR found OR death)` | 99 | 59% | "poor" |
-| `"found hanging" (tree OR woods OR park)` | 9 | 33% | "decent" |
-| `"ruled a suicide" hanging (family OR NAACP OR autopsy)` | 2 | **0%** | "best precision" |
+## 3. Rewrite the site and README around the finding
 
-The plan of "narrow the loose ones, protect the precise one" would have
-narrowed the 90% query and protected the 0% one. The Grimm episodes were
-also under `"found hanging"`, not `"hanging from a tree"`.
+Current site leads with the suppression grid (keep it, it works), then goes
+national, then state, then a thin case table.
 
-Changes made:
+New structure:
 
-- `"found hanging"`: `(tree OR woods OR park)` → `(man OR woman OR teen OR
-  student OR body)`. The location words let in an injured bald eagle and a
-  goat cruelty case. Constraining on a person tested **broader** live, 135
-  hits vs 91, and stops excluding deaths found somewhere other than a tree.
-- `"ruled a suicide"`: dropped the third clause. The narrow form returned 2
-  candidates in 30 days, neither relevant; the wider one surfaced the
-  Rebecca Zahau verdict, a contested hanging death it had been missing.
-- `NOISE_DOMAINS` gained fiction-recap sites only. Tabloids stay out: they
-  cover real deaths, and for a case that got one story, that story is the
-  record.
+1. The suppression grid and what it means for anyone using WONDER
+2. National trend and baseline
+3. State spread **with the system-type explanation from item 1**
+4. Race/age breakdown from item 2
+5. Case records, demoted, clearly labelled as an appendix
 
-Rate limiting is a **request budget over a window, not spacing**. Probed
-live: five queries 12s apart alternate 200/429, and 30s apart did worse.
-So `todays_queries()` rotates two queries per run and `THROTTLE_SECONDS` is
-30. `refresh.yml` moved 2d → 7d, because rotation is only free while the
-window is wider than the 2.5d a query waits its turn — otherwise the days a
-query sits out are never searched and the gap is invisible.
-`check_coverage()` warns if that ever stops holding, and it is tested.
+Reframe the case section as *"the cases that prompted this question"* with a
+freeze date, not as a live tracker. Nine sourced records with 61 links is a
+fine appendix. It is not a product.
 
-**Still true: do not narrow so far that single-local-story cases vanish.**
+Kill any language implying ongoing case collection.
 
-## 4. Small stuff
+## 4. Freeze case collection
 
-- ~~Move the root scripts into `tools/`; update README usage block.~~ Done.
-  The four using CWD-relative `data/tracker.db` still expect to be run from
-  the repo root, which is what the README shows.
-- Delete `mk.py`, `mk2.py`, `mk3.py`, `bootstrap.py` if still present —
-  they carry stale base64 copies and running one would revert a file.
-- `src/tracker/cli.py` still has a `wonder` subcommand that always 403s.
-  Either delete it or make it print the manual-export instructions.
-- `tests/` has one test. `tools/check_repo.py` invariants could move into
-  it and run in CI.
+- Turn off the daily schedule in `.github/workflows/refresh.yml`. Keep
+  `workflow_dispatch` so it can be run by hand.
+- Keep `curate.py` and `followup.py`. They work, and if a ruling lands on
+  one of the nine, recording it takes a minute.
+- Keep the nine records. Do not delete work that is already sourced.
+- Do not verify all nine. If you want the appendix to carry weight, verify
+  **Fortune and Raleigh only**: best documented, and two verified records
+  demonstrate the standard without committing you to maintaining nine.
 
-## 5. Worth considering separately
+## 5. Publish the suppression finding separately
 
-The WONDER suppression finding generalizes well beyond this topic: **summing
-published state-level counts undercounts a rare cause of death by up to 91%**,
-while common causes are unaffected. Any journalist pulling state CDC data on
-something rare will make that error silently.
+This is the most broadly useful thing here and it currently sits in a
+README on a repo about hanging deaths.
 
-It's currently buried in this README. A short standalone writeup would help
-people working on entirely unrelated stories.
+Short writeup: state-level CDC WONDER data hides any cell under 10 deaths,
+so summing published state figures undercounts rare causes by 70-90% while
+leaving common causes untouched. Worked example with the real numbers.
+Recommendation: use a no-state export for national figures, pool years for
+state comparisons, always enable Show Zero Values and Show Suppressed.
+
+Somewhere data journalists read. It helps people working on maternal
+mortality, overdose subtypes, occupational deaths, none of which have
+anything to do with this topic.
+
+## 6. Annual refresh, then leave it alone
+
+WONDER updates once a year. Document in the README: which exports, what
+settings, which script loads them. Then the pipeline needs an hour annually
+and nothing else.
+
+That is the entire ongoing maintenance burden, and it is the right size.
 
 ---
 
 ## Rules that must not erode
 
-These exist because the dataset's only real asset is being checkable.
+Unchanged. These exist because the only real asset here is being checkable.
 
-1. **`gdelt.py` has no path to `cases`.** Scraped headlines become case
-   records only when a person promotes them. `tools/check_repo.py` asserts
-   this. Don't add an LLM classifier that writes fields — the phrasing that
-   best predicts "a ruling landed" is identical to a family *disputing* a
-   ruling. Reed is the live example: recorded `suicide`, new coverage is the
-   family contesting. Same keywords, opposite meaning.
-
+1. **`gdelt.py` has no path to `cases`.** Enforced by
+   `tools/check_repo.py`. Never add a classifier that writes fields; the
+   phrasing that best predicts "a ruling landed" is identical to a family
+   *disputing* a ruling. Reed is the live example: recorded `suicide`, new
+   coverage is the family contesting. Same keywords, opposite meaning.
 2. **No conclusion columns.** No `suspected_lynching`, no `foul_play`, no
-   confidence score. The dataset records what authorities ruled and who
-   disputes it. `check_repo.py` asserts this too.
-
+   confidence score. Also enforced.
 3. **Suppressed is never zero.** `v_undetermined_ratio` returns NULL when
-   any cell in the group is suppressed. Preserve that in new aggregates.
-
-4. **No source, no change.** `followup.py` discards a whole update if no
-   source URL is given. Keep that.
-
+   any cell in the group is suppressed. Preserve in new aggregates.
+4. **No source, no change.** `followup.py` discards a whole update without
+   a source URL. Keep it. Keep the `verified` confirmation prompt too;
+   `verified` is the only value that cannot be re-derived from a source.
 5. **Hostile sources belong in `case_sources`** when they contain factual
-   reporting. A tracker citing only sympathetic outlets is one nobody
-   outside the choir has to engage with.
+   reporting.
+6. **`official_manner` records what was ruled**, not an assessment of it.
+   Police "investigating as a suicide" is `pending`.
+7. **Never estimate `days_to_ruling`** from an article date.
 
-6. **`official_manner` records what was ruled, not an assessment of it.**
-   Police "investigating as a suicide" is not a ruling — that's `pending`.
+## And one more
 
-7. **Never estimate `days_to_ruling`** from an article date. Two published
-   dates or NULL.
+**Publish results that cut against the framing.** Mississippi ranking 3rd
+highest is in the README's opening section on purpose. Item 2 may produce
+another one. The willingness to lead with the inconvenient number is the
+only reason anyone should believe the convenient ones.
+
+---
+
+## Done
+
+- Previous item 1 (followup.py fields) merged via PR #1
+- Branch protection verified enforced on `main` (GH013 on direct push)
+- Scripts moved to `tools/`, scratch transfer scripts removed
+
+### 2026-08-20
+
+- **Item 1 complete, and the hypothesis is dead.** `state_systems` built
+  from CDC COMEC's county table, weighted by deaths certified per county,
+  joined via `v_undetermined_by_system`. Certification structure does not
+  explain the spread: Spearman rho = -0.10, p = 0.62, n = 29, and the
+  highest and lowest states are both medical examiner jurisdictions.
+  Published as a ruled-out confound in the README, the site, and
+  `analyze.py`.
+- **Item 3 done.** Site reordered to suppression / national / state +
+  system test / (race, hidden until loaded) / cases as appendix with a
+  freeze date. README rewritten around the four findings. Tracker
+  language removed from both.
+- **Item 4 done.** Daily cron deleted from `refresh.yml`, dispatch kept.
+  Fortune and Raleigh checked field by field against primary sources and
+  both hold; `verification` left for a human to set, since nothing
+  automated may set it.
+- **Item 5 done.** `SUPPRESSION.md`, with the X91 middle case added so the
+  error is shown tracking rarity rather than asserted.
+- **Item 6 done.** Annual refresh recipe in the README, four exports.
+- **Item 2 blocked on a manual export.** cdc.gov returns an edge-level 403
+  to every non-browser client here, so even the national API path that the
+  NVSS restriction would allow is unreachable. Everything downstream is
+  ready: `load_wonder.py` reads Single Race 6 / sex / age columns and
+  stores labels verbatim, `v_undetermined_ratio` now groups by sex and
+  age_group, and the site renders the section the moment rows land.
+  Export 4 in the README's refresh table is the one to run.
+
+### Watch for
+
+- `v_undetermined_ratio` previously grouped by year/period/state/race only.
+  A demographic export would have pooled men and women into one ratio and
+  labelled it a breakdown. Views are now dropped and rebuilt on every
+  schema apply for this reason.

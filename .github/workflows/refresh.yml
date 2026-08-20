@@ -1,8 +1,15 @@
 name: refresh
 
+# Case collection is frozen. The daily cron is deliberately removed
+# rather than commented out, because a commented cron is one edit away
+# from restarting a queue nobody is triaging any more, and an untriaged
+# candidates table rots into a liability.
+#
+# The case list is an appendix with a freeze date, not a live tracker.
+# If a ruling lands on one of the nine records, run this by hand from the
+# Actions tab, or just run tools/followup.py locally. Everything here
+# still works; it simply does not run on a timer.
 on:
-  schedule:
-    - cron: "0 11 * * *"
   workflow_dispatch:
 
 permissions:

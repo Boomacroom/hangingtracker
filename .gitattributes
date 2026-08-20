@@ -1,1 +1,8 @@
 * text=auto eol=lf
+
+# Source files retrieved from a publisher are committed byte-for-byte.
+# SOURCES.txt calls the CDC table "verbatim, unmodified"; letting git
+# normalise its line endings would quietly make that untrue, and the
+# whole point of the file is that a reader can diff it against CDC.
+data/systems/*.csv -text
+data/wonder/*.xls -text

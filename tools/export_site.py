@@ -16,10 +16,14 @@ isn't already in a view.
 
 from __future__ import annotations
 
+import io
 import json
 import pathlib
 import sqlite3
 import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import stats  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DB = ROOT / "data" / "tracker.db"
@@ -64,6 +68,52 @@ def main():
         GROUP BY year ORDER BY year
     """)]
 
+    # --- certification structure, and whether it explains the spread ---
+    systems = [dict(r) for r in conn.execute("""
+        SELECT * FROM v_undetermined_by_system
+        WHERE system_type IS NOT NULL
+        ORDER BY (undetermined_ratio IS NULL), undetermined_ratio DESC
+    """)]
+    meas = [s for s in systems if s["undetermined_ratio"] is not None]
+    correlations = {}
+    if len(meas) >= 3:
+        y = [s["undetermined_ratio"] for s in meas]
+        for var in ("elected_share", "coroner_share", "me_share", "has_state_me"):
+            correlations[var] = stats.correlate([s[var] for s in meas], y)
+
+    by_type: dict[str, list[float]] = {}
+    for s in meas:
+        by_type.setdefault(s["system_type"], []).append(s["undetermined_ratio"])
+    system_groups = [
+        {"system_type": k, "n": len(v),
+         "median": sorted(v)[len(v) // 2] if len(v) % 2 else
+                   (sorted(v)[len(v) // 2 - 1] + sorted(v)[len(v) // 2]) / 2,
+         "min": min(v), "max": max(v)}
+        for k, v in sorted(by_type.items())
+    ]
+
+    # Source per row, because "who certifies deaths here" is the kind of
+    # claim a reader should be able to check without taking our word.
+    system_rows = [dict(r) for r in conn.execute(
+        "SELECT state, state_abbr, system_type, counties, counties_me, "
+        "counties_cor, counties_other, me_share, coroner_share, "
+        "elected_share, weight_basis, has_state_me, source_url, notes "
+        "FROM state_systems ORDER BY state")]
+
+    # --- national demographic breakdown, if that export has been loaded ---
+    # National only. At national scale nothing is suppressed, so this is
+    # the one place a race or age breakdown can be reported as counts
+    # rather than as a floor. Absent until someone runs the export; the
+    # site simply omits the section rather than showing an empty shell.
+    demographics = [dict(r) for r in conn.execute("""
+        SELECT year, race, sex, age_group, suicide_hanging, undetermined_hanging,
+               assault_hanging, suppressed_cells, undetermined_ratio
+        FROM v_undetermined_ratio
+        WHERE state IS NULL
+          AND (race IS NOT NULL OR sex IS NOT NULL OR age_group IS NOT NULL)
+        ORDER BY race, sex, age_group, year
+    """)]
+
     # --- the suppression grid: which state-year cells are visible at all ---
     years = sorted({r[0] for r in conn.execute(
         "SELECT DISTINCT year FROM mortality_agg WHERE year IS NOT NULL AND state IS NOT NULL")})
@@ -95,6 +145,18 @@ def main():
         "states": states,
         "national": national,
         "grid": grid,
+        "demographics": demographics,
+        "systems": {
+            "states": system_rows,
+            "joined": systems,
+            "correlations": correlations,
+            "groups": system_groups,
+        },
+        # The case list is frozen. Ship the date of the last change to it so
+        # the appendix can say so on its face rather than in a caption
+        # somebody edits and forgets.
+        "case_freeze_date": (conn.execute(
+            "SELECT MAX(substr(updated_at,1,10)) FROM cases").fetchone()[0]),
         "counts": {
             "cases": len(cases),
             "verified": sum(1 for c in cases if c["verification"] == "verified"),
@@ -103,7 +165,13 @@ def main():
         },
     }
 
-    (OUT / "tracker.json").write_text(json.dumps(payload, indent=1), encoding="utf-8")
+    # Explicit LF. On Windows the default translates every newline to CRLF,
+    # .gitattributes normalises it straight back on commit, and the working
+    # tree is left permanently dirty after an export. A diff that is always
+    # there is a diff nobody reads, which is how a real change to this file
+    # goes unnoticed.
+    with io.open(OUT / "tracker.json", "w", encoding="utf-8", newline="\n") as f:
+        json.dump(payload, f, indent=1)
 
     # Ship the db itself so Datasette Lite can open it.
     import shutil
@@ -113,6 +181,15 @@ def main():
     print(f"exported {c['cases']} cases ({c['verified']} verified), "
           f"{len(states)} states, {len(national)} years")
     print(f"suppression grid: {grid['visible']}/{grid['total']} cells visible")
+    if correlations:
+        e = correlations["elected_share"]
+        print(f"system-type test: n={e['n']}, elected-share rho={e['rho']:+.3f} "
+              f"(p={e['p']:.3f})")
+    if demographics:
+        print(f"demographic rows: {len(demographics)}")
+    else:
+        print("no national demographic export loaded yet (item 2); "
+              "the site omits that section")
     print(f"wrote {OUT / 'tracker.json'} and site/tracker.db")
     return 0
 
