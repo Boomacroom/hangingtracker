@@ -250,7 +250,12 @@ def ask_date(prompt, current):
 
 # Fields stored as INTEGER. Everything else is written as text.
 INT_FIELDS = ("days_to_ruling", "family_contests",
-              "autopsy_public", "independent_autopsy")
+              "autopsy_public", "independent_autopsy", "age")
+
+# Blank means "leave this alone", which gave no way to empty a field that
+# should never have been filled. A field asserting something false is worse
+# than an empty one, so clearing has to be expressible.
+CLEAR = "-"
 
 VERIFICATION_VALUES = ("unverified", "review", "verified", "rejected")
 
@@ -364,8 +369,11 @@ def update_case(conn, case_id: int):
         else:
             changes.append(("official_manner", case["official_manner"], manner))
 
-    ruled_by = ask("ruled by (office)")
-    if ruled_by and ruled_by != case["official_ruled_by"]:
+    ruled_by = ask(f"ruled by (office; '{CLEAR}' to clear)")
+    if ruled_by == CLEAR:
+        if case["official_ruled_by"] is not None:
+            changes.append(("official_ruled_by", case["official_ruled_by"], None))
+    elif ruled_by and ruled_by != case["official_ruled_by"]:
         changes.append(("official_ruled_by", case["official_ruled_by"], ruled_by))
 
     ruling_date = ask("date of ruling (YYYY-MM-DD, from the reporting)")
@@ -389,9 +397,26 @@ def update_case(conn, case_id: int):
     if orgs and orgs != case["org_contests"]:
         changes.append(("org_contests", case["org_contests"], orgs))
 
+    # date_found is corrected often enough to need a sourced path here: the
+    # common error is recording the article's publication date, which runs a
+    # day or more late. Fixing it by hand in SQL would leave no audit row.
+    found = ask_date("date body was found (YYYY-MM-DD)", case["date_found"])
+    if found:
+        changes.append(("date_found", case["date_found"], found))
+        if case["days_to_ruling"] is not None:
+            print("    NOTE: days_to_ruling was computed from the old date_found")
+            print("    and is now wrong. Re-enter the ruling date to recompute it.")
+
     last_seen = ask_date("date last seen alive (YYYY-MM-DD)", case["date_last_seen"])
     if last_seen:
         changes.append(("date_last_seen", case["date_last_seen"], last_seen))
+
+    age = ask("age at death")
+    if age and age != str(case["age"] or ""):
+        if not age.isdigit():
+            print(f"    '{age}' is not a number. Leaving unchanged.")
+        else:
+            changes.append(("age", case["age"], age))
 
     autopsy = ask_bool("autopsy public?", case["autopsy_public"])
     if autopsy is not None:
@@ -405,8 +430,18 @@ def update_case(conn, case_id: int):
     # never forwarded results, a hearing date: all real, none of them a
     # manner-of-death change. Without somewhere to put them the tool forces
     # a choice between losing the fact and asserting something stronger.
-    note = ask("note to append (dated; does not overwrite)")
-    if note:
+    # Appending is the default because notes accumulate context. But a note
+    # that states something the sources do not support cannot be fixed by
+    # adding a correction underneath it: the wrong sentence stays on the
+    # public page. '!' replaces instead, and the old text is preserved in
+    # case_updates, which is where the audit trail actually lives.
+    note = ask("note ('!' prefix replaces, otherwise dated append)")
+    if note == CLEAR:
+        if case["notes"] is not None:
+            changes.append(("notes", case["notes"], None))
+    elif note and note.startswith("!"):
+        changes.append(("notes", case["notes"], note[1:].strip()))
+    elif note:
         changes.append(("notes", case["notes"], append_note(case["notes"], note)))
 
     ver = ask(f"verification ({'/'.join(VERIFICATION_VALUES)})")
@@ -450,7 +485,14 @@ def update_case(conn, case_id: int):
     print(f"\n  Recorded {len(changes)} change(s) with source.")
     for f, o, n in changes:
         if f == "notes":
-            print(f"    notes: appended {_short(n, tail=True)}")
+            if n is None:
+                print("    notes: cleared")
+            elif o and n.startswith(o.rstrip()):
+                print(f"    notes: appended {_short(n, tail=True)}")
+            else:
+                print(f"    notes: REPLACED (old text kept in case_updates)")
+                print(f"      was: {_short(o, 60)}")
+                print(f"      now: {_short(n, 60)}")
         else:
             print(f"    {f}: {_short(o)} -> {_short(n)}")
     if not any(f == "verification" for f, _, _ in changes):

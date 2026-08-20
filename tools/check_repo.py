@@ -82,11 +82,39 @@ if check(str(db.relative_to(ROOT)), db.exists(), "run: tracker init"):
           "run: python -m tracker.seed", fatal=False)
 
     print("\n--- invariants ---")
-    n_verified = conn.execute(
-        "select count(*) from cases where verification='verified'").fetchone()[0]
-    check("nothing auto-verified", n_verified == 0,
-          f"{n_verified} rows are verified but no human did that. "
-          "Something is setting verification automatically. Find it.")
+    # This used to assert that NO case was verified, which would have started
+    # failing the moment someone did the verification work correctly. What
+    # actually needs guarding is that a human did it and left their name: a
+    # verified row with no verified_by is one nothing human touched.
+    unattributed = conn.execute("""
+        select count(*) from cases
+        where verification = 'verified'
+          and (verified_by is null or trim(verified_by) = '')
+    """).fetchone()[0]
+    check("nothing auto-verified", unattributed == 0,
+          f"{unattributed} rows are verified with no verified_by. Verification "
+          "is a claim about work a person did; something set it automatically.")
+
+    # A source published or archived before the body was found cannot be
+    # about that death. This is how two Tasia Fortune stories ended up filed
+    # under the Raleigh case: title matching on a city name.
+    # published_at arrives from GDELT as 20260818T191500Z, not ISO, so it has
+    # to be normalised before comparing. Comparing the raw string silently
+    # never matches, which is a check that always passes and guards nothing.
+    anachronistic = conn.execute("""
+        select count(*) from case_sources s join cases c on c.id = s.case_id
+        where c.date_found is not null and s.published_at is not null
+          and case when instr(s.published_at, '-') > 0
+                   then substr(s.published_at, 1, 10)
+                   else substr(s.published_at, 1, 4) || '-' ||
+                        substr(s.published_at, 5, 2) || '-' ||
+                        substr(s.published_at, 7, 2)
+              end < c.date_found
+    """).fetchone()[0]
+    check("no source predates the death it documents", anachronistic == 0,
+          f"{anachronistic} source(s) are dated before their case's date_found. "
+          "Either the source is filed under the wrong case or date_found is wrong.",
+          fatal=False)
 
     orphans = conn.execute("""
         select count(*) from cases c

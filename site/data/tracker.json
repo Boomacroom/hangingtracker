@@ -4,15 +4,15 @@
    "id": 9,
    "slug": "unknown-nc-2026",
    "decedent_name": null,
-   "age": null,
-   "date_found": "2026-08-16",
+   "age": 32,
+   "date_found": "2026-08-15",
    "date_last_seen": null,
    "city": "Raleigh",
    "county": "Wake",
    "state": "NC",
    "location_type": "tree, downtown",
    "official_manner": "pending",
-   "official_ruled_by": "Raleigh Police Department (investigating)",
+   "official_ruled_by": null,
    "days_to_ruling": null,
    "autopsy_public": 0,
    "independent_autopsy": 0,
@@ -21,9 +21,9 @@
    "verification": "unverified",
    "verified_by": null,
    "verified_at": null,
-   "notes": "Police investigating as suicide; no ME ruling published as of 2026-08-19. WRAL reported police responding to misinformation circulating during the investigation. Decedent not publicly named. Clusters 11 and 12 are additional sources not yet linked.",
+   "notes": "Body found Saturday 2026-08-15 in the 300 block of South McDowell Street, downtown Raleigh; WRAL posted the story 2026-08-16. Raleigh police said Monday 2026-08-17 that investigators had confirmed a suicide, citing video, and the Office of the Chief Medical Examiner took custody. No ME ruling published as of 2026-08-19, so official_manner stays pending and no ruling office is recorded. Decedent a 32-year-old man, not publicly named. His mother cooperated with investigators and cited a history of mental health issues; no family or organisation is contesting. Police issued a statement responding to misinformation circulating online.",
    "created_at": "2026-08-19T22:07:42.058277+00:00",
-   "updated_at": "2026-08-19T22:07:42.058277+00:00",
+   "updated_at": "2026-08-20T07:53:33.769541+00:00",
    "source_count": 8,
    "sources": [
     {
@@ -31,56 +31,56 @@
      "outlet": "92q.com",
      "title": "Black Man Found Hanging From Tree In Raleigh , Police Say It  Being Investigated As A Suicide  ",
      "source_type": "news",
-     "archived_url": null
+     "archived_url": "https://web.archive.org/web/20260819094411/https://92q.com/5912880/black-man-found-hanging-from-tree-in-raleigh/"
+    },
+    {
+     "url": "https://abc11.com/post/nc-hanging-death-downtown-raleigh-investigated-suicide-police-say-north-carolina-medical-examiner-taking-case/19692363/",
+     "outlet": "abc11.com",
+     "title": "NC hanging death in Downtown Raleigh investigated as suicide , police say ; North Carolina medical Examiner taking over case",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260818233551/https://abc11.com/post/nc-hanging-death-downtown-raleigh-investigated-suicide-police-say-north-carolina-medical-examiner-taking-case/19692363/"
     },
     {
      "url": "https://ipowerrichmond.com/4572098/black-man-found-hanging-from-tree-raleigh/",
      "outlet": "ipowerrichmond.com",
      "title": "Black Man Found Hanging From Tree In Raleigh Investigated As A Suicide",
      "source_type": "news",
-     "archived_url": null
+     "archived_url": "https://web.archive.org/web/20260818055216/https://ipowerrichmond.com/4572098/black-man-found-hanging-from-tree-raleigh/"
     },
     {
      "url": "https://myk104.com/1760/black-man-found-hanging-from-tree-raleigh/",
      "outlet": "myk104.com",
      "title": "Black Man Found Hanging From Tree In Raleigh Investigated As A Suicide",
      "source_type": "news",
-     "archived_url": null
-    },
-    {
-     "url": "https://mywdia.iheart.com/content/2026-08-07-black-woman-found-hanging-from-tree-identified-as-tasia-fortune/",
-     "outlet": "mywdia.iheart.com",
-     "title": "Black Woman Found Hanging From Tree Identified As Tasia Fortune",
-     "source_type": "news",
-     "archived_url": null
-    },
-    {
-     "url": "https://newsone.com/6868579/black-woman-found-hanging-identified-tasia-fortune/",
-     "outlet": "newsone.com",
-     "title": "Black Woman Found Hanging Identified As Tasia Fortune",
-     "source_type": "news",
-     "archived_url": null
+     "archived_url": "https://web.archive.org/web/20260817215151/https://myk104.com/1760/black-man-found-hanging-from-tree-raleigh/"
     },
     {
      "url": "https://tvone.tv/1968338/black-man-found-hanging-from-tree-raleigh/",
      "outlet": "tvone.tv",
      "title": "A Black Man Was Found Hanging From A Tree In Raleigh",
      "source_type": "news",
-     "archived_url": null
+     "archived_url": "https://web.archive.org/web/20260818200617/https://tvone.tv/1968338/black-man-found-hanging-from-tree-raleigh/"
     },
     {
      "url": "https://tvone.tv/1968342/black-man-found-hanging-in-raleigh/",
      "outlet": "tvone.tv",
      "title": "Black Man Found Hanging In Downtown Raleigh",
      "source_type": "news",
-     "archived_url": null
+     "archived_url": "https://web.archive.org/web/20260819105625/https://tvone.tv/1968342/black-man-found-hanging-in-raleigh/"
     },
     {
      "url": "https://tvone.tv/1968364/black-man-found-hanging-from-tree-in-raleigh/",
      "outlet": "tvone.tv",
      "title": "A Black Man Was Found Hanging From A Tree In Raleigh",
      "source_type": "news",
-     "archived_url": null
+     "archived_url": "https://web.archive.org/web/20260819162113/https://tvone.tv/1968364/black-man-found-hanging-from-tree-in-raleigh/"
+    },
+    {
+     "url": "https://www.wral.com/news/local/raleigh-hanging-suicide-investigation-police-respond-misinformation-august-2026/",
+     "outlet": "wral.com",
+     "title": "Raleigh police respond to misinformation during suicide investigation",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260819030511/https://www.wral.com/news/local/raleigh-hanging-suicide-investigation-police-respond-misinformation-august-2026/"
     }
    ]
   },
@@ -105,15 +105,386 @@
    "verification": "unverified",
    "verified_by": null,
    "verified_at": null,
-   "notes": "Found Aug 3 behind a vacant home. No cause or manner released as of mid-August 2026. A person of interest was reported arrested. Mother Christy Spivey publicly disputed suicide. This is the open case.",
+   "notes": "Found Aug 3 2026 behind a vacant home on Road of Remembrance, Jackson. No cause or manner released as of mid-August 2026; the Mississippi State Medical Examiner's Office conducted the autopsy and results were not made public. A man interviewed in the investigation was arrested on an unrelated felon-in-possession charge; Jackson police could not confirm he had been designated a person of interest, and he denied involvement in her death. Mother Christy Spivey publicly disputed suicide. The family rejects the suicide theory and has not alleged a lynching. This is the open case.",
    "created_at": "2026-08-19T20:40:39.074678+00:00",
-   "updated_at": "2026-08-19T20:40:39.074678+00:00",
-   "source_count": 1,
+   "updated_at": "2026-08-20T07:51:52.712508+00:00",
+   "source_count": 54,
    "sources": [
+    {
+     "url": "https://92q.com/5912496/tasia-fortune-cause-of-death-pending/",
+     "outlet": "92q.com",
+     "title": "Tasia Fortune : Mississippi State Medical Examiner Office Hasnt Revealed Cause Of Death For Woman Found Hanging",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260815105104/https://92q.com/5912496/tasia-fortune-cause-of-death-pending/"
+    },
     {
      "url": "https://www.cnn.com/2026/08/11/us/video/tasia-fortune-mississippi-hanging-tree-vrtc",
      "outlet": "CNN",
      "title": null,
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://blackamericaweb.com/2026/08/13/tasia-fortune-cause-of-death-pending/",
+     "outlet": "blackamericaweb.com",
+     "title": "Medical Examiner Hasnt Revealed Tasia Fortune Cause Of Death",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260815020145/https://blackamericaweb.com/2026/08/13/tasia-fortune-cause-of-death-pending/"
+    },
+    {
+     "url": "https://www.bostonherald.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "bostonherald.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260816114934/https://www.bostonherald.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "https://www.broomfieldenterprise.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "broomfieldenterprise.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260812103429/https://www.broomfieldenterprise.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "http://www.cecildaily.com/ap/nation/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_4d2431d8-8a3b-57b8-9b05-92c0b4247e13.html",
+     "outlet": "cecildaily.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811010045/https://www.cecildaily.com/ap/nation/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_4d2431d8-8a3b-57b8-9b05-92c0b4247e13.html"
+    },
+    {
+     "url": "https://www.citizensvoice.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "citizensvoice.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811105404/https://www.citizensvoice.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "https://www.courant.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "courant.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811170502/https://www.courant.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "https://www.dailycamera.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "dailycamera.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811060500/https://www.dailycamera.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "https://www.dailygazette.com/hv360/ap/national/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_243412d7-668b-5c37-a44e-d6a56c2363a1.html",
+     "outlet": "dailygazette.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811045727/https://www.dailygazette.com/hv360/ap/national/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_243412d7-668b-5c37-a44e-d6a56c2363a1.html"
+    },
+    {
+     "url": "https://ipowerrichmond.com/4571568/person-of-interest-arrested-in-tasia-fortune-case/",
+     "outlet": "ipowerrichmond.com",
+     "title": "Tasia Fortune : Person Of Interest In Death Investigation Arrested , Admits To  Arguing  With Mississippi Woman Before She Was Found Hanging",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://www.ketv.com/article/tasia-fortune-mississippi-death-what-we-know/73403443",
+     "outlet": "ketv.com",
+     "title": "Tasia Fortune death in Mississippi : What we know",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://www.koat.com/article/tasia-fortune-mississippi-death-what-we-know/73403443",
+     "outlet": "koat.com",
+     "title": "Tasia Fortune death in Mississippi : What we know",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://www.koco.com/article/tasia-fortune-mississippi-death-what-we-know/73403443",
+     "outlet": "koco.com",
+     "title": "Tasia Fortune death in Mississippi : What we know",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://www.ksat.com/news/national/2026/08/10/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/",
+     "outlet": "ksat.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260814220915/https://www.ksat.com/news/national/2026/08/10/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/"
+    },
+    {
+     "url": "https://kysdc.com/5734635/tasia-fortune-cause-of-death-pending/",
+     "outlet": "kysdc.com",
+     "title": "Tasia Fortune : Mississippi State Medical Examiner Office Hasnt Revealed Cause Of Death For Woman Found Hanging",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260816093921/https://kysdc.com/5734635/tasia-fortune-cause-of-death-pending/"
+    },
+    {
+     "url": "https://lasvegassun.com/news/2026/aug/10/what-we-know-about-the-death-of-tasia-fortune-in-m/",
+     "outlet": "lasvegassun.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi - Las Vegas Sun News",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811133901/https://lasvegassun.com/news/2026/aug/10/what-we-know-about-the-death-of-tasia-fortune-in-m/"
+    },
+    {
+     "url": "https://www.local10.com/news/2026/08/10/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/",
+     "outlet": "local10.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260816170737/https://www.local10.com/news/2026/08/10/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/"
+    },
+    {
+     "url": "https://www.mainlinemedianews.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "mainlinemedianews.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811115035/https://www.mainlinemedianews.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "https://www.mcall.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "mcall.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260814063219/https://www.mcall.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "https://www.mendocinobeacon.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "mendocinobeacon.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811032850/https://www.mendocinobeacon.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "https://mywdia.iheart.com/content/2026-08-07-black-woman-found-hanging-from-tree-identified-as-tasia-fortune/",
+     "outlet": "mywdia.iheart.com",
+     "title": "Black Woman Found Hanging From Tree Identified As Tasia Fortune",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260807173203/https://mywdia.iheart.com/content/2026-08-07-black-woman-found-hanging-from-tree-identified-as-tasia-fortune/"
+    },
+    {
+     "url": "https://www.nbcnews.com/news/us-news/jackson-mississippi-hanging-person-interest-questioned-tasia-fortune-d-rcna591686",
+     "outlet": "nbcnews.com",
+     "title": "Jackson , Mississippi hanging : Person of interest questioned in Tasia Fortune death",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260819084845/https://www.nbcnews.com/news/us-news/jackson-mississippi-hanging-person-interest-questioned-tasia-fortune-d-rcna591686"
+    },
+    {
+     "url": "https://newsone.com/6868579/black-woman-found-hanging-identified-tasia-fortune/",
+     "outlet": "newsone.com",
+     "title": "Black Woman Found Hanging Identified As Tasia Fortune",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260809014237/https://newsone.com/6868579/black-woman-found-hanging-identified-tasia-fortune/"
+    },
+    {
+     "url": "https://northdallasgazette.com/2026/08/12/tasia-fortune/",
+     "outlet": "northdallasgazette.com",
+     "title": "Tasia Fortune - North Dallas Gazette",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260814181602/https://northdallasgazette.com/2026/08/12/tasia-fortune/"
+    },
+    {
+     "url": "https://www.nydailynews.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "nydailynews.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811142923/https://www.nydailynews.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "https://www.orlandosentinel.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "orlandosentinel.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260812031504/https://www.orlandosentinel.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "https://www.phillytrib.com/news/across_america/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_62862672-ddba-4998-a17b-c7032189d8a2.html",
+     "outlet": "phillytrib.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260816085948/https://www.phillytrib.com/news/across_america/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_62862672-ddba-4998-a17b-c7032189d8a2.html"
+    },
+    {
+     "url": "http://www.reflector.com/news/national/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_aebea30c-96e0-51f3-952e-9d7747dcf641.html",
+     "outlet": "reflector.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811010404/https://www.reflector.com/news/national/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_aebea30c-96e0-51f3-952e-9d7747dcf641.html"
+    },
+    {
+     "url": "https://www.reporterherald.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "reporterherald.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811201650/https://www.reporterherald.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "http://www.stardem.com/ap/nation/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_e7043a89-13be-5566-83df-61061dc5a7ab.html",
+     "outlet": "stardem.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811003715/https://www.stardem.com/ap/nation/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_e7043a89-13be-5566-83df-61061dc5a7ab.html"
+    },
+    {
+     "url": "https://www.sun-sentinel.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "sun-sentinel.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811163510/https://www.sun-sentinel.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "https://www.supertalk.fm/autopsy-conducted-on-jackson-woman-found-hanging-from-tree-cause-of-death-pending/",
+     "outlet": "supertalk.fm",
+     "title": "Autopsy conducted on Jackson woman found hanging from tree , cause of death pending",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260818035003/https://www.supertalk.fm/autopsy-conducted-on-jackson-woman-found-hanging-from-tree-cause-of-death-pending/"
+    },
+    {
+     "url": "https://www.supertalk.fm/family-of-jackson-woman-found-hanging-rejects-suicide-theory-but-doesnt-believe-it-was-racially-motivated/",
+     "outlet": "supertalk.fm",
+     "title": "Family of Jackson woman found hanging rejects suicide theory , but doesnt believe it was racially motivated",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811193942/https://www.supertalk.fm/family-of-jackson-woman-found-hanging-rejects-suicide-theory-but-doesnt-believe-it-was-racially-motivated/"
+    },
+    {
+     "url": "https://www.supertalk.fm/woman-found-dead-hanging-from-tree-in-jackson-police-investigating/",
+     "outlet": "supertalk.fm",
+     "title": "Woman found dead hanging from tree in Jackson , police investigating",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260807120512/https://www.supertalk.fm/woman-found-dead-hanging-from-tree-in-jackson-police-investigating/"
+    },
+    {
+     "url": "https://thebeatdfw.com/4540766/tasia-fortune-cause-of-death-pending/",
+     "outlet": "thebeatdfw.com",
+     "title": "Tasia Fortune : Mississippi State Medical Examiner Office Hasnt Revealed Cause Of Death For Woman Found Hanging",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260814090420/https://thebeatdfw.com/4540766/tasia-fortune-cause-of-death-pending/"
+    },
+    {
+     "url": "https://thegrio.com/2026/08/11/tasia-fortune-death-mississippi-family-seeks-answers/",
+     "outlet": "thegrio.com",
+     "title": "Tasia Fortune Death : Her Family Seeks Answers",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://www.times-standard.com/2026/08/10/mississippi-woman-hanging/",
+     "outlet": "times-standard.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811162402/https://www.times-standard.com/2026/08/10/mississippi-woman-hanging/"
+    },
+    {
+     "url": "https://tvone.tv/1967879/person-of-interest-arrested-in-tasia-fortune-case/",
+     "outlet": "tvone.tv",
+     "title": "Person Of Interest Arrested In Tasia Fortune Hanging Investigation",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260813175042/https://tvone.tv/1967879/person-of-interest-arrested-in-tasia-fortune-case/"
+    },
+    {
+     "url": "https://www.wapt.com/article/neighbors-react-after-woman-found-hanging-from-tree-in-jackson-neighborhood/73350045",
+     "outlet": "wapt.com",
+     "title": "Neighbors react after woman found hanging from tree in Jackson",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://www.wapt.com/article/tasia-fortune-memorial-jackson-autopsy-results/73406854",
+     "outlet": "wapt.com",
+     "title": "Memorial grows for Tasia Fortune in Jackson",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://www.wapt.com/article/woman-found-dead-behind-jackson-house-identified/73369290",
+     "outlet": "wapt.com",
+     "title": "Woman found hanging from tree in Jackson identified",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://www.wboc.com/news/national/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_9cce7f3a-034b-5b02-ab84-10e48918241b.html",
+     "outlet": "wboc.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260810232737/https://www.wboc.com/news/national/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_9cce7f3a-034b-5b02-ab84-10e48918241b.html"
+    },
+    {
+     "url": "https://www.wdbo.com/news/what-we-know-about/TUERCKGDIE3I5PE2UI26ES33BY/",
+     "outlet": "wdbo.com",
+     "title": "Mississippi woman Tasia Fortune found dead in hanging incident",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260812071305/https://www.wdbo.com/news/what-we-know-about/TUERCKGDIE3I5PE2UI26ES33BY/"
+    },
+    {
+     "url": "https://www.wesh.com/article/tasia-fortune-mississippi-death-what-we-know/73403443",
+     "outlet": "wesh.com",
+     "title": "Tasia Fortune death in Mississippi : What we know",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://www.wgal.com/article/tasia-fortune-mississippi-death-what-we-know/73403443",
+     "outlet": "wgal.com",
+     "title": "Tasia Fortune death in Mississippi : What we know",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://www.wgauradio.com/news/what-we-know-about/TUERCKGDIE3I5PE2UI26ES33BY/",
+     "outlet": "wgauradio.com",
+     "title": "Mississippi woman Tasia Fortune found dead in hanging incident",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260811083336/https://www.wgauradio.com/news/what-we-know-about/TUERCKGDIE3I5PE2UI26ES33BY/"
+    },
+    {
+     "url": "https://www.winknews.com/news/international/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_e48255fd-7343-5a67-aa8e-b9c2e5f88748.html",
+     "outlet": "winknews.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260814142629/https://www.winknews.com/news/international/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/article_e48255fd-7343-5a67-aa8e-b9c2e5f88748.html"
+    },
+    {
+     "url": "https://wiznation.com/4165580/tasia-fortune-cause-of-death-pending/",
+     "outlet": "wiznation.com",
+     "title": "Tasia Fortune : Mississippi State Medical Examiner Office Hasnt Revealed Cause Of Death For Woman Found Hanging",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260815141424/https://wiznation.com/4165580/tasia-fortune-cause-of-death-pending/"
+    },
+    {
+     "url": "https://www.wmur.com/article/tasia-fortune-mississippi-death-what-we-know/73403443",
+     "outlet": "wmur.com",
+     "title": "Tasia Fortune death in Mississippi : What we know",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://www.wokv.com/news/what-we-know-about/TUERCKGDIE3I5PE2UI26ES33BY/",
+     "outlet": "wokv.com",
+     "title": "Mississippi woman Tasia Fortune found dead in hanging incident",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260815180217/https://www.wokv.com/news/what-we-know-about/TUERCKGDIE3I5PE2UI26ES33BY/"
+    },
+    {
+     "url": "https://www.wral.com/news/ap/2f212-what-we-know-about-the-death-of-tasia-fortune-in-mississippi/",
+     "outlet": "wral.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260812033309/https://www.wral.com/news/ap/2f212-what-we-know-about-the-death-of-tasia-fortune-in-mississippi/"
+    },
+    {
+     "url": "https://www.wsls.com/news/national/2026/08/10/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/",
+     "outlet": "wsls.com",
+     "title": "What we know about the death of Tasia Fortune in Mississippi",
+     "source_type": "news",
+     "archived_url": "https://web.archive.org/web/20260813202244/https://www.wsls.com/news/national/2026/08/10/what-we-know-about-the-death-of-tasia-fortune-in-mississippi/"
+    },
+    {
+     "url": "https://www.wxii12.com/article/tasia-fortune-mississippi-death-what-we-know/73403443",
+     "outlet": "wxii12.com",
+     "title": "Tasia Fortune death in Mississippi : What we know",
      "source_type": "news",
      "archived_url": null
     }
@@ -255,7 +626,7 @@
    "notes": "Delta State University student. Coroner ruled suicide. Family and local advocates dispute. This case drove much of the subsequent national coverage and JULIAN's report timing. date_found approximate.",
    "created_at": "2026-08-19T20:40:39.074678+00:00",
    "updated_at": "2026-08-19T20:40:39.074678+00:00",
-   "source_count": 2,
+   "source_count": 3,
    "sources": [
     {
      "url": "https://www.julianfreedom.org/press-releases/new-crimson-record-chronicles-over-70-recent-lynchings-in-deep-south-reveals-new-evidence-in-cases",
@@ -268,6 +639,13 @@
      "url": "https://www.wbez.org/in-the-loop-with-sasha-ann-simons/2026/03/04/a-crimson-record-a-new-report-finds-modern-day-lynchings-on-the-rise",
      "outlet": "WBEZ",
      "title": null,
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://myk104.com/997/trey-reed-ben-crump-autopsy-results/",
+     "outlet": "myk104.com",
+     "title": "Trey Reed : Family Says Ben Crump Never Sent Autopsy Results",
      "source_type": "news",
      "archived_url": null
     }
@@ -367,12 +745,61 @@
    "notes": "Named in aggregate 2026 coverage. Date, location, and ruling not yet sourced to a primary report. Needs verification before any use.",
    "created_at": "2026-08-19T20:40:39.074678+00:00",
    "updated_at": "2026-08-19T20:40:39.074678+00:00",
-   "source_count": 1,
+   "source_count": 8,
    "sources": [
+    {
+     "url": "https://92q.com/5910668/juliana-nzita-hanging-still-no-answers/",
+     "outlet": "92q.com",
+     "title": "Juliana Nzita : 2 Months Later , Still No Answers In Hanging",
+     "source_type": "news",
+     "archived_url": null
+    },
     {
      "url": "https://emeraldbook.org/news/aug-1526/",
      "outlet": "Emerald Book",
      "title": null,
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://ipowerrichmond.com/4570518/juliana-nzita-hanging-still-no-answers/",
+     "outlet": "ipowerrichmond.com",
+     "title": "Juliana Nzita : 2 Months Later , Still No Answers In Hanging",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://krnb.com/1276483/juliana-nzita-hanging-still-no-answers/",
+     "outlet": "krnb.com",
+     "title": "Juliana Nzita : 2 Months Later , Still No Answers In Hanging",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://madamenoire.com/1684325/julianas-nzita-hanging-death-update/",
+     "outlet": "madamenoire.com",
+     "title": "Juliana Nzita : 2 Months Later , Still No Answers In Hanging Death",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://myk104.com/585/juliana-nzita-hanging-still-no-answers/",
+     "outlet": "myk104.com",
+     "title": "Juliana Nzita : 2 Months Later , Still No Answers In Hanging",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://newsone.com/6867419/juliana-nzita-hanging-still-no-answers/",
+     "outlet": "newsone.com",
+     "title": "Juliana Nzita : 2 Months Later , Still No Answers In Hanging",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://thebeatdfw.com/4539006/juliana-nzita-hanging-still-no-answers/",
+     "outlet": "thebeatdfw.com",
+     "title": "Juliana Nzita : 2 Months Later , Still No Answers In Hanging",
      "source_type": "news",
      "archived_url": null
     }
