@@ -1,11 +1,19 @@
 ---
 name: hanging-deaths-tracker-dev
-description: "Use this skill whenever the user asks about developing, modifying, debugging, deploying, or extending the hanging-deaths-tracker project — the zero-cost civic dataset tracking how US jurisdictions classify hanging deaths and where those rulings are publicly contested. Trigger for: CDC WONDER API work (request XML, parameter codes, D77/D158 dataset files, suppression handling, ICD-10 X70/Y20/X91), GDELT DOC 2.0 candidate collection and query tuning, the triage workflow that promotes candidates to cases, SQLite schema changes, the undetermined-ratio view, static export and Datasette Lite hosting, or the GitHub Actions refresh cron. Also trigger on tracker.db, schema.sql, wonder.py, gdelt.py, mortality_agg, case_sources, v_undetermined_ratio, the candidates table, triage status, verification status, JULIAN / A Crimson Record, or questions about whether the dataset's claims are defensible. Also trigger when the user asks to add a new data source, seed cases, or harden the repo."
+description: "Use this skill whenever the user asks about developing, modifying, debugging, deploying, or extending the hanging-deaths-tracker project — the zero-cost analysis of how US jurisdictions classify hanging deaths, its CDC WONDER pipeline, and its frozen appendix of sourced case records. Trigger for: CDC WONDER API work (request XML, parameter codes, D77/D158 dataset files, suppression handling, ICD-10 X70/Y20/X91), GDELT DOC 2.0 candidate collection and query tuning, the frozen triage workflow, SQLite schema changes, the undetermined-ratio view, state_systems and death-investigation system types, the suppression writeup, static export and Datasette Lite hosting, or the GitHub Actions refresh workflow. Also trigger on tracker.db, schema.sql, wonder.py, gdelt.py, mortality_agg, case_sources, v_undetermined_ratio, the candidates table, triage status, verification status, JULIAN / A Crimson Record, state_systems, tools/stats.py, SUPPRESSION.md, or questions about whether the dataset's claims are defensible. Also trigger when the user asks to add a new data source, seed cases, or harden the repo."
 ---
 
 # hanging-deaths-tracker Development Guide
 
-A zero-cost civic dataset tracking **how US jurisdictions classify hanging deaths**, and maintaining a sourced case record where official rulings are publicly contested.
+A zero-cost analysis of **how US jurisdictions classify hanging deaths**, plus the pipeline that produced it and a frozen appendix of sourced case records.
+
+**The project was reframed in August 2026 and is no longer a case tracker.**
+Read `NEXT.md` before doing anything else. In short: the case list is nine
+records with a freeze date, GDELT collection is off the cron, and the
+product is the analysis -- the CDC suppression finding, the national
+baseline, the state spread, and the fact that certification structure does
+not explain that spread. Do not add features premised on ongoing case
+collection, and do not write copy implying it.
 
 The project exists because a real pattern of reporting emerged in 2025-2026 (JULIAN's *A Crimson Record*, Feb 2026; a run of 2026 cases covered by CNN, Capital B, TheGrio, Atlanta Black Star) and there is no open, queryable dataset behind it. Advocacy orgs have case lists. Nobody has the classification-behavior angle.
 
@@ -30,9 +38,11 @@ Population-level rates cannot determine manner of death in an individual case, i
 ## Architecture
 
 ```
-GDELT ──> candidates ──[human triage]──> cases ──> case_sources
+GDELT ──> candidates ──[human triage]──> cases ──> case_sources   (frozen)
                                             │
-CDC WONDER ──> mortality_agg ───────────────┴──> static JSON / Datasette Lite
+CDC WONDER ──> mortality_agg ───────────────┤
+                                            ├──> static JSON / Datasette Lite
+CDC COMEC ──> state_systems ────────────────┘
 ```
 
 Three layers, one direction. `gdelt.py` has **no code path to `cases`** and must not acquire one. The only route from a scraped headline to a case record runs through a person marking it in triage.
@@ -46,6 +56,8 @@ hanging-deaths-tracker/
 ├── schema.sql                    # source of truth for structure
 ├── pyproject.toml                # httpx only; datasette is an extra
 ├── data/tracker.db               # committed to the repo on purpose
+├── SUPPRESSION.md                # the standalone WONDER suppression writeup
+├── data/systems/                 # CDC COMEC county table + Census weights
 ├── src/tracker/
 │   ├── cli.py                    # init / wonder / news / triage / export
 │   └── sources/
@@ -126,7 +138,39 @@ Keep queries broad. Narrowing loses the cases that got one local story and nothi
 
 Local news is the only source for many of these cases **and it disappears**. Push a web.archive.org snapshot at triage time and store it in `case_sources.archived_url`. Treat link rot as a certainty, not a risk.
 
-## Triage Workflow
+## state_systems
+
+Built by `tools/load_state_systems.py` from CDC's county-level table of who
+conducts medicolegal death investigation, weighted by how many deaths each
+county certifies (a state's undetermined rate is a property of its death
+certificates, so county-count shares would let its smallest jurisdictions
+outvote the ones doing most of the certifying).
+
+It records **structure, never quality**. There is no column saying a coroner
+system is worse and adding one is the `suspected_lynching` mistake in a new
+place; `check_repo.py` bans the obvious names. Every row carries its own
+`source_url` and that is enforced too.
+
+The measured result: **no relationship** between how a state certifies
+deaths and how often it leaves intent undetermined (Spearman rho = -0.10,
+p = 0.62, n = 29). If someone proposes copy explaining the state spread by
+coroner-vs-medical-examiner systems, that has been tested and does not hold.
+Report it as a ruled-out confound, not as a weak positive.
+
+## Statistics
+
+`tools/stats.py` has Spearman plus a seeded permutation test and no
+dependencies. Two rules if you extend it: rank methods over Pearson (29
+bounded, right-skewed rates), and canonicalise pair order before shuffling,
+or the same data reached through two different `ORDER BY` clauses reports
+two different p-values.
+
+## Triage Workflow (frozen)
+
+The cron is off; `workflow_dispatch` remains. These still work by hand if a
+ruling lands on one of the nine records, and `followup.py` is the only way
+to record it -- source-first, with an interactive confirmation for
+`verified` that nothing automated may answer.
 
 ```bash
 tracker news --timespan 7d    # collect

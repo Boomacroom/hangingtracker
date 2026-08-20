@@ -19,6 +19,10 @@ from __future__ import annotations
 import pathlib
 import sqlite3
 import sys
+from statistics import median
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import stats  # noqa: E402
 
 DB = pathlib.Path("data/tracker.db")
 
@@ -108,15 +112,75 @@ def main():
             print("  and rare is what this project measures.")
 
     print("\n" + "=" * 66)
+    print("  DOES CERTIFICATION STRUCTURE EXPLAIN THE SPREAD?")
+    print("  Undetermined rate vs who certifies deaths in the state.")
+    print("=" * 66)
+
+    sysrows = [dict(r) for r in conn.execute("""
+        SELECT * FROM v_undetermined_by_system
+        WHERE undetermined_ratio IS NOT NULL AND system_type IS NOT NULL
+    """)]
+    if not sysrows:
+        print("\n  No state_systems rows. Run tools/load_state_systems.py.")
+    else:
+        y = [r["undetermined_ratio"] for r in sysrows]
+        print(f"\n  {'variable':<40}{'rho':>7}{'p':>9}")
+        print("  " + "-" * 56)
+        labels = {
+            "elected_share": "share certified by elected official",
+            "coroner_share": "share certified by a coroner",
+            "me_share": "share certified by a medical examiner",
+            "has_state_me": "state has a state medical examiner",
+        }
+        for var, label in labels.items():
+            s = stats.correlate([r[var] for r in sysrows], y)
+            print(f"  {label:<40}{s['rho']:>+7.3f}{s['p']:>9.3f}")
+        print(f"\n  n = {len(sysrows)} states. Spearman rank correlation,")
+        print("  p from a 20,000-shuffle permutation test.")
+
+        groups: dict[str, list[float]] = {}
+        for r in sysrows:
+            groups.setdefault(r["system_type"], []).append(
+                r["undetermined_ratio"] * 100)
+        print(f"\n  {'system type':<24}{'n':>4}{'median':>9}{'range':>16}")
+        print("  " + "-" * 53)
+        for k in sorted(groups, key=lambda k: -median(groups[k])):
+            v = groups[k]
+            print(f"  {k:<24}{len(v):>4}{median(v):>9.2f}"
+                  f"{min(v):>10.2f}-{max(v):.2f}")
+
+        print("""
+  Read this as a negative result. None of these correlations is
+  distinguishable from chance at n=29, and the categorical medians
+  overlap across nearly their whole range: the highest and lowest
+  states in the table are both medical examiner jurisdictions.
+
+  So the intuitive explanation -- that states electing lay coroners
+  leave intent undetermined at different rates than states running
+  medical examiner offices -- is not what is driving the sevenfold
+  spread. That is worth knowing. It removes the readiest explanation
+  and leaves the variation needing a different one, which may be
+  office-level rather than state-level: caseload, autopsy rate, local
+  convention, or how a single large county certifies.
+
+  What this does NOT show is that structure never matters. A rank
+  correlation over 29 states has little power, half the states are
+  unmeasurable, and 'mixed' states are averages of counties that
+  differ from each other. It rules the explanation out as the driver
+  of the spread, not out of the picture.""")
+
+    print("\n" + "=" * 66)
     print("  WHAT THIS DOES NOT SHOW")
     print("=" * 66)
     print("""
   Not whether any ruling is correct. Not whether any death was a
   homicide. A high undetermined rate is not evidence of diligence and
   a low one is not evidence of cover-up; both are consistent with
-  several explanations this data cannot distinguish, including who
-  certifies deaths in a state (elected coroner vs medical examiner),
-  ME office resourcing, and local certification convention.
+  several explanations. One of them -- who certifies deaths in a
+  state -- is tested above and does not account for the spread. The
+  ones still standing, which this data cannot distinguish, include
+  office resourcing, autopsy rates, local certification convention,
+  and classification becoming more cautious under public scrutiny.
 
   The spread is a finding about practice that warrants explanation.
   It is not itself an explanation.

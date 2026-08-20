@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hanging Death Classification Tracker</title>
-<meta name="description" content="How US jurisdictions classify hanging deaths. Open data for reporters, with sources and known limits.">
+<title>Classifying Hanging Deaths</title>
+<meta name="description" content="How US jurisdictions classify hanging deaths: a national baseline, a sevenfold state spread, and the CDC suppression rule that hides most of the data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -111,11 +111,12 @@ footer{border-top:2px solid var(--ink);padding:1.5rem 0 3rem;margin-top:2rem;
 <div class="wrap">
 
 <header>
-  <div class="eyebrow">Open dataset · CDC WONDER + sourced case records</div>
+  <div class="eyebrow">Analysis · CDC WONDER 2018–2024</div>
   <h1>How jurisdictions classify hanging deaths</h1>
   <p class="lede">A hanging death can be ruled suicide, homicide, or undetermined
-  intent. Which one gets recorded varies a great deal by where the person died.
-  This tracks that variation, and the cases where a ruling is publicly disputed.</p>
+  intent. Which one gets recorded varies about sevenfold between states. Here is
+  that variation, what does not explain it, and why most of the underlying data
+  is invisible unless you query it a particular way.</p>
 </header>
 
 <section>
@@ -152,21 +153,59 @@ footer{border-top:2px solid var(--ink);padding:1.5rem 0 3rem;margin-top:2rem;
 <section>
   <h2>By state, 2018–2024 combined</h2>
   <p class="sub">Undetermined-intent hangings per 100 ruled suicide, pooled across
-  seven years so more states clear the suppression threshold. National rate is
-  about 1.1 per 100.</p>
+  seven years so more states clear the suppression threshold. The national rate is
+  about 1.1 per 100. Note where Mississippi lands: third highest, not lowest,
+  which is the opposite of the intuition this analysis started from.</p>
   <table id="statetable"><caption>Rate of undetermined-intent classification</caption></table>
 </section>
 
 <section>
-  <h2>Case records</h2>
-  <p class="sub">Individual deaths where the ruling has been publicly disputed.
-  Every field traces to a source link. Records marked unverified have not been
-  checked field by field yet.</p>
+  <h2>Does it matter who certifies the death?</h2>
+  <p class="sub">The readiest explanation for that spread is structural. Some
+  states elect county coroners who need no medical training; some run a
+  centralized medical examiner office staffed by forensic pathologists; most are
+  a mixture. We joined CDC's county-level table of who certifies deaths, weighted
+  by how many deaths each county actually certifies, and tested it against the
+  rate above.</p>
+  <div class="callout">
+    <strong>It does not explain the spread.</strong> Across
+    <span id="syn">29</span> measurable states there is no relationship between
+    the share of deaths certified by an elected official and how often intent is
+    left undetermined (<span class="mono" id="syrho"></span>). The highest and
+    lowest states in the table are both medical examiner jurisdictions. We are
+    publishing this because a ruled-out explanation is still a result, and
+    because it was the explanation we expected to find.
+  </div>
+  <table id="systable"><caption>Undetermined rate against certification structure</caption></table>
+  <p class="sub" style="margin-top:1rem">This rules the explanation out as the
+  driver of the state spread, not out of the picture. A rank correlation over 29
+  states has little power, half the states are unmeasurable, and a state labelled
+  "mixed" is an average of counties that differ from each other. What it does
+  say is that the variation needs a different explanation, and one that may live
+  at the level of individual offices rather than state law: caseload, autopsy
+  rate, local convention, or how a single large county certifies.</p>
+</section>
+
+<section id="demosec" hidden>
+  <h2>By race, age and sex, nationally</h2>
+  <p class="sub">National query, no state breakdown, so nothing is suppressed and
+  these are counts rather than floors. Categories are CDC's own labels, stored
+  and shown verbatim.</p>
+  <table id="demotable"><caption>Undetermined-intent rate by group</caption></table>
+</section>
+
+<section>
+  <h2>Appendix: the cases that prompted this question</h2>
+  <p class="sub">A frozen set of individual deaths where the ruling was publicly
+  disputed in reporting. This is a record of what started the analysis above, not
+  a case tracker: collection stopped on <span id="freeze" class="mono">—</span>
+  and no new cases are being added. Every field traces to a source link.</p>
   <div class="callout">
     <strong>Read the status before citing.</strong> An unverified record is a
     starting point for reporting, not a finding. The aggregate figures above say
     nothing about any individual case here, and no rate on this page is evidence
-    about how any particular person died.
+    about how any particular person died. For a maintained case database on this
+    subject, see JULIAN's <em>A Crimson Record</em>.
   </div>
   <div id="cases"></div>
 </section>
@@ -185,9 +224,13 @@ footer{border-top:2px solid var(--ink);padding:1.5rem 0 3rem;margin-top:2rem;
   <p>Mortality data: CDC WONDER, Multiple Cause of Death 2018–2024, single-race
   file. ICD-10 X70 (suicide), X91 (assault), Y20 (undetermined intent), underlying
   cause. Query parameters for every export are committed alongside the data.</p>
-  <p>Case records are compiled from published reporting. This dataset records what
-  authorities ruled and who has disputed it. It does not assess whether any ruling
-  is correct.</p>
+  <p>Case records are compiled from published reporting and are frozen. This
+  dataset records what authorities ruled and who has disputed it. It does not
+  assess whether any ruling is correct.</p>
+  <p>Certification structure: CDC Collaborating Office for Medical Examiners and
+  Coroners, Medicolegal Death Investigation System by County. County death counts
+  for weighting: US Census Bureau population estimates. Source URLs are stored
+  per row.</p>
   <p>Prior work: JULIAN's <em>A Crimson Record</em> documents suspected modern-day
   lynchings across the South and maintains its own case database.</p>
 </footer>
@@ -266,7 +309,54 @@ function render(d){
       Withheld means fewer than ten such deaths in seven years, not none.
     </td></tr></tbody>`;
 
-  // --- cases ---
+  // --- certification structure ---
+  const sysjoin = (d.systems?.joined || []).filter(s => s.undetermined_ratio !== null);
+  const corr = d.systems?.correlations || {};
+  if (sysjoin.length) {
+    $('#syn').textContent = sysjoin.length;
+    const e = corr.elected_share;
+    if (e) $('#syrho').textContent =
+      `Spearman ρ = ${e.rho.toFixed(2)}, p = ${e.p.toFixed(2)}, n = ${e.n}`;
+    const smax = Math.max(...sysjoin.map(s => s.undetermined_ratio));
+    $('#systable').innerHTML += `<thead><tr>
+      <th>State</th><th>Who certifies</th>
+      <th style="text-align:right">Elected</th>
+      <th>Undet. per 100 ruled suicide</th></tr></thead><tbody>` +
+      sysjoin.map(s => `<tr><td>${esc(s.state)}</td>
+        <td>${esc(s.system_type)}</td>
+        <td class="num">${Math.round(s.elected_share * 100)}%</td>
+        <td class="bar-cell num"><i style="width:${(s.undetermined_ratio/smax*100).toFixed(1)}%"></i>
+        <span>${(s.undetermined_ratio*100).toFixed(2)}</span></td></tr>`).join('') +
+      `<tr><td colspan="4" style="background:var(--paper);padding-top:.8rem;font-size:.85rem;color:var(--ink-soft)">
+        "Elected" is the share of the state's deaths certified by an elected
+        official, weighted by how many deaths each county certifies. Structure
+        from CDC's county-level table; every state's row and its source URL are
+        in <code>state_systems</code> in the database.
+      </td></tr></tbody>`;
+  }
+
+  // --- national demographic breakdown, only if that export was loaded ---
+  const demo = d.demographics || [];
+  if (demo.length) {
+    const lab = r => [r.race, r.sex, r.age_group].filter(Boolean).join(' · ');
+    $('#demosec').hidden = false;
+    $('#demotable').innerHTML += `<thead><tr>
+      <th>Group</th><th style="text-align:right">Year</th>
+      <th style="text-align:right">Suicide</th>
+      <th style="text-align:right">Undetermined</th>
+      <th style="text-align:right">Per 100</th></tr></thead><tbody>` +
+      demo.map(r => `<tr><td>${esc(lab(r))}</td>
+        <td class="num">${r.year ?? 'pooled'}</td>
+        <td class="num">${(r.suicide_hanging ?? 0).toLocaleString()}</td>
+        <td class="num">${r.undetermined_hanging ?? ''}</td>
+        ${r.undetermined_ratio === null
+          ? '<td class="withheld">withheld</td>'
+          : `<td class="num">${(r.undetermined_ratio*100).toFixed(2)}</td>`}
+        </tr>`).join('') + '</tbody>';
+  }
+
+  // --- cases, appendix ---
+  if (d.case_freeze_date) $('#freeze').textContent = d.case_freeze_date;
   $('#cases').innerHTML = d.cases.map(c => `
     <details>
       <summary>
