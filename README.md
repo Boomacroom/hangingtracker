@@ -36,7 +36,7 @@ about sevenfold between states:
 
 29 states measurable. 22 have fewer than 10 Y20 deaths even pooled across
 seven years and are withheld under confidentiality rules; those are
-reported as unmeasurable, never as zero. Run `python analyze.py` for the
+reported as unmeasurable, never as zero. Run `python tools/analyze.py` for the
 full table.
 
 **Note where Mississippi lands.** The intuitive hypothesis behind a
@@ -74,7 +74,7 @@ annually, not daily.
 3. Group as below, uncheck **Show Totals**, and in Quick Options set
    **Show Zero Values** and **Show Suppressed** to **True**.
 4. Export, save under `data/wonder/`, and run
-   `python load_wonder.py data/wonder/<file>.xls`.
+   `python tools/load_wonder.py data/wonder/<file>.xls`.
 
 Three exports, each answering something the others can't:
 
@@ -157,9 +157,12 @@ pip install -e .
 python -m tracker.cli init                 # create data/tracker.db
 python -m tracker.seed                     # seed sourced cases (unverified)
 python -m tracker.cli news --timespan 30d  # collect GDELT candidates
-python curate.py                           # cluster + triage + promote
-python load_wonder.py <export.xls>         # load a WONDER export
-python analyze.py                          # the ratio table
+python tools/curate.py                     # cluster + triage + promote
+python tools/load_wonder.py <export.xls>   # load a WONDER export
+python tools/analyze.py                    # the ratio table
+python tools/followup.py                   # developments on existing cases
+python tools/followup.py --update <id>     # record one, with its source
+python tools/export_site.py                # rebuild site/ from the db
 python tools/check_repo.py                 # verify invariants
 ```
 

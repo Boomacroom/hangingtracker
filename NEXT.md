@@ -24,28 +24,23 @@ intuitive framing and is stated up front in the README on purpose.
 
 ---
 
-## 1. Finish `tools/followup.py` (highest value, well-defined)
+## 1. Finish `tools/followup.py` — DONE
 
-Two update attempts tonight both dead-ended because the fields that
-actually needed changing aren't exposed. Concretely:
+`--update` now exposes `notes` (dated append, never overwrite),
+`verification`, `verified_by`/`verified_at`, `autopsy_public`,
+`independent_autopsy`, `date_last_seen`.
 
-- **Fortune (case 3):** a person of interest was arrested. Not a manner
-  change. Belongs in `notes`. No way to write it.
-- **Reed (case 7):** family says their attorney never sent autopsy
-  results. Not a ruling dispute — `family_contests` was already 1 and
-  setting it again would assert the wrong thing. Belongs in `notes`.
+- Source URL is the **first** prompt. Blank aborts before anything else is
+  typed, instead of after.
+- Attach and update are one transaction. Ctrl-C mid-prompts rolls back the
+  attached sources too.
+- Setting `verification='verified'` requires typing `yes` to a prompt that
+  states what verified means, and warns how many sources still lack an
+  `archived_url`.
 
-Add to `--update`: `notes` (append with a date prefix, don't overwrite),
-`verification`, `autopsy_public`, `independent_autopsy`, `date_last_seen`.
-
-Two fixes while in there:
-
-- **Ask for the source URL first.** It's currently last, so you type
-  everything then lose it all if you don't have the link. Both sessions
-  tonight hit this.
-- **Make attach and update one transaction.** Attach runs before the
-  prompts, so an abandoned session still links sources. Safe direction to
-  fail, but surprising.
+The Fortune and Reed developments that dead-ended before are now writable
+as dated notes, which is what they were: an arrest and an attorney
+complaint, neither of them a manner-of-death change.
 
 ## 2. Verify cases (no tooling can do this)
 
@@ -86,8 +81,9 @@ exactly the ones nobody else is counting.
 
 ## 4. Small stuff
 
-- Move `curate.py`, `peek.py`, `analyze.py`, `load_wonder.py`,
-  `migrate_pooled.py` into `tools/`; update README usage block.
+- ~~Move the root scripts into `tools/`; update README usage block.~~ Done.
+  The four using CWD-relative `data/tracker.db` still expect to be run from
+  the repo root, which is what the README shows.
 - Delete `mk.py`, `mk2.py`, `mk3.py`, `bootstrap.py` if still present —
   they carry stale base64 copies and running one would revert a file.
 - `src/tracker/cli.py` still has a `wonder` subcommand that always 403s.

@@ -223,6 +223,79 @@ def ask(prompt, default=None):
     return v or default
 
 
+def ask_bool(prompt, current):
+    """y/n prompt returning '1'/'0', or None to leave the field alone."""
+    v = ask(f"{prompt} (y/n)")
+    if not v:
+        return None
+    if v.lower()[0] not in "yn":
+        print(f"    '{v}' is not y or n. Leaving unchanged.")
+        return None
+    new = "1" if v.lower().startswith("y") else "0"
+    return new if new != str(current or 0) else None
+
+
+def ask_date(prompt, current):
+    """ISO date prompt. A date that won't parse is refused, not stored."""
+    v = ask(prompt)
+    if not v:
+        return None
+    try:
+        dt.date.fromisoformat(v)
+    except ValueError:
+        print(f"    '{v}' is not YYYY-MM-DD. Leaving unchanged.")
+        return None
+    return v if v != current else None
+
+
+# Fields stored as INTEGER. Everything else is written as text.
+INT_FIELDS = ("days_to_ruling", "family_contests",
+              "autopsy_public", "independent_autopsy")
+
+VERIFICATION_VALUES = ("unverified", "review", "verified", "rejected")
+
+
+def _short(v, n=46, tail=False):
+    """
+    Collapse a value for the change summary. `tail` shows the end rather than
+    the start, which is the only informative part of an appended note: both
+    versions share a long identical head.
+    """
+    if v is None:
+        return "None"
+    s = " ".join(str(v).splitlines()[-1].split()) if tail else " ".join(str(v).split())
+    return s if len(s) <= n else s[:n - 3] + "..."
+
+
+def _confirm_verified(conn, case_id: int) -> bool:
+    """
+    'verified' is the one value in this table that is a claim about the work
+    done, not about the case. It means a person opened every source and
+    checked every field against it. The prompt states that, because a
+    verified row that nobody actually checked is worse than an unverified
+    one: it spends credibility the dataset has not earned.
+    """
+    n_src, n_arch = conn.execute("""
+        SELECT COUNT(*), COUNT(archived_url) FROM case_sources WHERE case_id = ?
+    """, (case_id,)).fetchone()
+    print(f"\n    'verified' means: every one of these {n_src} source(s) opened,")
+    print("    every populated field checked against them, every URL archived.")
+    if n_arch < n_src:
+        print(f"    {n_src - n_arch} of {n_src} source(s) have no archived_url yet.")
+        print("    Local coverage disappears; archive them before verifying.")
+    return (input("    Confirm you did that (yes): ").strip().lower() == "yes")
+
+
+def append_note(existing: str | None, addition: str) -> str:
+    """
+    Notes accumulate. Overwriting one would silently drop the context that
+    justified an earlier reading of the record, so entries are dated and
+    appended.
+    """
+    entry = f"[{dt.date.today().isoformat()}] {addition}"
+    return f"{existing.rstrip()}\n{entry}" if existing else entry
+
+
 def update_case(conn, case_id: int):
     case = conn.execute("SELECT * FROM cases WHERE id = ?", (case_id,)).fetchone()
     if not case:
@@ -232,9 +305,27 @@ def update_case(conn, case_id: int):
     name = case["decedent_name"] or case["slug"]
     print(f"\n  Case {case_id}: {name}")
     print(f"  current ruling: {case['official_manner'] or 'none recorded'}")
-    print(f"  found: {case['date_found'] or 'unknown'}\n")
+    print(f"  found: {case['date_found'] or 'unknown'}")
+    print(f"  verification: {case['verification']}"
+          f"{' by ' + case['verified_by'] if case['verified_by'] else ''}")
+    if case["notes"]:
+        last = case["notes"].strip().splitlines()[-1]
+        print(f"  last note: {last[:66]}")
+    print()
 
-    # Offer to attach matching candidates as sources first.
+    # The source is asked for before anything else on purpose. It used to be
+    # the last prompt, which meant discovering you had no link only after
+    # typing the whole update, and losing all of it. Nothing below is worth
+    # collecting without it.
+    src = ask("source URL justifying this update")
+    if not src:
+        print("\n  No source given. Nothing recorded. This is deliberate:")
+        print("  an unsourced ruling is exactly what this dataset must not hold.\n")
+        return
+    who = ask("your name or handle", "unattributed")
+
+    # Offer to attach matching candidates as sources.
+    chosen_any = False
     hits = find_new_coverage(conn)
     if case_id in hits:
         _, matched = hits[case_id]
@@ -255,9 +346,12 @@ def update_case(conn, case_id: int):
             """, (case_id, m["url"], m["domain"], m["title"], m["seendate"], now))
             conn.execute("UPDATE candidates SET promoted_case = ?, triage = 'relevant' "
                          "WHERE id = ?", (case_id, m["id"]))
-        conn.commit()
+        # Deliberately not committed here. The attach and the field changes
+        # land together or not at all, so abandoning the prompts below leaves
+        # no trace rather than half an edit.
+        chosen_any = bool(chosen)
         if chosen:
-            print(f"  attached {len(chosen)} source(s)")
+            print(f"  attached {len(chosen)} source(s) (pending)")
 
     print("\n  Record a development. Blank leaves a field unchanged.")
     print("  A ruling needs a source URL, or it is not recorded.\n")
@@ -295,20 +389,50 @@ def update_case(conn, case_id: int):
     if orgs and orgs != case["org_contests"]:
         changes.append(("org_contests", case["org_contests"], orgs))
 
-    if not changes:
-        print("\n  No changes.\n")
-        return
+    last_seen = ask_date("date last seen alive (YYYY-MM-DD)", case["date_last_seen"])
+    if last_seen:
+        changes.append(("date_last_seen", case["date_last_seen"], last_seen))
 
-    src = ask("source URL justifying these changes")
-    if not src:
-        print("\n  No source given. Nothing recorded. This is deliberate:")
-        print("  an unsourced ruling is exactly what this dataset must not hold.\n")
+    autopsy = ask_bool("autopsy public?", case["autopsy_public"])
+    if autopsy is not None:
+        changes.append(("autopsy_public", str(case["autopsy_public"]), autopsy))
+
+    indep = ask_bool("independent autopsy?", case["independent_autopsy"])
+    if indep is not None:
+        changes.append(("independent_autopsy", str(case["independent_autopsy"]), indep))
+
+    # Most developments are not field changes. An arrest, an attorney who
+    # never forwarded results, a hearing date: all real, none of them a
+    # manner-of-death change. Without somewhere to put them the tool forces
+    # a choice between losing the fact and asserting something stronger.
+    note = ask("note to append (dated; does not overwrite)")
+    if note:
+        changes.append(("notes", case["notes"], append_note(case["notes"], note)))
+
+    ver = ask(f"verification ({'/'.join(VERIFICATION_VALUES)})")
+    if ver and ver != case["verification"]:
+        if ver not in VERIFICATION_VALUES:
+            print(f"  '{ver}' is not a recognised value. Skipping.")
+        elif ver == "verified" and not _confirm_verified(conn, case_id):
+            print("  Not marking verified.")
+        else:
+            changes.append(("verification", case["verification"], ver))
+            if ver == "verified":
+                changes.append(("verified_by", case["verified_by"], who))
+                changes.append(("verified_at", case["verified_at"],
+                                dt.date.today().isoformat()))
+
+    if not changes:
+        if chosen_any:
+            conn.commit()
+            print("\n  No field changes. Attached sources committed.\n")
+        else:
+            print("\n  No changes.\n")
         return
-    who = ask("your name or handle", "unattributed")
 
     now = dt.datetime.now(dt.timezone.utc).isoformat()
     for field, old, new in changes:
-        val = int(new) if field in ("days_to_ruling", "family_contests") else new
+        val = int(new) if field in INT_FIELDS else new
         conn.execute(f"UPDATE cases SET {field} = ?, updated_at = ? WHERE id = ?",
                      (val, now, case_id))
         conn.execute("""
@@ -325,9 +449,15 @@ def update_case(conn, case_id: int):
 
     print(f"\n  Recorded {len(changes)} change(s) with source.")
     for f, o, n in changes:
-        print(f"    {f}: {o} -> {n}")
-    print("\n  Verification reset is NOT automatic. If this case was verified,")
-    print("  re-check it: the record has changed since someone last confirmed it.\n")
+        if f == "notes":
+            print(f"    notes: appended {_short(n, tail=True)}")
+        else:
+            print(f"    {f}: {_short(o)} -> {_short(n)}")
+    if not any(f == "verification" for f, _, _ in changes):
+        print("\n  Verification reset is NOT automatic. If this case was verified,")
+        print("  re-check it: the record has changed since someone last confirmed it.\n")
+    else:
+        print()
 
 
 def main():
@@ -342,7 +472,12 @@ def main():
     if a.attach:
         attach_all(conn, a.attach)
     elif a.update:
-        update_case(conn, a.update)
+        try:
+            update_case(conn, a.update)
+        except (KeyboardInterrupt, EOFError):
+            conn.rollback()
+            print("\n\n  Abandoned. Nothing written, including source attachments.\n")
+            return 1
     elif a.pending:
         show_pending(conn)
     else:
