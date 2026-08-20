@@ -187,7 +187,10 @@ def main():
 
     # Provenance: keep the query parameters with the data.
     out = path.with_suffix(".footnotes.txt")
-    out.write_text(ftext, encoding="utf-8")
+    # Explicit LF, same reason as export_site.py: re-loading an unchanged
+    # export should not show up as a modified sidecar.
+    with open(out, "w", encoding="utf-8", newline="\n") as fh:
+        fh.write(ftext)
     print(f"footnotes saved -> {out}")
     print("Commit both. The query parameters are what make the numbers checkable.\n")
     return 0

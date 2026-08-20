@@ -16,6 +16,7 @@ isn't already in a view.
 
 from __future__ import annotations
 
+import io
 import json
 import pathlib
 import sqlite3
@@ -164,7 +165,13 @@ def main():
         },
     }
 
-    (OUT / "tracker.json").write_text(json.dumps(payload, indent=1), encoding="utf-8")
+    # Explicit LF. On Windows the default translates every newline to CRLF,
+    # .gitattributes normalises it straight back on commit, and the working
+    # tree is left permanently dirty after an export. A diff that is always
+    # there is a diff nobody reads, which is how a real change to this file
+    # goes unnoticed.
+    with io.open(OUT / "tracker.json", "w", encoding="utf-8", newline="\n") as f:
+        json.dump(payload, f, indent=1)
 
     # Ship the db itself so Datasette Lite can open it.
     import shutil
