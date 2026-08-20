@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   refresh:
@@ -20,19 +21,38 @@ jobs:
       - run: pip install -e .
 
       - name: Ensure db
-        run: test -f data/tracker.db || tracker init
+        run: test -f data/tracker.db || python -m tracker.cli init
 
+      # GDELT only. WONDER is a manual export: the API returns 403 for any
+      # state-level query, so there is nothing to automate there.
       - name: Collect news candidates
-        run: tracker news --timespan 2d
+        run: python -m tracker.cli news --timespan 2d
         continue-on-error: true
 
-      - name: Export static JSON
-        run: tracker export
+      - name: Flag developments on existing cases
+        run: python tools/followup.py || true
 
-      - name: Commit
-        run: |
-          git config user.name "refresh-bot"
-          git config user.email "actions@github.com"
-          git add data/tracker.db site/data || true
-          git diff --staged --quiet || git commit -m "refresh: $(date -u +%F)"
-          git push
+      - name: Build site data
+        run: python tools/export_site.py
+
+      # main is protected, so the bot opens a PR instead of pushing.
+      # Candidates are raw scraped rows, not curated claims, but they still
+      # land in the same file as the case records, so they go through review
+      # like everything else.
+      - name: Open PR with new candidates
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "refresh: candidates ${{ github.run_number }}"
+          branch: auto/refresh
+          delete-branch: true
+          title: "Daily refresh: new candidates"
+          body: |
+            Automated GDELT collection. Nothing here is a case record.
+
+            Before merging, skim the run log for the "Flag developments"
+            step: if it lists coverage matching an existing case, that
+            case may have a ruling to record via
+            `python tools/followup.py --update <id>`.
+          add-paths: |
+            data/tracker.db
+            site/data
