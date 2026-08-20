@@ -25,8 +25,14 @@ jobs:
 
       # GDELT only. WONDER is a manual export: the API returns 403 for any
       # state-level query, so there is nothing to automate there.
+      # 7d, not 2d. gdelt.py rotates through its query list two per run to
+      # stay under the request budget, so any single query only comes up
+      # every ~2.5 days. The window has to be wider than that gap or the
+      # days a query sits out are simply never searched, and a gap in this
+      # table is indistinguishable from a quiet week. Overlap is free: the
+      # candidates table dedupes on url.
       - name: Collect news candidates
-        run: python -m tracker.cli news --timespan 2d
+        run: python -m tracker.cli news --timespan 7d
         continue-on-error: true
 
       - name: Flag developments on existing cases

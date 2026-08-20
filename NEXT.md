@@ -57,27 +57,45 @@ Raleigh (case 9, 8 sources) — best-documented.
 Nzita (case 4) is still a near-empty stub with 7 sources attached but no
 date, city, or ruling. Either fill it or mark it `rejected`.
 
-## 3. GDELT query tuning
+## 3. GDELT query tuning — DONE
 
-In `src/tracker/sources/gdelt.py`. Current results, 30-day window:
+The quality column in the old version of this section was eyeballed, and it
+had two of the four backwards. Measuring precision against the 160 triaged
+candidates instead:
 
-| query | hits | quality |
-|---|---|---|
-| `"hanging from a tree"` | 99 | poor — Grimm episodes, an F/A-18 crash, boredpanda |
-| `"independent autopsy"` | 50 | loose |
-| `"found hanging"` | 9 | decent |
-| `"ruled a suicide" hanging (family OR NAACP OR autopsy)` | 2 | **best precision** |
+| query | n | precision | old guess |
+|---|---|---|---|
+| `"independent autopsy" hanging` | 50 | **90%** | "loose" |
+| `"hanging from a tree" (body OR found OR death)` | 99 | 59% | "poor" |
+| `"found hanging" (tree OR woods OR park)` | 9 | 33% | "decent" |
+| `"ruled a suicide" hanging (family OR NAACP OR autopsy)` | 2 | **0%** | "best precision" |
 
-The budget is spent in the wrong place, and the best query keeps getting
-429'd out. Needs iterating against live results — narrow the loose ones,
-protect the precise one, maybe run it first.
+The plan of "narrow the loose ones, protect the precise one" would have
+narrowed the 90% query and protected the 0% one. The Grimm episodes were
+also under `"found hanging"`, not `"hanging from a tree"`.
 
-Rate limiting: `THROTTLE_SECONDS = 15` and it still 429s. Raising it made
-things worse, so it's likely a rolling window rather than per-request
-spacing. Consider fewer queries per run, rotating across days.
+Changes made:
 
-**Do not narrow so far that single-local-story cases vanish.** Those are
-exactly the ones nobody else is counting.
+- `"found hanging"`: `(tree OR woods OR park)` → `(man OR woman OR teen OR
+  student OR body)`. The location words let in an injured bald eagle and a
+  goat cruelty case. Constraining on a person tested **broader** live, 135
+  hits vs 91, and stops excluding deaths found somewhere other than a tree.
+- `"ruled a suicide"`: dropped the third clause. The narrow form returned 2
+  candidates in 30 days, neither relevant; the wider one surfaced the
+  Rebecca Zahau verdict, a contested hanging death it had been missing.
+- `NOISE_DOMAINS` gained fiction-recap sites only. Tabloids stay out: they
+  cover real deaths, and for a case that got one story, that story is the
+  record.
+
+Rate limiting is a **request budget over a window, not spacing**. Probed
+live: five queries 12s apart alternate 200/429, and 30s apart did worse.
+So `todays_queries()` rotates two queries per run and `THROTTLE_SECONDS` is
+30. `refresh.yml` moved 2d → 7d, because rotation is only free while the
+window is wider than the 2.5d a query waits its turn — otherwise the days a
+query sits out are never searched and the gap is invisible.
+`check_coverage()` warns if that ever stops holding, and it is tested.
+
+**Still true: do not narrow so far that single-local-story cases vanish.**
 
 ## 4. Small stuff
 
