@@ -63,25 +63,49 @@ def main():
     print("  across seven years, withheld under confidentiality rules.")
 
     print("\n" + "=" * 66)
-    print("  NATIONAL TREND BY YEAR (lower bounds, see note)")
+    print("  NATIONAL TREND BY YEAR")
+    print("  From a no-state export: nothing suppressed, these are counts.")
     print("=" * 66)
-    print(f"\n  {'year':<8}{'X70':>9}{'X91':>8}{'Y20':>8}")
-    print("  " + "-" * 33)
-    for r in conn.execute("""
+    print(f"\n  {'year':<8}{'X70':>9}{'X91':>8}{'Y20':>8}{'Y20 per 100 X70':>18}")
+    print("  " + "-" * 51)
+    nat = list(conn.execute("""
         SELECT year,
                SUM(CASE WHEN icd10_code='X70' THEN deaths END) x70,
                SUM(CASE WHEN icd10_code='X91' THEN deaths END) x91,
                SUM(CASE WHEN icd10_code='Y20' THEN deaths END) y20
-        FROM mortality_agg WHERE year IS NOT NULL AND deaths IS NOT NULL
+        FROM mortality_agg
+        WHERE state IS NULL AND year IS NOT NULL AND deaths IS NOT NULL
         GROUP BY year ORDER BY year
-    """):
-        print(f"  {r['year']:<8}{r['x70'] or 0:>9}{r['x91'] or 0:>8}{r['y20'] or 0:>8}")
+    """))
+    if not nat:
+        print("\n  No national rows loaded. Export grouped by Year + Cause with")
+        print("  no State breakdown, then load it. Summing the state export")
+        print("  gives floors, not counts: it undercounts Y20 by 70-90%.")
+    else:
+        for r in nat:
+            ratio = (r["y20"] / r["x70"] * 100) if r["x70"] else 0
+            print(f"  {r['year']:<8}{r['x70']:>9}{r['x91']:>8}{r['y20']:>8}{ratio:>18.2f}")
 
-    print("\n  These are sums of VISIBLE state rows in a year-by-state export")
-    print("  that hides both zero and suppressed cells. The Y20 column is a")
-    print("  FLOOR, not a count: the hidden cells contribute 0-9 each and are")
-    print("  excluded here. For true national figures, export grouped by Year")
-    print("  and Cause with no State breakdown, which suppresses nothing.")
+        # Why the separate export exists, shown rather than asserted.
+        floors = {r[0]: r[1] for r in conn.execute("""
+            SELECT year, SUM(deaths) FROM mortality_agg
+            WHERE state IS NOT NULL AND year IS NOT NULL
+              AND icd10_code='Y20' AND deaths IS NOT NULL
+            GROUP BY year
+        """)}
+        if floors:
+            print("\n  Why this export is separate: summing the state-broken")
+            print("  export instead would have given these Y20 figures --")
+            worst = 0
+            for r in nat:
+                f = floors.get(r["year"], 0)
+                pct = (r["y20"] - f) / r["y20"] * 100 if r["y20"] else 0
+                worst = max(worst, pct)
+                print(f"    {r['year']}: {f:>4} vs {r['y20']:>4} actual  ({pct:.0f}% missing)")
+            print(f"\n  Up to {worst:.0f}% of undetermined-intent hangings vanish when you")
+            print("  sum visible state cells. X70 is unaffected (never suppressed).")
+            print("  Rare categories are exactly where suppression bites hardest,")
+            print("  and rare is what this project measures.")
 
     print("\n" + "=" * 66)
     print("  WHAT THIS DOES NOT SHOW")

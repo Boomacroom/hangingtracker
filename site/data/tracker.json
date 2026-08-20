@@ -1,0 +1,1376 @@
+{
+ "cases": [
+  {
+   "id": 9,
+   "slug": "unknown-nc-2026",
+   "decedent_name": null,
+   "age": null,
+   "date_found": "2026-08-16",
+   "date_last_seen": null,
+   "city": "Raleigh",
+   "county": "Wake",
+   "state": "NC",
+   "location_type": "tree, downtown",
+   "official_manner": "pending",
+   "official_ruled_by": "Raleigh Police Department (investigating)",
+   "days_to_ruling": null,
+   "autopsy_public": 0,
+   "independent_autopsy": 0,
+   "family_contests": 0,
+   "org_contests": null,
+   "verification": "unverified",
+   "verified_by": null,
+   "verified_at": null,
+   "notes": "Police investigating as suicide; no ME ruling published as of 2026-08-19. WRAL reported police responding to misinformation circulating during the investigation. Decedent not publicly named. Clusters 11 and 12 are additional sources not yet linked.",
+   "created_at": "2026-08-19T22:07:42.058277+00:00",
+   "updated_at": "2026-08-19T22:07:42.058277+00:00",
+   "source_count": 8,
+   "sources": [
+    {
+     "url": "https://92q.com/5912880/black-man-found-hanging-from-tree-in-raleigh/",
+     "outlet": "92q.com",
+     "title": "Black Man Found Hanging From Tree In Raleigh , Police Say It  Being Investigated As A Suicide  ",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://ipowerrichmond.com/4572098/black-man-found-hanging-from-tree-raleigh/",
+     "outlet": "ipowerrichmond.com",
+     "title": "Black Man Found Hanging From Tree In Raleigh Investigated As A Suicide",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://myk104.com/1760/black-man-found-hanging-from-tree-raleigh/",
+     "outlet": "myk104.com",
+     "title": "Black Man Found Hanging From Tree In Raleigh Investigated As A Suicide",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://mywdia.iheart.com/content/2026-08-07-black-woman-found-hanging-from-tree-identified-as-tasia-fortune/",
+     "outlet": "mywdia.iheart.com",
+     "title": "Black Woman Found Hanging From Tree Identified As Tasia Fortune",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://newsone.com/6868579/black-woman-found-hanging-identified-tasia-fortune/",
+     "outlet": "newsone.com",
+     "title": "Black Woman Found Hanging Identified As Tasia Fortune",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://tvone.tv/1968338/black-man-found-hanging-from-tree-raleigh/",
+     "outlet": "tvone.tv",
+     "title": "A Black Man Was Found Hanging From A Tree In Raleigh",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://tvone.tv/1968342/black-man-found-hanging-in-raleigh/",
+     "outlet": "tvone.tv",
+     "title": "Black Man Found Hanging In Downtown Raleigh",
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://tvone.tv/1968364/black-man-found-hanging-from-tree-in-raleigh/",
+     "outlet": "tvone.tv",
+     "title": "A Black Man Was Found Hanging From A Tree In Raleigh",
+     "source_type": "news",
+     "archived_url": null
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "slug": "tasia-fortune-ms-2026",
+   "decedent_name": "Tasia Fortune",
+   "age": 29,
+   "date_found": "2026-08-03",
+   "date_last_seen": null,
+   "city": "Jackson",
+   "county": "Hinds",
+   "state": "MS",
+   "location_type": "behind vacant home",
+   "official_manner": "pending",
+   "official_ruled_by": "Mississippi State Medical Examiner",
+   "days_to_ruling": null,
+   "autopsy_public": 0,
+   "independent_autopsy": 0,
+   "family_contests": 1,
+   "org_contests": null,
+   "verification": "unverified",
+   "verified_by": null,
+   "verified_at": null,
+   "notes": "Found Aug 3 behind a vacant home. No cause or manner released as of mid-August 2026. A person of interest was reported arrested. Mother Christy Spivey publicly disputed suicide. This is the open case.",
+   "created_at": "2026-08-19T20:40:39.074678+00:00",
+   "updated_at": "2026-08-19T20:40:39.074678+00:00",
+   "source_count": 1,
+   "sources": [
+    {
+     "url": "https://www.cnn.com/2026/08/11/us/video/tasia-fortune-mississippi-hanging-tree-vrtc",
+     "outlet": "CNN",
+     "title": null,
+     "source_type": "news",
+     "archived_url": null
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "slug": "isaac-carlos-aguirre-dc-2026",
+   "decedent_name": "Isaac Carlos Aguirre",
+   "age": 19,
+   "date_found": "2026-04-01",
+   "date_last_seen": null,
+   "city": "Washington",
+   "county": null,
+   "state": "DC",
+   "location_type": "tree near police station",
+   "official_manner": "pending",
+   "official_ruled_by": "Metropolitan Police Department",
+   "days_to_ruling": null,
+   "autopsy_public": 0,
+   "independent_autopsy": 0,
+   "family_contests": 1,
+   "org_contests": null,
+   "verification": "unverified",
+   "verified_by": null,
+   "verified_at": null,
+   "notes": "Found near MPD Fourth District station. MPD treated it as a suicide investigation and said no foul play suspected; a formal ME ruling was not reported, so official_manner is 'pending' rather than 'suicide'. Reporting noted a three-day delay before any public statement. Exact date_found not established in available reporting; April 2026 only.",
+   "created_at": "2026-08-19T20:40:39.074678+00:00",
+   "updated_at": "2026-08-19T20:40:39.074678+00:00",
+   "source_count": 1,
+   "sources": [
+    {
+     "url": "https://davisvanguard.org/2026/08/modern-day-lynching-report/",
+     "outlet": "Davis Vanguard",
+     "title": null,
+     "source_type": "news",
+     "archived_url": null
+    }
+   ]
+  },
+  {
+   "id": 1,
+   "slug": "kyle-bassinga-ga-2026",
+   "decedent_name": "Kyle Bassinga",
+   "age": 21,
+   "date_found": "2026-02-18",
+   "date_last_seen": null,
+   "city": "Marietta",
+   "county": "Cobb",
+   "state": "GA",
+   "location_type": "wooded area",
+   "official_manner": "suicide",
+   "official_ruled_by": "Cobb County Police Department",
+   "days_to_ruling": null,
+   "autopsy_public": 0,
+   "independent_autopsy": 0,
+   "family_contests": 0,
+   "org_contests": null,
+   "verification": "unverified",
+   "verified_by": null,
+   "verified_at": null,
+   "notes": "Reported missing Feb 14; found Feb 18 at Fair Oaks Park. Police cited surveillance video showing him entering the area alone, plus witness and autopsy findings. Family stated through police that they trust the process. Exact ruling date not published, so days_to_ruling left NULL.",
+   "created_at": "2026-08-19T20:40:39.074678+00:00",
+   "updated_at": "2026-08-19T20:40:39.074678+00:00",
+   "source_count": 2,
+   "sources": [
+    {
+     "url": "https://atlantablackstar.com/2026/08/13/at-least-six-black-people-found-hanging/",
+     "outlet": "Atlanta Black Star",
+     "title": null,
+     "source_type": "news",
+     "archived_url": null
+    },
+    {
+     "url": "https://thegrio.com/2026/08/10/black-people-are-being-found-hanging-from-trees-why-are-officials-so-quick-to-call-it-suicide/",
+     "outlet": "TheGrio",
+     "title": null,
+     "source_type": "news",
+     "archived_url": null
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "slug": "tory-medley-wi-2025",
+   "decedent_name": "Tory Medley",
+   "age": 39,
+   "date_found": "2025-11-13",
+   "date_last_seen": null,
+   "city": "Brookfield",
+   "county": "Waukesha",
+   "state": "WI",
+   "location_type": "golf course",
+   "official_manner": "suicide",
+   "official_ruled_by": "local police (preliminary)",
+   "days_to_ruling": null,
+   "autopsy_public": 0,
+   "independent_autopsy": 1,
+   "family_contests": 1,
+   "org_contests": "NAACP Milwaukee; NAACP Waukesha",
+   "verification": "unverified",
+   "verified_by": null,
+   "verified_at": null,
+   "notes": "Police said preliminary investigation indicated suicide and later cited a mental health crisis, saying reviewed video did not substantiate foul play. Family and NAACP chapters questioned how he reached a suburban course without a car and commissioned an independent autopsy. Phone and ID were not found.",
+   "created_at": "2026-08-19T20:40:39.074678+00:00",
+   "updated_at": "2026-08-19T20:40:39.074678+00:00",
+   "source_count": 1,
+   "sources": [
+    {
+     "url": "https://thegrio.com/2026/08/10/black-people-are-being-found-hanging-from-trees-why-are-officials-so-quick-to-call-it-suicide/",
+     "outlet": "TheGrio",
+     "title": null,
+     "source_type": "news",
+     "archived_url": null
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "slug": "trey-reed-ms-2025",
+   "decedent_name": "Demartravion 'Trey' Reed",
+   "age": 25,
+   "date_found": "2025-09-15",
+   "date_last_seen": null,
+   "city": "Cleveland",
+   "county": "Bolivar",
+   "state": "MS",
+   "location_type": "campus",
+   "official_manner": "suicide",
+   "official_ruled_by": "Bolivar County Coroner",
+   "days_to_ruling": null,
+   "autopsy_public": 0,
+   "independent_autopsy": 0,
+   "family_contests": 1,
+   "org_contests": null,
+   "verification": "unverified",
+   "verified_by": null,
+   "verified_at": null,
+   "notes": "Delta State University student. Coroner ruled suicide. Family and local advocates dispute. This case drove much of the subsequent national coverage and JULIAN's report timing. date_found approximate.",
+   "created_at": "2026-08-19T20:40:39.074678+00:00",
+   "updated_at": "2026-08-19T20:40:39.074678+00:00",
+   "source_count": 2,
+   "sources": [
+    {
+     "url": "https://www.julianfreedom.org/press-releases/new-crimson-record-chronicles-over-70-recent-lynchings-in-deep-south-reveals-new-evidence-in-cases",
+     "outlet": "JULIAN",
+     "title": null,
+     "source_type": "org_report",
+     "archived_url": null
+    },
+    {
+     "url": "https://www.wbez.org/in-the-loop-with-sasha-ann-simons/2026/03/04/a-crimson-record-a-new-report-finds-modern-day-lynchings-on-the-rise",
+     "outlet": "WBEZ",
+     "title": null,
+     "source_type": "news",
+     "archived_url": null
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "slug": "javion-magee-nc-2024",
+   "decedent_name": "Javion Magee",
+   "age": 21,
+   "date_found": "2024-09-12",
+   "date_last_seen": null,
+   "city": "Henderson",
+   "county": "Vance",
+   "state": "NC",
+   "location_type": "base of tree",
+   "official_manner": "suicide",
+   "official_ruled_by": "North Carolina Medical Examiner",
+   "days_to_ruling": null,
+   "autopsy_public": 0,
+   "independent_autopsy": 0,
+   "family_contests": 1,
+   "org_contests": null,
+   "verification": "unverified",
+   "verified_by": null,
+   "verified_at": null,
+   "notes": "Found with a rope around his neck. Family attorneys called an early suicide conclusion premature; a later state ME report classified it a suicide. date_found approximate.",
+   "created_at": "2026-08-19T20:40:39.074678+00:00",
+   "updated_at": "2026-08-19T20:40:39.074678+00:00",
+   "source_count": 1,
+   "sources": [
+    {
+     "url": "https://balleralert.com/black-people-found-hanging-2026-suicide-rulings/",
+     "outlet": "Baller Alert",
+     "title": null,
+     "source_type": "news",
+     "archived_url": null
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "slug": "tonea-nicole-miller-fl-2026",
+   "decedent_name": "Tonea Nicole Miller",
+   "age": null,
+   "date_found": null,
+   "date_last_seen": null,
+   "city": null,
+   "county": null,
+   "state": "FL",
+   "location_type": null,
+   "official_manner": null,
+   "official_ruled_by": null,
+   "days_to_ruling": null,
+   "autopsy_public": 0,
+   "independent_autopsy": 0,
+   "family_contests": 0,
+   "org_contests": null,
+   "verification": "unverified",
+   "verified_by": null,
+   "verified_at": null,
+   "notes": "Named in aggregate 2026 coverage. Details not yet sourced to a primary report. Needs verification before any use.",
+   "created_at": "2026-08-19T20:40:39.074678+00:00",
+   "updated_at": "2026-08-19T20:40:39.074678+00:00",
+   "source_count": 1,
+   "sources": [
+    {
+     "url": "https://emeraldbook.org/news/aug-1526/",
+     "outlet": "Emerald Book",
+     "title": null,
+     "source_type": "news",
+     "archived_url": null
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "slug": "juliana-nzita-nc-2026",
+   "decedent_name": "Juliana Nzita",
+   "age": 16,
+   "date_found": null,
+   "date_last_seen": null,
+   "city": null,
+   "county": null,
+   "state": "NC",
+   "location_type": null,
+   "official_manner": null,
+   "official_ruled_by": null,
+   "days_to_ruling": null,
+   "autopsy_public": 0,
+   "independent_autopsy": 0,
+   "family_contests": 0,
+   "org_contests": null,
+   "verification": "unverified",
+   "verified_by": null,
+   "verified_at": null,
+   "notes": "Named in aggregate 2026 coverage. Date, location, and ruling not yet sourced to a primary report. Needs verification before any use.",
+   "created_at": "2026-08-19T20:40:39.074678+00:00",
+   "updated_at": "2026-08-19T20:40:39.074678+00:00",
+   "source_count": 1,
+   "sources": [
+    {
+     "url": "https://emeraldbook.org/news/aug-1526/",
+     "outlet": "Emerald Book",
+     "title": null,
+     "source_type": "news",
+     "archived_url": null
+    }
+   ]
+  }
+ ],
+ "states": [
+  {
+   "state": "Alaska",
+   "suicide_hanging": 417,
+   "undetermined_hanging": 16,
+   "assault_hanging": 26,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.03836930455635491
+  },
+  {
+   "state": "Arizona",
+   "suicide_hanging": 2311,
+   "undetermined_hanging": 63,
+   "assault_hanging": 76,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.027260926006057985
+  },
+  {
+   "state": "Mississippi",
+   "suicide_hanging": 632,
+   "undetermined_hanging": 17,
+   "assault_hanging": 35,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.02689873417721519
+  },
+  {
+   "state": "North Carolina",
+   "suicide_hanging": 2276,
+   "undetermined_hanging": 49,
+   "assault_hanging": 87,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.021528998242530756
+  },
+  {
+   "state": "Indiana",
+   "suicide_hanging": 1882,
+   "undetermined_hanging": 40,
+   "assault_hanging": 81,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.021253985122210415
+  },
+  {
+   "state": "Missouri",
+   "suicide_hanging": 1830,
+   "undetermined_hanging": 38,
+   "assault_hanging": 64,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.020765027322404372
+  },
+  {
+   "state": "Tennessee",
+   "suicide_hanging": 1757,
+   "undetermined_hanging": 34,
+   "assault_hanging": 93,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.01935116676152533
+  },
+  {
+   "state": "Pennsylvania",
+   "suicide_hanging": 3376,
+   "undetermined_hanging": 63,
+   "assault_hanging": 101,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.018661137440758292
+  },
+  {
+   "state": "Iowa",
+   "suicide_hanging": 1130,
+   "undetermined_hanging": 21,
+   "assault_hanging": 27,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.018584070796460177
+  },
+  {
+   "state": "South Carolina",
+   "suicide_hanging": 1171,
+   "undetermined_hanging": 21,
+   "assault_hanging": 61,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.017933390264730998
+  },
+  {
+   "state": "Minnesota",
+   "suicide_hanging": 1610,
+   "undetermined_hanging": 28,
+   "assault_hanging": 43,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.017391304347826087
+  },
+  {
+   "state": "Kansas",
+   "suicide_hanging": 983,
+   "undetermined_hanging": 16,
+   "assault_hanging": 20,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.01627670396744659
+  },
+  {
+   "state": "Alabama",
+   "suicide_hanging": 1126,
+   "undetermined_hanging": 16,
+   "assault_hanging": 52,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.014209591474245116
+  },
+  {
+   "state": "Michigan",
+   "suicide_hanging": 2781,
+   "undetermined_hanging": 38,
+   "assault_hanging": 105,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.013664149586479683
+  },
+  {
+   "state": "Kentucky",
+   "suicide_hanging": 1254,
+   "undetermined_hanging": 17,
+   "assault_hanging": 45,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.013556618819776715
+  },
+  {
+   "state": "Washington",
+   "suicide_hanging": 2079,
+   "undetermined_hanging": 27,
+   "assault_hanging": 63,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.012987012987012988
+  },
+  {
+   "state": "Louisiana",
+   "suicide_hanging": 1017,
+   "undetermined_hanging": 13,
+   "assault_hanging": 62,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.012782694198623401
+  },
+  {
+   "state": "Virginia",
+   "suicide_hanging": 1914,
+   "undetermined_hanging": 24,
+   "assault_hanging": 59,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.012539184952978056
+  },
+  {
+   "state": "Utah",
+   "suicide_hanging": 1122,
+   "undetermined_hanging": 14,
+   "assault_hanging": 15,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.012477718360071301
+  },
+  {
+   "state": "Ohio",
+   "suicide_hanging": 3179,
+   "undetermined_hanging": 39,
+   "assault_hanging": 104,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.012268008807801196
+  },
+  {
+   "state": "Georgia",
+   "suicide_hanging": 2453,
+   "undetermined_hanging": 27,
+   "assault_hanging": 116,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.0110069302894415
+  },
+  {
+   "state": "Florida",
+   "suicide_hanging": 5252,
+   "undetermined_hanging": 56,
+   "assault_hanging": 233,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.010662604722010662
+  },
+  {
+   "state": "Illinois",
+   "suicide_hanging": 3325,
+   "undetermined_hanging": 32,
+   "assault_hanging": 110,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.00962406015037594
+  },
+  {
+   "state": "New York",
+   "suicide_hanging": 4261,
+   "undetermined_hanging": 35,
+   "assault_hanging": 146,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.008214034264257217
+  },
+  {
+   "state": "Texas",
+   "suicide_hanging": 7291,
+   "undetermined_hanging": 55,
+   "assault_hanging": 280,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.007543546838568098
+  },
+  {
+   "state": "Wisconsin",
+   "suicide_hanging": 1609,
+   "undetermined_hanging": 12,
+   "assault_hanging": 40,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.0074580484773151025
+  },
+  {
+   "state": "New Jersey",
+   "suicide_hanging": 2043,
+   "undetermined_hanging": 15,
+   "assault_hanging": 46,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.007342143906020558
+  },
+  {
+   "state": "California",
+   "suicide_hanging": 10109,
+   "undetermined_hanging": 64,
+   "assault_hanging": 293,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.006330992185181522
+  },
+  {
+   "state": "Colorado",
+   "suicide_hanging": 2331,
+   "undetermined_hanging": 13,
+   "assault_hanging": 81,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.005577005577005577
+  },
+  {
+   "state": "Arkansas",
+   "suicide_hanging": 953,
+   "undetermined_hanging": null,
+   "assault_hanging": 38,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Connecticut",
+   "suicide_hanging": 946,
+   "undetermined_hanging": null,
+   "assault_hanging": 25,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Delaware",
+   "suicide_hanging": 248,
+   "undetermined_hanging": null,
+   "assault_hanging": 10,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "District of Columbia",
+   "suicide_hanging": 112,
+   "undetermined_hanging": null,
+   "assault_hanging": 14,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Hawaii",
+   "suicide_hanging": 773,
+   "undetermined_hanging": null,
+   "assault_hanging": 12,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Idaho",
+   "suicide_hanging": 539,
+   "undetermined_hanging": 10,
+   "assault_hanging": null,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Maine",
+   "suicide_hanging": 430,
+   "undetermined_hanging": null,
+   "assault_hanging": 11,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Maryland",
+   "suicide_hanging": 1287,
+   "undetermined_hanging": null,
+   "assault_hanging": 39,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Massachusetts",
+   "suicide_hanging": 1952,
+   "undetermined_hanging": null,
+   "assault_hanging": 31,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Montana",
+   "suicide_hanging": 438,
+   "undetermined_hanging": null,
+   "assault_hanging": 19,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Nebraska",
+   "suicide_hanging": 580,
+   "undetermined_hanging": null,
+   "assault_hanging": 17,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Nevada",
+   "suicide_hanging": 943,
+   "undetermined_hanging": null,
+   "assault_hanging": 43,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "New Hampshire",
+   "suicide_hanging": 440,
+   "undetermined_hanging": null,
+   "assault_hanging": null,
+   "suppressed_cells": 2,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "New Mexico",
+   "suicide_hanging": 982,
+   "undetermined_hanging": null,
+   "assault_hanging": 35,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "North Dakota",
+   "suicide_hanging": 263,
+   "undetermined_hanging": null,
+   "assault_hanging": null,
+   "suppressed_cells": 2,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Oklahoma",
+   "suicide_hanging": 1526,
+   "undetermined_hanging": null,
+   "assault_hanging": 53,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Oregon",
+   "suicide_hanging": 1441,
+   "undetermined_hanging": null,
+   "assault_hanging": 30,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Rhode Island",
+   "suicide_hanging": 297,
+   "undetermined_hanging": null,
+   "assault_hanging": null,
+   "suppressed_cells": 2,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "South Dakota",
+   "suicide_hanging": 442,
+   "undetermined_hanging": null,
+   "assault_hanging": 11,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Vermont",
+   "suicide_hanging": 199,
+   "undetermined_hanging": null,
+   "assault_hanging": null,
+   "suppressed_cells": 2,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "West Virginia",
+   "suicide_hanging": 542,
+   "undetermined_hanging": 10,
+   "assault_hanging": null,
+   "suppressed_cells": 1,
+   "undetermined_ratio": null
+  },
+  {
+   "state": "Wyoming",
+   "suicide_hanging": 198,
+   "undetermined_hanging": null,
+   "assault_hanging": null,
+   "suppressed_cells": 2,
+   "undetermined_ratio": null
+  }
+ ],
+ "national": [
+  {
+   "year": 2018,
+   "x70": 13840,
+   "x91": 485,
+   "y20": 154,
+   "y20_state_sum": 23
+  },
+  {
+   "year": 2019,
+   "x70": 13563,
+   "x91": 455,
+   "y20": 156,
+   "y20_state_sum": 38
+  },
+  {
+   "year": 2020,
+   "x70": 12495,
+   "x91": 415,
+   "y20": 133,
+   "y20_state_sum": 33
+  },
+  {
+   "year": 2021,
+   "x70": 12431,
+   "x91": 409,
+   "y20": 144,
+   "y20_state_sum": 13
+  },
+  {
+   "year": 2022,
+   "x70": 12247,
+   "x91": 375,
+   "y20": 159,
+   "y20_state_sum": 39
+  },
+  {
+   "year": 2023,
+   "x70": 12023,
+   "x91": 450,
+   "y20": 143,
+   "y20_state_sum": 44
+  },
+  {
+   "year": 2024,
+   "x70": 11453,
+   "x91": 407,
+   "y20": 131,
+   "y20_state_sum": 21
+  }
+ ],
+ "grid": {
+  "years": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "states": [
+   "Alabama",
+   "Alaska",
+   "Arizona",
+   "Arkansas",
+   "California",
+   "Colorado",
+   "Connecticut",
+   "Delaware",
+   "District of Columbia",
+   "Florida",
+   "Georgia",
+   "Hawaii",
+   "Idaho",
+   "Illinois",
+   "Indiana",
+   "Iowa",
+   "Kansas",
+   "Kentucky",
+   "Louisiana",
+   "Maine",
+   "Maryland",
+   "Massachusetts",
+   "Michigan",
+   "Minnesota",
+   "Mississippi",
+   "Missouri",
+   "Montana",
+   "Nebraska",
+   "Nevada",
+   "New Hampshire",
+   "New Jersey",
+   "New Mexico",
+   "New York",
+   "North Carolina",
+   "North Dakota",
+   "Ohio",
+   "Oklahoma",
+   "Oregon",
+   "Pennsylvania",
+   "Rhode Island",
+   "South Carolina",
+   "South Dakota",
+   "Tennessee",
+   "Texas",
+   "Utah",
+   "Vermont",
+   "Virginia",
+   "Washington",
+   "West Virginia",
+   "Wisconsin",
+   "Wyoming"
+  ],
+  "cells": [
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  ],
+  "visible": 18,
+  "total": 357
+ },
+ "counts": {
+  "cases": 9,
+  "verified": 0,
+  "measurable_states": 29,
+  "suppressed_states": 22
+ }
+}

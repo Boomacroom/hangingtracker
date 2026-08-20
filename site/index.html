@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hanging Death Classification Tracker</title>
+<meta name="description" content="How US jurisdictions classify hanging deaths. Open data for reporters, with sources and known limits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#171C18;
+  --ink-soft:#4A544C;
+  --paper:#FBFCFA;
+  --bar:#E6EDE2;          /* continuous-form green bar */
+  --rule:#C0CCBA;
+  --withheld:#BDB7AC;     /* suppressed cells: warm grey, never green */
+  --flag:#6E2B2B;         /* oxblood, for warnings and contested */
+  --max:informal;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'IBM Plex Sans',system-ui,sans-serif; font-size:16px; line-height:1.6;
+}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:700;line-height:1.1;letter-spacing:-.01em;margin:0}
+.mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+
+/* ---- masthead: a form header, because that's what this data is ---- */
+header{border-bottom:2px solid var(--ink);padding:2.5rem 0 1.25rem;margin-bottom:2.5rem}
+header .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:.6rem}
+header h1{font-size:clamp(1.9rem,5vw,3.1rem);max-width:22ch}
+header p.lede{margin:.9rem 0 0;max-width:56ch;font-size:1.05rem;color:var(--ink-soft)}
+
+section{margin:0 0 3.5rem}
+h2{font-size:1.5rem;margin-bottom:.35rem}
+h2+.sub{color:var(--ink-soft);font-size:.93rem;margin:0 0 1.25rem;max-width:62ch}
+
+/* ---- signature: the suppression grid ---- */
+.grid-figure{border:1px solid var(--rule);background:#fff;padding:1.25rem;overflow-x:auto}
+.sgrid{display:grid;gap:2px;grid-template-columns:8.5rem repeat(7,1fr);min-width:34rem}
+.sgrid .yr,.sgrid .st{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--ink-soft)}
+.sgrid .yr{text-align:center;padding-bottom:.3rem}
+.sgrid .st{padding-right:.5rem;text-align:right;line-height:1.15;align-self:center;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cell{height:1.05rem;background:var(--withheld);position:relative}
+.cell.on{background:var(--ink)}
+.grid-key{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem;font-size:.8rem;color:var(--ink-soft)}
+.grid-key span{display:flex;align-items:center;gap:.45rem}
+.swatch{width:.85rem;height:.85rem;display:inline-block}
+
+.callout{border-left:3px solid var(--flag);background:#fff;padding:1rem 1.15rem;margin:1.25rem 0;
+  font-size:.95rem}
+.callout strong{color:var(--flag)}
+
+/* ---- greenbar tables ---- */
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+caption{text-align:left;font-family:'IBM Plex Mono',monospace;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:.5rem}
+th{font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;text-align:left;
+  border-bottom:1.5px solid var(--ink);padding:.45rem .6rem;font-size:.82rem;
+  letter-spacing:.02em;text-transform:uppercase}
+td{padding:.4rem .6rem;border-bottom:1px solid var(--rule)}
+tbody tr:nth-child(odd){background:var(--bar)}
+td.num{font-family:'IBM Plex Mono',monospace;text-align:right;font-variant-numeric:tabular-nums}
+td.withheld{color:var(--withheld);font-family:'IBM Plex Mono',monospace;text-align:right}
+.bar-cell{position:relative}
+.bar-cell i{position:absolute;left:0;top:0;bottom:0;background:var(--ink);opacity:.13}
+.bar-cell span{position:relative}
+
+.tag{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:.1rem .4rem;border:1px solid currentColor;white-space:nowrap}
+.tag.unverified{color:var(--flag)}
+.tag.verified{color:#2A5C3A}
+
+details{border-bottom:1px solid var(--rule)}
+details summary{cursor:pointer;padding:.7rem .2rem;display:flex;gap:.85rem;align-items:baseline;
+  flex-wrap:wrap;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:'+';font-family:'IBM Plex Mono',monospace;color:var(--ink-soft)}
+details[open] summary::before{content:'–'}
+details .body{padding:0 0 1rem 1.6rem;font-size:.9rem}
+details .body dt{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:.7rem}
+details .body dd{margin:.15rem 0 0}
+.srcs a{display:block;color:var(--ink);font-size:.85rem;padding:.15rem 0}
+
+a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:2px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+.btn{display:inline-block;border:1.5px solid var(--ink);padding:.55rem 1rem;text-decoration:none;
+  font-family:'IBM Plex Sans Condensed',sans-serif;font-weight:600;font-size:.9rem;margin:.3rem .4rem .3rem 0}
+.btn:hover{background:var(--ink);color:var(--paper)}
+footer{border-top:2px solid var(--ink);padding:1.5rem 0 3rem;margin-top:2rem;
+  font-size:.85rem;color:var(--ink-soft)}
+.err{border:1px solid var(--flag);padding:1rem;color:var(--flag);font-size:.9rem}
+@media(max-width:640px){
+  .sgrid{grid-template-columns:5.5rem repeat(7,1fr);min-width:0}
+  .sgrid .st{font-size:.6rem}
+}
+@media(prefers-reduced-motion:no-preference){
+  .cell.on{animation:ink .5s ease-out backwards}
+  @keyframes ink{from{opacity:0}to{opacity:1}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Open dataset · CDC WONDER + sourced case records</div>
+  <h1>How jurisdictions classify hanging deaths</h1>
+  <p class="lede">A hanging death can be ruled suicide, homicide, or undetermined
+  intent. Which one gets recorded varies a great deal by where the person died.
+  This tracks that variation, and the cases where a ruling is publicly disputed.</p>
+</header>
+
+<section>
+  <h2>Start here: most of this data is withheld</h2>
+  <p class="sub">Each cell is one state in one year. Filled means CDC published a
+  count of undetermined-intent hangings. Grey means fewer than ten deaths, so the
+  figure is suppressed for confidentiality.</p>
+  <div class="grid-figure">
+    <div class="sgrid" id="sgrid"><div class="err">Loading…</div></div>
+    <div class="grid-key">
+      <span><i class="swatch" style="background:var(--ink)"></i> count published</span>
+      <span><i class="swatch" style="background:var(--withheld)"></i> withheld (under 10)</span>
+      <span id="gridstat" class="mono"></span>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>If you take one thing from this page:</strong> a withheld cell is not
+    zero. Summing the state-level figures CDC publishes undercounts
+    undetermined-intent hangings by <span id="undercount">70–90</span>%, because
+    every small count disappears. Suicide counts are large enough that none are
+    withheld, so the error lands entirely on the rarer category. Anyone pulling
+    state-level WONDER data on a rare cause of death will hit this.
+  </div>
+</section>
+
+<section>
+  <h2>National counts</h2>
+  <p class="sub">From a query with no state breakdown, so nothing is suppressed.
+  These are complete counts. The last column shows what you would have gotten by
+  adding up the published state figures instead.</p>
+  <table id="nattable"><caption>Deaths by underlying cause, United States</caption></table>
+</section>
+
+<section>
+  <h2>By state, 2018–2024 combined</h2>
+  <p class="sub">Undetermined-intent hangings per 100 ruled suicide, pooled across
+  seven years so more states clear the suppression threshold. National rate is
+  about 1.1 per 100.</p>
+  <table id="statetable"><caption>Rate of undetermined-intent classification</caption></table>
+</section>
+
+<section>
+  <h2>Case records</h2>
+  <p class="sub">Individual deaths where the ruling has been publicly disputed.
+  Every field traces to a source link. Records marked unverified have not been
+  checked field by field yet.</p>
+  <div class="callout">
+    <strong>Read the status before citing.</strong> An unverified record is a
+    starting point for reporting, not a finding. The aggregate figures above say
+    nothing about any individual case here, and no rate on this page is evidence
+    about how any particular person died.
+  </div>
+  <div id="cases"></div>
+</section>
+
+<section>
+  <h2>Get the data</h2>
+  <p class="sub">Everything is public domain source data plus sourced records.
+  Query it, download it, or check the exact CDC parameters used.</p>
+  <a class="btn" id="dsl" href="#">Query in Datasette</a>
+  <a class="btn" href="data/tracker.json">Download JSON</a>
+  <a class="btn" href="tracker.db">Download SQLite</a>
+  <a class="btn" href="https://github.com/Boomacroom/hangingtracker">Source and method</a>
+</section>
+
+<footer>
+  <p>Mortality data: CDC WONDER, Multiple Cause of Death 2018–2024, single-race
+  file. ICD-10 X70 (suicide), X91 (assault), Y20 (undetermined intent), underlying
+  cause. Query parameters for every export are committed alongside the data.</p>
+  <p>Case records are compiled from published reporting. This dataset records what
+  authorities ruled and who has disputed it. It does not assess whether any ruling
+  is correct.</p>
+  <p>Prior work: JULIAN's <em>A Crimson Record</em> documents suspected modern-day
+  lynchings across the South and maintains its own case database.</p>
+</footer>
+
+</div>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => (s ?? '').toString().replace(/[&<>"]/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+fetch('data/tracker.json').then(r => {
+  if (!r.ok) throw new Error(r.status);
+  return r.json();
+}).then(render).catch(e => {
+  $('#sgrid').innerHTML = '<div class="err">Could not load data/tracker.json. ' +
+    'If you opened this file directly, serve the folder over HTTP instead: ' +
+    '<code>python -m http.server</code></div>';
+});
+
+function render(d){
+  // --- suppression grid ---
+  const g = d.grid, sg = $('#sgrid');
+  let h = '<div></div>' + g.years.map(y => `<div class="yr">${y}</div>`).join('');
+  g.states.forEach((st, i) => {
+    h += `<div class="st" title="${esc(st)}">${esc(st)}</div>`;
+    h += g.cells[i].map((c, j) =>
+      `<div class="cell${c ? ' on' : ''}" style="animation-delay:${(i*7+j)*1.2}ms" ` +
+      `title="${esc(st)} ${g.years[j]}: ${c ? 'published' : 'withheld (under 10)'}"></div>`
+    ).join('');
+  });
+  sg.innerHTML = h;
+  const pct = Math.round(100 * g.visible / g.total);
+  $('#gridstat').textContent = `${g.visible} of ${g.total} published (${pct}%)`;
+
+  // --- national ---
+  const worst = Math.max(...d.national.map(n =>
+    n.y20 ? Math.round((n.y20 - n.y20_state_sum) / n.y20 * 100) : 0));
+  const best = Math.min(...d.national.map(n =>
+    n.y20 ? Math.round((n.y20 - n.y20_state_sum) / n.y20 * 100) : 100));
+  $('#undercount').textContent = `${best}\u2013${worst}`;
+
+  $('#nattable').innerHTML += `<thead><tr>
+    <th>Year</th><th style="text-align:right">Suicide</th>
+    <th style="text-align:right">Assault</th>
+    <th style="text-align:right">Undetermined</th>
+    <th style="text-align:right">Undet. per 100</th>
+    <th style="text-align:right">If summed from states</th></tr></thead><tbody>` +
+    d.national.map(n => {
+      const miss = n.y20 ? Math.round((n.y20 - n.y20_state_sum)/n.y20*100) : 0;
+      return `<tr><td class="mono">${n.year}</td>
+      <td class="num">${n.x70.toLocaleString()}</td>
+      <td class="num">${n.x91.toLocaleString()}</td>
+      <td class="num">${n.y20}</td>
+      <td class="num">${(n.y20/n.x70*100).toFixed(2)}</td>
+      <td class="num" style="color:var(--flag)">${n.y20_state_sum} <span style="opacity:.6">(−${miss}%)</span></td></tr>`;
+    }).join('') + '</tbody>';
+
+  // --- states ---
+  const meas = d.states.filter(s => s.undetermined_ratio !== null);
+  const max = Math.max(...meas.map(s => s.undetermined_ratio));
+  $('#statetable').innerHTML += `<thead><tr>
+    <th>State</th><th style="text-align:right">Suicide</th>
+    <th style="text-align:right">Undetermined</th>
+    <th>Per 100 ruled suicide</th></tr></thead><tbody>` +
+    meas.map(s => {
+      const v = s.undetermined_ratio * 100;
+      return `<tr><td>${esc(s.state)}</td>
+      <td class="num">${s.suicide_hanging.toLocaleString()}</td>
+      <td class="num">${s.undetermined_hanging}</td>
+      <td class="bar-cell num"><i style="width:${(s.undetermined_ratio/max*100).toFixed(1)}%"></i>
+      <span>${v.toFixed(2)}</span></td></tr>`;
+    }).join('') +
+    `<tr><td colspan="4" style="background:var(--paper);padding-top:.8rem;font-size:.85rem;color:var(--ink-soft)">
+      <strong>${d.counts.suppressed_states} states withheld:</strong>
+      ${d.states.filter(s=>s.undetermined_ratio===null).map(s=>esc(s.state)).join(', ')}.
+      Withheld means fewer than ten such deaths in seven years, not none.
+    </td></tr></tbody>`;
+
+  // --- cases ---
+  $('#cases').innerHTML = d.cases.map(c => `
+    <details>
+      <summary>
+        <strong>${esc(c.decedent_name || 'Name not published')}</strong>
+        <span class="mono" style="font-size:.8rem;color:var(--ink-soft)">
+          ${esc(c.city ? c.city + ', ' : '')}${esc(c.state || '')} ${esc(c.date_found || '')}</span>
+        <span class="tag ${esc(c.verification)}">${esc(c.verification)}</span>
+      </summary>
+      <div class="body"><dl>
+        <dt>Official manner</dt><dd>${esc(c.official_manner || 'not recorded')}${
+          c.official_ruled_by ? ' — ' + esc(c.official_ruled_by) : ''}</dd>
+        ${c.family_contests || c.org_contests ? `<dt>Disputed by</dt><dd>${
+          [c.family_contests ? 'family' : null, c.org_contests].filter(Boolean).map(esc).join('; ')}</dd>` : ''}
+        ${c.notes ? `<dt>Notes</dt><dd>${esc(c.notes)}</dd>` : ''}
+        <dt>Sources (${c.source_count})</dt>
+        <dd class="srcs">${c.sources.map(s =>
+          `<a href="${esc(s.url)}" rel="noopener">${esc(s.outlet || s.url)}${
+            s.title ? ' — ' + esc(s.title) : ''}</a>`).join('')}</dd>
+      </dl></div>
+    </details>`).join('');
+
+  $('#dsl').href = 'https://lite.datasette.io/?url=' +
+    encodeURIComponent(location.origin + location.pathname.replace(/[^/]*$/, '') + 'tracker.db');
+}
+</script>
+</body>
+</html>
