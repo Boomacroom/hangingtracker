@@ -280,6 +280,35 @@ index and the view's GROUP BY. `tools/migrate.py` is new: `schema.sql`
 alone cannot add a column to an existing database, and a rebuilt index
 referencing a missing column fails the whole script.
 
+### 2026-08-22 (later still) — the site broke, and the test that missed it
+
+Rewriting the suppression callout removed `<span id="undercount">` while
+the script still wrote to it. `querySelector` returns null, the write
+throws, and `render()` aborted right after the first figure -- so the grid
+drew, its stat line filled in, and every table below it stayed empty.
+
+Worse, the `.catch()` reported it as "Could not load data/tracker.json".
+The data had loaded fine. Anyone debugging that message goes looking for a
+missing file, a bad path, or a web server. Fixed: the handler now
+distinguishes a fetch that failed from a render that failed, and says
+which.
+
+**The Node check I had been running gave a false pass**, because its stub
+`querySelector` returned a fresh object for any selector -- so a missing
+element was indistinguishable from a present one. A test that cannot fail
+the way production fails is not a test.
+
+`tools/check_site.py` replaces it: parses the ids actually present in the
+HTML, returns null for anything else, runs `render()` against the real
+exported JSON, and fails if any referenced element is missing, if render
+throws, or if a core section comes out empty. Verified it catches the
+original bug by reintroducing it.
+
+Also: the callout numbers are now read from the data instead of typed
+into the prose. "2 of 357" and "68-91" were hardcoded a few hours after
+being computed, which is how a figure goes stale the next time an export
+is re-run.
+
 ### Still open
 
 - Cases 3 and 9 remain `unverified`; that is a human confirmation.

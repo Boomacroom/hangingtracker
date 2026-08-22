@@ -411,6 +411,7 @@ python tools/load_state_systems.py            # build state_systems from CDC COM
 python tools/analyze.py                       # every finding above, printed
 python tools/export_site.py                   # rebuild site/ from the db
 python tools/check_repo.py                    # verify invariants
+python tools/check_site.py                    # render the site and fail on JS errors
 ```
 
 Frozen but still working, for the appendix:
