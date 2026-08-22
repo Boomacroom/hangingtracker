@@ -309,6 +309,52 @@ into the prose. "2 of 357" and "68-91" were hardcoded a few hours after
 being computed, which is how a figure goes stale the next time an export
 is re-run.
 
+### 2026-08-22 — confidence intervals; the state ranking was mostly noise
+
+An external review of the numbers, verified independently here, was right
+on every checkable claim.
+
+**The state table was a ranking that the counts do not support.** Exact
+Poisson intervals on all 20 measurable states: **only 5 clear the national
+rate** (Mississippi, Missouri, Arizona, Indiana, California). The other 15
+overlap it, on numerators of 11 to 34 deaths over seven years, and their
+order was noise presented as structure. The site now groups them as
+distinguishable / not distinguishable instead of ranking them.
+
+**The Montana callout was wrong and is gone.** 0 against 426 ruled suicide
+has an interval of 0-0.87, which includes the national 0.62. Zero is what
+a small state at the average often looks like. Calling it "the low end of
+the spread" was reading noise as a finding -- the same error as treating
+suppressed as zero, one step further along.
+
+**Mississippi survives**, at 2.44 with an interval of 1.37-4.03, on 15
+deaths. Still the inconvenient result, still published.
+
+**Race is the strongest result and now carries its caveat.** Black 1.15
+(0.89-1.47) against White 0.58 (0.53-0.64), non-overlapping. Added: the
+event mix differs sharply -- assault-by-strangulation relative to
+suicide-hanging is 12.3% for Black decedents against 2.4% for White, five
+times higher. So the higher undetermined rate is as consistent with
+genuinely more ambiguous circumstances as with different classification
+behaviour, and this data cannot separate them. That caveat is now on the
+site, in the README, and in analyze.py output.
+
+`tools/stats.py` gained exact Poisson intervals (Garwood, via incomplete
+gamma, no scipy). Normal approximations would be wrong in the flattering
+direction at these counts and cannot represent a zero at all.
+
+One trap worth recording: the first version of the annotation helper
+coerced a suppressed numerator to 0, which handed 18 withheld states a
+confident interval near zero -- converting "not allowed to know" into
+"unusually low". The project's founding mistake, reintroduced by a helper
+function. Fixed; suppressed rows get no interval.
+
+**The review's one wrong claim** was that the race section is absent from
+the site. It has been there since the demographic exports landed -- but
+until the `#undercount` fix an hour earlier, `render()` threw before
+reaching it, so on the deployed page it genuinely never drew. Right
+observation, and the cause was the render bug.
+
 ### Still open
 
 - Cases 3 and 9 remain `unverified`; that is a human confirmation.

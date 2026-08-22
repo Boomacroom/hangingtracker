@@ -77,6 +77,39 @@ def main():
         GROUP BY year ORDER BY year
     """, (AGE,))]
 
+    # National rate first: every state and group interval is judged against
+    # it, and "separates from national" is the only honest summary of a
+    # 20-row table where most rows are indistinguishable from each other.
+    nat_tot = conn.execute("""
+        SELECT SUM(CASE WHEN icd10_code='X70' THEN deaths END),
+               SUM(CASE WHEN icd10_code='Y20' THEN deaths END)
+        FROM mortality_agg WHERE state IS NULL AND year IS NOT NULL
+          AND age_filter = ?
+    """, (AGE,)).fetchone()
+    national_rate = (nat_tot[1] / nat_tot[0]) if nat_tot[0] else None
+    national_ci = stats.rate_ci(nat_tot[1], nat_tot[0]) if nat_tot[0] else None
+
+    def annotate(rows, k="undetermined_hanging", n="suicide_hanging"):
+        """Attach an exact Poisson interval and whether it clears the
+        national rate. Without this the table is a ranking, and a ranking
+        of these counts is mostly noise."""
+        for r in rows:
+            # A suppressed row has no computable ratio, and coercing its
+            # withheld numerator to 0 would hand it a confident interval
+            # near zero -- turning "we are not allowed to know" into "this
+            # state is unusually low". That is the project's founding
+            # mistake, committed by a helper function.
+            usable = (r.get("undetermined_ratio") is not None
+                      and r.get(n) and r.get(k) is not None)
+            ci = stats.rate_ci(r[k], r[n]) if usable else None
+            r["ci_low"], r["ci_high"] = (ci if ci else (None, None))
+            r["separates"] = bool(
+                ci and national_rate is not None
+                and (ci[0] > national_rate * 100 or ci[1] < national_rate * 100))
+        return rows
+
+    annotate(states)
+
     # --- certification structure, and whether it explains the spread ---
     systems = [dict(r) for r in conn.execute("""
         SELECT * FROM v_undetermined_by_system
@@ -132,9 +165,9 @@ def main():
         """, (af,))]
 
     demographics = {
-        "race": demo("race"),
-        "sex": demo("sex"),
-        "age": demo("age_group"),
+        "race": annotate(demo("race")),
+        "sex": annotate(demo("sex")),
+        "age": annotate(demo("age_group")),
         # Shipped so the correction is checkable rather than asserted: this
         # is the table that showed the problem, under-5 rows included.
         "age_all_ages": demo("age_group", ALL),
@@ -187,6 +220,23 @@ def main():
         "national": national,
         "grid": grid,
         "demographics": demographics,
+        # Event mix, because it is the first thing anyone should ask about
+        # the race result. Assault-by-strangulation relative to
+        # suicide-hanging is five times higher for Black decedents, so a
+        # higher undetermined rate is consistent with genuinely more
+        # ambiguous circumstances as well as with different classification
+        # behaviour, and this data cannot separate the two.
+        "event_mix": [dict(r) for r in conn.execute("""
+            SELECT race,
+                   SUM(CASE WHEN icd10_code='X70' THEN deaths END) AS x70,
+                   SUM(CASE WHEN icd10_code='X91' THEN deaths END) AS x91,
+                   SUM(CASE WHEN icd10_code='Y20' THEN deaths END) AS y20
+            FROM mortality_agg
+            WHERE state IS NULL AND race IS NOT NULL AND age_filter = ?
+            GROUP BY race
+        """, (AGE,))],
+        "national_rate": national_rate,
+        "national_ci": national_ci,
         "age_filter": AGE,
         "systems": {
             "states": system_rows,
@@ -224,6 +274,10 @@ def main():
           f"{len(states)} states, {len(national)} years")
     print(f"suppression grid: {grid['published']} usable, {grid['withheld']} "
           f"withheld, {grid['zero']} true zero, of {grid['total']}")
+    seps = [s_["state"] for s_ in states if s_.get("separates")]
+    meas_n = sum(1 for s_ in states if s_["undetermined_ratio"] is not None)
+    print(f"states separating from the national rate: {len(seps)} of {meas_n} "
+          f"measurable -> {', '.join(seps)}")
     if correlations:
         e = correlations["elected_share"]
         print(f"system-type test: n={e['n']}, elected-share rho={e['rho']:+.3f} "

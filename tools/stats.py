@@ -18,7 +18,94 @@ Seeded, so the number in the README is the number you get.
 
 from __future__ import annotations
 
+import math
 import random
+
+
+# ---------------------------------------------------------------------
+# Exact Poisson confidence intervals.
+#
+# These exist because a ranked table of 20 states invites the reader to
+# treat position as meaning, and at these counts it mostly does not.
+# Fifteen of the twenty states have intervals covering the national rate:
+# their order is noise driven by numerators between 11 and 34 deaths.
+# Publishing the rank without the interval is publishing a finding the
+# data does not contain.
+#
+# Garwood/exact rather than normal-approximation, because a normal
+# interval on 11 events is wrong in the direction that flatters the
+# result, and it cannot represent a zero count at all -- Montana has 0
+# undetermined against 426 ruled suicide, and its honest interval runs
+# from 0 to 0.87, which comfortably includes the national 0.62.
+#
+# No scipy: the only hard dependency here is httpx, so the incomplete
+# gamma function is implemented directly.
+# ---------------------------------------------------------------------
+
+def _gammainc_p(s: float, x: float, iters: int = 500) -> float:
+    """Regularized lower incomplete gamma P(s, x)."""
+    if x <= 0 or s <= 0:
+        return 0.0
+    if x < s + 1:  # series expansion
+        ap, total, term = s, 1.0 / s, 1.0 / s
+        for _ in range(iters):
+            ap += 1
+            term *= x / ap
+            total += term
+            if abs(term) < abs(total) * 1e-15:
+                break
+        return total * math.exp(-x + s * math.log(x) - math.lgamma(s))
+    # continued fraction for the upper tail, then complement
+    tiny = 1e-300
+    b, c, d = x + 1 - s, 1 / tiny, 1 / (x + 1 - s)
+    h = d
+    for i in range(1, iters):
+        an = -i * (i - s)
+        b += 2
+        d = an * d + b
+        if abs(d) < tiny:
+            d = tiny
+        c = b + an / c
+        if abs(c) < tiny:
+            c = tiny
+        d = 1 / d
+        delta = d * c
+        h *= delta
+        if abs(delta - 1) < 1e-15:
+            break
+    return 1 - math.exp(-x + s * math.log(x) - math.lgamma(s)) * h
+
+
+def _chi2_ppf(p: float, df: int) -> float:
+    if df <= 0:
+        return 0.0
+    lo, hi = 0.0, max(1000.0, df * 10.0)
+    while _gammainc_p(df / 2, hi / 2) < p:
+        hi *= 2
+    for _ in range(200):
+        mid = (lo + hi) / 2
+        if _gammainc_p(df / 2, mid / 2) < p:
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2
+
+
+def poisson_ci(k: int, alpha: float = 0.05) -> tuple[float, float]:
+    """Exact two-sided interval for a count. k=0 gives a lower bound of 0
+    and a real upper bound, which is the whole point of using this."""
+    lo = 0.0 if k <= 0 else _chi2_ppf(alpha / 2, 2 * k) / 2
+    return lo, _chi2_ppf(1 - alpha / 2, 2 * (k + 1)) / 2
+
+
+def rate_ci(k: int, denom: int, per: int = 100) -> tuple[float, float] | None:
+    """Interval on k/denom, scaled. The denominator is treated as a fixed
+    offset: X70 counts are in the thousands and never suppressed, so
+    essentially all the uncertainty lives in the rare numerator."""
+    if not denom:
+        return None
+    lo, hi = poisson_ci(k or 0)
+    return lo / denom * per, hi / denom * per
 
 
 def rank(values: list[float]) -> list[float]:

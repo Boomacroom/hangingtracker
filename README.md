@@ -15,11 +15,14 @@ Three things came out of this that were not assembled anywhere else:
    other work.
 2. **A national baseline**: 0.62 undetermined-intent deaths per 100 ruled
    suicide, ages 15+, stable across 2018-2024.
-3. **A several-fold spread between states**, with Mississippi highest of
-   the 20 measurable states and Montana at a true zero.
-4. **A roughly twofold difference by race** that survives correction, and
-   an equally large one that does not — about half the apparent gap was
-   infant suffocation deaths these ICD-10 codes also count.
+3. **A twofold difference by race**: intent is left undetermined about
+   twice as often for Black decedents (1.15 vs 0.58 per 100,
+   non-overlapping intervals) — the opposite direction to the assumption
+   the subject usually carries.
+4. **State variation that is mostly not measurable.** Only 5 of 20
+   measurable states separate from the national rate; the rest is noise
+   at these counts, and an earlier version of this repo published the
+   full ranking as if it were a finding.
 
 Two published figures in this repository have already been corrected by
 later exports. Both corrections are recorded rather than quietly folded
@@ -119,72 +122,81 @@ correction rather than a discarded draft. `mortality_agg.age_filter`
 records which regime each row came from, so the two can never be summed
 together.
 
-## Finding 3: a several-fold state spread
+## Finding 3: state variation, and how little of it is real
 
-Pooled 2018-2024, ages 15+, so more states clear the suppression
-threshold. 20 of 51 jurisdictions are measurable:
+Pooled 2018-2024, ages 15+. 20 of 51 jurisdictions are measurable. The
+national rate is **0.62 per 100** (95% CI 0.57-0.68).
 
-| | state | X70 | Y20 | per 100 |
-|---|---|---:|---:|---:|
-| highest | Mississippi | 614 | 15 | 2.44 |
-| | Missouri | 1,778 | 25 | 1.41 |
-| | Kansas | 961 | 11 | 1.14 |
-| | South Carolina | 1,140 | 13 | 1.14 |
-| … | | | | |
-| | New York | 4,194 | 20 | 0.48 |
-| | California | 9,920 | 43 | 0.43 |
-| true zero | Montana | 426 | 0 | 0.00 |
+**Only 5 of those 20 states have an interval that clears the national
+rate.** The counts are 11 to 34 deaths over seven years, and at that size
+most states cannot be told apart from the national average or from each
+other.
 
-Mississippi is 1.7x the next state and 5.7x the lowest non-zero.
-Montana's zero is real — that cell is published, not suppressed.
+| state | X70 | Y20 | per 100 | 95% CI |
+|---|---:|---:|---:|---|
+| Mississippi | 614 | 15 | 2.44 | 1.37 – 4.03 |
+| Missouri | 1,778 | 25 | 1.41 | 0.91 – 2.08 |
+| Arizona | 2,250 | 25 | 1.11 | 0.72 – 1.64 |
+| Indiana | 1,824 | 19 | 1.04 | 0.63 – 1.63 |
+| California | 9,920 | 43 | 0.43 | 0.31 – 0.58 |
 
-31 states are withheld even pooled across seven years, reported as
-unmeasurable, never as zero. `python tools/analyze.py` prints the full
-table.
+The other 15 measurable states overlap the national rate. They are
+published for completeness, and **their order is noise**. An earlier
+version of this README and of the site presented all 20 as a ranked
+table, which showed structure the data does not contain.
 
-**Note where Mississippi lands.** The intuitive hypothesis behind a
-project like this is that Southern jurisdictions close these cases as
-suicide too readily and under-use "undetermined". The data says the
-reverse, and says it more strongly after the age correction than before:
-Mississippi is the highest of every state that can be measured.
+**Montana is not a low outlier.** It recorded 0 undetermined against 426
+ruled suicide, and an earlier version called that out as a finding. Its
+interval runs 0 – 0.87, which includes the national 0.62. Zero out of 426
+is what a small state at the average frequently looks like. The callout
+has been removed.
 
-This is stated up front deliberately. The willingness to lead with the
-inconvenient number is the only reason anyone should believe the
-convenient ones.
+**Mississippi does hold up.** It is the highest measurable state and its
+interval clears the national rate, on 15 deaths. That still cuts against
+the intuition the project started from — that Southern jurisdictions
+would *under*-use "undetermined" — and it is stated here for that reason.
 
-## Finding 4: a twofold difference by race, after correction
+## Finding 4: a twofold difference by race
 
-National, pooled, ages 15+, no state, so these are counts and not floors:
+National, pooled, ages 15+. The counts here are large enough that the
+intervals are tight, unlike the state table:
 
-| group | X70 | Y20 | per 100 |
-|---|---:|---:|---:|
-| Black or African American | 5,722 | 66 | 1.15 |
-| More than one race | 1,709 | 14 | 0.82 |
-| American Indian or Alaska Native | 2,080 | 17 | 0.82 |
-| White | 71,963 | 419 | 0.58 |
-| Asian | 4,070 | 15 | 0.37 |
-| Native Hawaiian or Other Pacific Islander | 381 | withheld | — |
+| group | X70 | Y20 | per 100 | 95% CI |
+|---|---:|---:|---:|---|
+| Black or African American | 5,722 | 66 | 1.15 | 0.89 – 1.47 |
+| More than one race | 1,709 | 14 | 0.82 | 0.45 – 1.37 |
+| American Indian or Alaska Native | 2,080 | 17 | 0.82 | 0.48 – 1.31 |
+| White | 71,963 | 419 | 0.58 | 0.53 – 0.64 |
+| Asian | 4,070 | 15 | 0.37 | 0.21 – 0.61 |
 
-| group | X70 | Y20 | per 100 |
-|---|---:|---:|---:|
-| Female | 18,556 | 158 | 0.85 |
-| Male | 67,369 | 376 | 0.56 |
+| group | X70 | Y20 | per 100 | 95% CI |
+|---|---:|---:|---:|---|
+| Female | 18,556 | 158 | 0.85 | 0.72 – 1.00 |
+| Male | 67,369 | 376 | 0.56 | 0.50 – 0.62 |
 
-Among hanging and suffocation deaths of Black decedents aged 15+, intent
-was left undetermined about **twice as often** as among White decedents.
+The Black and White intervals do not overlap. Among these deaths, intent
+was left undetermined about **twice as often** for Black decedents.
 
-**Half of the apparent gap was an artefact, and it is worth knowing which
-half.** On all-ages data the same query gives 3.50 against 0.98, a 3.6x
-gap. These ICD-10 codes cover suffocation as well as hanging, and 36% of
-all undetermined-intent deaths are children under 5 whose X70 count is
-structurally zero. Infant suffocation mortality differs sharply by race,
-so a large part of that 3.6x was infant deaths with no denominator. The
-age-filtered 2.0x is what survives.
+**This is the direct opposite of the premise the project started from.**
+The claim motivating this subject is that officials reach too readily for
+"suicide". Nationally, for Black decedents, they reach for "undetermined"
+at roughly double the White rate.
 
-What this does **not** say: nothing here indicates any individual ruling
-was wrong, and a higher undetermined rate is not evidence of foul play in
-either direction. It is a statement about how often intent was recorded
-as unresolved, in aggregate, and the reasons are not in this data.
+**The first thing to ask about that, and the honest answer.** The mix of
+deaths behind the two figures is not the same. Assault by strangulation,
+relative to suicide-hanging, is **12.3%** for Black decedents against
+**2.4%** for White decedents — five times higher. Where more deaths are
+genuinely violent or ambiguous, more may be genuinely hard to classify.
+So the difference is consistent with more ambiguous circumstances as much
+as with different classification behaviour, and **this data cannot
+separate those two explanations.** The direction holds either way.
+
+Also worth knowing: on all-ages data the same comparison gives 3.50
+against 0.98, a 3.6x gap. Roughly half of that was infant suffocation
+deaths these ICD-10 codes also count, which have no denominator in X70.
+The 2x is what survived the age filter. If a gap that large can be half
+artefact, "the reasons are not in this data" is a finding about the data,
+not a hedge.
 
 ## Finding 5: certification structure — this data cannot answer it
 
