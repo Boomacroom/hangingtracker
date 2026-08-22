@@ -112,6 +112,79 @@ def main():
             print("  and rare is what this project measures.")
 
     print("\n" + "=" * 66)
+    print("  NATIONAL BREAKDOWN, AND A PROBLEM WITH THE HEADLINE")
+    print("  Pooled 2018-2024, no state, so nothing is a floor.")
+    print("=" * 66)
+
+    def axis(col, label):
+        rows = list(conn.execute(f"""
+            SELECT {col} g, suicide_hanging x, assault_hanging a,
+                   undetermined_hanging y, suppressed_cells s, undetermined_ratio r
+            FROM v_undetermined_ratio
+            WHERE state IS NULL AND {col} IS NOT NULL
+            ORDER BY (r IS NULL), r DESC
+        """))
+        if not rows:
+            return []
+        print(f"\n  {label}")
+        print(f"  {'group':<36}{'X70':>7}{'X91':>6}{'Y20':>6}{'Y20/100':>9}")
+        print("  " + "-" * 64)
+        for r in rows:
+            rr = f"{r['r']*100:.2f}" if r["r"] is not None else (
+                "withheld" if r["s"] else "n/a")
+            f = lambda v: v if v is not None else "-"  # noqa: E731
+            print(f"  {r['g']:<36}{f(r['x']):>7}{f(r['a']):>6}{f(r['y']):>6}{rr:>9}")
+        return rows
+
+    ages = axis("age_group", "BY AGE")
+    axis("race", "BY RACE (see the warning below before quoting these)")
+    axis("sex", "BY SEX (same warning)")
+
+    if ages:
+        under5 = [r for r in ages if r["g"] in ("< 1 year", "1-4 years")]
+        y_u5 = sum(r["y"] or 0 for r in under5)
+        x_u5 = sum(r["x"] or 0 for r in under5)
+        y_all = sum(r["y"] or 0 for r in ages)
+        adult = [r for r in ages
+                 if r["g"] not in ("< 1 year", "1-4 years", "5-14 years", "Not Stated")]
+        ax_, ay_ = sum(r["x"] or 0 for r in adult), sum(r["y"] or 0 for r in adult)
+        if y_all and ax_:
+            print(f"""
+  READ THIS BEFORE USING THE NATIONAL RATE.
+
+  {y_u5} of {y_all} undetermined-intent deaths ({y_u5/y_all*100:.0f}%) are children
+  under 5. Their X70 count is {x_u5}, and it cannot be anything else:
+  intentional self-harm is not assigned at that age. So a third of the
+  numerator of the national ratio has no denominator at all.
+
+  These are not hangings. X70/X91/Y20 are mechanism codes covering
+  hanging AND strangulation AND suffocation, and under age 5 the code is
+  picking up infant suffocation deaths -- unsafe sleep, overlay, wedging
+  -- where intent was left undetermined. That is a real and serious
+  category of death. It is not the one this project measures, and it
+  behaves nothing like it.
+
+  Restricted to ages 15+, where the ratio is between two things that can
+  actually both happen:
+
+      X70 {ax_}   Y20 {ay_}   {ay_/ax_*100:.2f} per 100
+
+  against {y_all}/{sum(r['x'] or 0 for r in ages)} = \
+{y_all/max(sum(r['x'] or 0 for r in ages),1)*100:.2f} across all ages.
+
+  The all-ages figure is inflated by roughly {(y_all/max(sum(r['x'] or 0 for r in ages),1))/(ay_/ax_):.1f}x. Every
+  national and state number elsewhere in this output is all-ages and
+  carries the same inflation, and infant suffocation mortality varies by
+  state and by race, so the state spread and the race breakdown are
+  contaminated by it too, in unknown proportion.
+
+  The fix is an age filter on the WONDER exports, not an adjustment here.
+  Until those are re-run, the race and sex tables above are NOT
+  publishable: the group with the highest ratio is also the group with
+  the highest infant suffocation mortality, and this data cannot separate
+  those. See NEXT.md.""")
+
+    print("\n" + "=" * 66)
     print("  DOES CERTIFICATION STRUCTURE EXPLAIN THE SPREAD?")
     print("  Undetermined rate vs who certifies deaths in the state.")
     print("=" * 66)

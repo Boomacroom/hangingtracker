@@ -187,11 +187,27 @@ footer{border-top:2px solid var(--ink);padding:1.5rem 0 3rem;margin-top:2rem;
 </section>
 
 <section id="demosec" hidden>
-  <h2>By race, age and sex, nationally</h2>
-  <p class="sub">National query, no state breakdown, so nothing is suppressed and
-  these are counts rather than floors. Categories are CDC's own labels, stored
-  and shown verbatim.</p>
-  <table id="demotable"><caption>Undetermined-intent rate by group</caption></table>
+  <h2>By age — and why the headline rate is too high</h2>
+  <p class="sub">National query, no state breakdown, so these are counts rather
+  than floors. Age groups are CDC's own labels, shown verbatim.</p>
+  <div class="callout">
+    <strong>A third of these deaths are children under 5</strong>, and their
+    suicide count is zero — it cannot be anything else, since intentional
+    self-harm is not assigned at that age. These ICD-10 codes cover hanging
+    <em>and strangulation and suffocation</em>, so under age 5 they are counting
+    infant suffocation deaths where intent was left undetermined. That is a real
+    and serious category of death, but it is not this one, and it has no
+    denominator here. Restricted to ages 15+ the rate is
+    <span class="mono" id="adultrate">—</span> per 100 rather than the
+    <span class="mono" id="allrate">—</span> shown further up this page.
+  </div>
+  <table id="demotable"><caption>Undetermined-intent rate by age group</caption></table>
+  <p class="sub" style="margin-top:1rem">Every other figure on this page is
+  all-ages and carries the same inflation. Infant suffocation mortality varies
+  by state, so the state spread is affected too, by an amount this export cannot
+  measure. Breakdowns by race and sex have been run and are deliberately not
+  shown here: the same confound distorts them, and correcting it needs an
+  age-filtered export rather than an adjustment after the fact.</p>
 </section>
 
 <section>
@@ -338,19 +354,29 @@ function render(d){
   // --- national demographic breakdown, only if that export was loaded ---
   const demo = d.demographics || [];
   if (demo.length) {
-    const lab = r => [r.race, r.sex, r.age_group].filter(Boolean).join(' · ');
     $('#demosec').hidden = false;
+    const young = g => g === '< 1 year' || g === '1-4 years';
+    const adult = demo.filter(r => !young(r.age_group)
+      && r.age_group !== '5-14 years' && r.age_group !== 'Not Stated');
+    const sum = (rows, k) => rows.reduce((t, r) => t + (r[k] || 0), 0);
+    const ax = sum(adult, 'suicide_hanging'), ay = sum(adult, 'undetermined_hanging');
+    const tx = sum(demo, 'suicide_hanging'), ty = sum(demo, 'undetermined_hanging');
+    if (ax) $('#adultrate').textContent = (ay / ax * 100).toFixed(2);
+    if (tx) $('#allrate').textContent = (ty / tx * 100).toFixed(2);
+
     $('#demotable').innerHTML += `<thead><tr>
-      <th>Group</th><th style="text-align:right">Year</th>
+      <th>Age group</th>
       <th style="text-align:right">Suicide</th>
+      <th style="text-align:right">Assault</th>
       <th style="text-align:right">Undetermined</th>
-      <th style="text-align:right">Per 100</th></tr></thead><tbody>` +
-      demo.map(r => `<tr><td>${esc(lab(r))}</td>
-        <td class="num">${r.year ?? 'pooled'}</td>
+      <th style="text-align:right">Undet. per 100</th></tr></thead><tbody>` +
+      demo.map(r => `<tr${young(r.age_group) ? ' style="color:var(--flag)"' : ''}>
+        <td>${esc(r.age_group)}</td>
         <td class="num">${(r.suicide_hanging ?? 0).toLocaleString()}</td>
-        <td class="num">${r.undetermined_hanging ?? ''}</td>
+        <td class="num">${r.assault_hanging ?? '—'}</td>
+        <td class="num">${r.undetermined_hanging ?? '—'}</td>
         ${r.undetermined_ratio === null
-          ? '<td class="withheld">withheld</td>'
+          ? `<td class="withheld">${r.suppressed_cells ? 'withheld' : 'no denominator'}</td>`
           : `<td class="num">${(r.undetermined_ratio*100).toFixed(2)}</td>`}
         </tr>`).join('') + '</tbody>';
   }

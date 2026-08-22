@@ -1794,7 +1794,144 @@
   "visible": 18,
   "total": 357
  },
- "demographics": [],
+ "demographics": [
+  {
+   "year": null,
+   "race": null,
+   "sex": null,
+   "age_group": "25-34 years",
+   "suicide_hanging": 20221,
+   "undetermined_hanging": 121,
+   "assault_hanging": 565,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.005983878146481381
+  },
+  {
+   "year": null,
+   "race": null,
+   "sex": null,
+   "age_group": "35-44 years",
+   "suicide_hanging": 19047,
+   "undetermined_hanging": 114,
+   "assault_hanging": 546,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.0059851945188218614
+  },
+  {
+   "year": null,
+   "race": null,
+   "sex": null,
+   "age_group": "45-54 years",
+   "suicide_hanging": 14994,
+   "undetermined_hanging": 89,
+   "assault_hanging": 425,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.005935707616379886
+  },
+  {
+   "year": null,
+   "race": null,
+   "sex": null,
+   "age_group": "15-24 years",
+   "suicide_hanging": 12917,
+   "undetermined_hanging": 91,
+   "assault_hanging": 313,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.007044979484400402
+  },
+  {
+   "year": null,
+   "race": null,
+   "sex": null,
+   "age_group": "55-64 years",
+   "suicide_hanging": 11451,
+   "undetermined_hanging": 63,
+   "assault_hanging": 401,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.005501702908042965
+  },
+  {
+   "year": null,
+   "race": null,
+   "sex": null,
+   "age_group": "65-74 years",
+   "suicide_hanging": 4717,
+   "undetermined_hanging": 29,
+   "assault_hanging": 254,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.006147975408098368
+  },
+  {
+   "year": null,
+   "race": null,
+   "sex": null,
+   "age_group": "5-14 years",
+   "suicide_hanging": 2121,
+   "undetermined_hanging": 117,
+   "assault_hanging": 110,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.055162659123055166
+  },
+  {
+   "year": null,
+   "race": null,
+   "sex": null,
+   "age_group": "75-84 years",
+   "suicide_hanging": 1798,
+   "undetermined_hanging": 17,
+   "assault_hanging": 109,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.009454949944382647
+  },
+  {
+   "year": null,
+   "race": null,
+   "sex": null,
+   "age_group": "85+ years",
+   "suicide_hanging": 780,
+   "undetermined_hanging": 10,
+   "assault_hanging": 44,
+   "suppressed_cells": 0,
+   "undetermined_ratio": 0.01282051282051282
+  },
+  {
+   "year": null,
+   "race": null,
+   "sex": null,
+   "age_group": "1-4 years",
+   "suicide_hanging": 0,
+   "undetermined_hanging": 39,
+   "assault_hanging": 100,
+   "suppressed_cells": 0,
+   "undetermined_ratio": null
+  },
+  {
+   "year": null,
+   "race": null,
+   "sex": null,
+   "age_group": "< 1 year",
+   "suicide_hanging": 0,
+   "undetermined_hanging": 329,
+   "assault_hanging": 129,
+   "suppressed_cells": 0,
+   "undetermined_ratio": null
+  },
+  {
+   "year": null,
+   "race": null,
+   "sex": null,
+   "age_group": "Not Stated",
+   "suicide_hanging": null,
+   "undetermined_hanging": null,
+   "assault_hanging": 0,
+   "suppressed_cells": 2,
+   "undetermined_ratio": null
+  }
+ ],
+ "demographics_held": [
+  "sex",
+  "race"
+ ],
  "systems": {
   "states": [
    {
