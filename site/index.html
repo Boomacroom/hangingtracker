@@ -136,10 +136,12 @@ footer{border-top:2px solid var(--ink);padding:1.5rem 0 3rem;margin-top:2rem;
   </div>
   <div class="callout">
     <strong>If you take one thing from this page:</strong> a withheld cell is not
-    zero, and only <strong>2 of 357</strong> cells here carry a usable count.
+    zero, and only <strong><span id="gridusable">&mdash;</span> of
+    <span id="gridtotal">&mdash;</span></strong> cells here carry a usable count.
     Summing the state figures CDC publishes gives <strong>zero</strong>
-    undetermined-intent deaths nationally in five of these seven years, against
-    68&ndash;91 actual. Suicide counts are large enough that none are withheld, so
+    undetermined-intent deaths nationally in
+    <span id="zeroyears">&mdash;</span> of these seven years, against
+    <span id="natrange">&mdash;</span> actual. Suicide counts are large enough that none are withheld, so
     they sum to the last death — 0% error, every year. The entire error lands on
     the rarer category. Anyone pulling state-level WONDER data on a rare cause of
     death will hit this.
@@ -263,13 +265,23 @@ const $ = s => document.querySelector(s);
 const esc = s => (s ?? '').toString().replace(/[&<>"]/g, c =>
   ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
+let fetched = false;
 fetch('data/tracker.json').then(r => {
-  if (!r.ok) throw new Error(r.status);
+  if (!r.ok) throw new Error('HTTP ' + r.status);
   return r.json();
-}).then(render).catch(e => {
-  $('#sgrid').innerHTML = '<div class="err">Could not load data/tracker.json. ' +
-    'If you opened this file directly, serve the folder over HTTP instead: ' +
-    '<code>python -m http.server</code></div>';
+}).then(d => { fetched = true; return render(d); }).catch(e => {
+  // Two very different failures used to print the same message. A page
+  // that has already drawn half a figure is not a page that failed to
+  // fetch its data, and saying so sends whoever reads it to the wrong
+  // problem entirely.
+  $('#sgrid').innerHTML = fetched
+    ? '<div class="err"><strong>The data loaded; rendering it failed.</strong> ' +
+      esc(e && e.message || e) + '. This is a bug in index.html, not a missing ' +
+      'or unreachable file. Details in the browser console.</div>'
+    : '<div class="err">Could not load data/tracker.json. ' +
+      'If you opened this file directly, serve the folder over HTTP instead: ' +
+      '<code>python -m http.server</code></div>';
+  console.error(e);
 });
 
 function render(d){
@@ -290,11 +302,15 @@ function render(d){
     `${g.published} usable · ${g.withheld} withheld · ${g.zero} true zero`;
 
   // --- national ---
-  const worst = Math.max(...d.national.map(n =>
-    n.y20 ? Math.round((n.y20 - n.y20_state_sum) / n.y20 * 100) : 0));
-  const best = Math.min(...d.national.map(n =>
-    n.y20 ? Math.round((n.y20 - n.y20_state_sum) / n.y20 * 100) : 100));
-  $('#undercount').textContent = `${best}\u2013${worst}`;
+  // Driven from the data rather than typed into the prose. The previous
+  // version hardcoded "2 of 357" and "68-91" into the callout, which is
+  // how a figure goes stale the next time an export is re-run.
+  $('#gridusable').textContent = g.published;
+  $('#gridtotal').textContent = g.total;
+  const y20s = d.national.map(n => n.y20).filter(v => v != null);
+  $('#zeroyears').textContent = d.national.filter(n => !n.y20_state_sum).length;
+  $('#natrange').textContent = y20s.length
+    ? `${Math.min(...y20s)}\u2013${Math.max(...y20s)}` : '\u2014';
 
   $('#nattable').innerHTML += `<thead><tr>
     <th>Year</th><th style="text-align:right">Suicide</th>
