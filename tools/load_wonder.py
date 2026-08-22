@@ -57,6 +57,55 @@ def parse(path: pathlib.Path):
     return header, data, footer
 
 
+STANDARD_AGES = ["< 1 year", "1-4 years", "5-14 years", "15-24 years",
+                 "25-34 years", "35-44 years", "45-54 years", "55-64 years",
+                 "65-74 years", "75-84 years", "85+ years"]
+
+
+def age_filter_label(ftext: str) -> str:
+    """
+    What the query restricted ages to, as a short stable key.
+
+    This is a filter, not a grouping, so it appears nowhere in the data
+    rows and yet decides what they mean: a 15+ pooled state row and an
+    all-ages pooled state row are identical in every other column. Without
+    a label they group together and get summed.
+
+    The full parameter line stays in the .footnotes.txt sidecar. This is
+    just the key, derived by an explicit rule rather than typed in.
+    """
+    m = re.search(r'"?Ten-Year Age Groups:\s*([^"\n]+)"?', ftext)
+    if not m:
+        return "all ages"
+    groups = [g.strip() for g in m.group(1).split(";") if g.strip()]
+    if not groups or len(groups) == len(STANDARD_AGES):
+        return "all ages"
+    # A contiguous run ending at the oldest group is the common case and
+    # reads naturally as "15+". Anything else is spelled out rather than
+    # guessed at, because a wrong label here silently merges two queries.
+    try:
+        idx = [STANDARD_AGES.index(g) for g in groups]
+    except ValueError:
+        return "; ".join(groups)
+    if idx == list(range(idx[0], len(STANDARD_AGES))):
+        first = STANDARD_AGES[idx[0]]
+        return first.split("-")[0].strip() + "+"
+    return "; ".join(groups)
+
+
+def ensure_age_filter_column(conn: sqlite3.Connection) -> None:
+    """Idempotent migration. The column arrived after the first exports
+    were already loaded, and CREATE TABLE IF NOT EXISTS will not add it to
+    a database that already exists."""
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(mortality_agg)")}
+    if "age_filter" not in cols:
+        conn.execute("ALTER TABLE mortality_agg ADD COLUMN age_filter TEXT "
+                     "NOT NULL DEFAULT 'all ages'")
+        conn.commit()
+        print("  migrated: added mortality_agg.age_filter "
+              "(existing rows default to 'all ages')")
+
+
 def col(header, *candidates):
     for c in candidates:
         if c in header:
@@ -130,6 +179,9 @@ def main():
         return 1
 
     conn = sqlite3.connect(DB)
+    ensure_age_filter_column(conn)
+    age_filter = age_filter_label(ftext)
+    print(f"  age filter: {age_filter}")
     now = dt.datetime.now(dt.timezone.utc).isoformat()
     dataset = f"WONDER-MCD-expanded:{path.name}"
     loaded = supp = 0
@@ -165,9 +217,9 @@ def main():
             """
             INSERT INTO mortality_agg
                 (dataset, year, period, state, race, sex, age_group,
-                 icd10_code, icd10_label, deaths, population, crude_rate,
-                 suppressed, unreliable, fetched_at)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,0,?)
+                 age_filter, icd10_code, icd10_label, deaths, population,
+                 crude_rate, suppressed, unreliable, fetched_at)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,0,?)
             ON CONFLICT DO UPDATE SET
                 deaths = excluded.deaths,
                 population = excluded.population,
@@ -176,7 +228,7 @@ def main():
                 fetched_at = excluded.fetched_at
             """,
             (dataset, year, period, get(i_state), get(i_race), get(i_sex),
-             get(i_age), get(i_code),
+             get(i_age), age_filter, get(i_code),
              get(col(header, "Underlying Cause of death")),
              deaths, pop, rate, 1 if is_supp else 0, now),
         )

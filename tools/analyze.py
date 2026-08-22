@@ -26,6 +26,14 @@ import stats  # noqa: E402
 
 DB = pathlib.Path("data/tracker.db")
 
+# Everything published is ages 15+. The all-ages exports are still loaded
+# and are still the evidence for why: below 15, X70 is structurally near
+# zero while Y20 is not, because these ICD-10 codes cover suffocation as
+# well as hanging, so an all-ages ratio is inflated by infant suffocation
+# deaths that have no denominator. See the age section below.
+AGE = "15+"
+ALL = "all ages"
+
 
 def main():
     if not DB.exists():
@@ -36,16 +44,16 @@ def main():
 
     print("\n" + "=" * 66)
     print("  UNDETERMINED-INTENT HANGINGS PER 100 SUICIDE-RULED HANGINGS")
-    print("  CDC WONDER MCD 2018-2024, pooled. Y20 vs X70, underlying cause.")
+    print("  CDC WONDER MCD 2018-2024, pooled, ages 15+. Underlying cause.")
     print("=" * 66)
 
     rows = list(conn.execute("""
         SELECT state, suicide_hanging x, undetermined_hanging y,
                suppressed_cells s, undetermined_ratio r
         FROM v_undetermined_ratio
-        WHERE period IS NOT NULL AND state IS NOT NULL
+        WHERE period IS NOT NULL AND state IS NOT NULL AND age_filter = ?
         ORDER BY (r IS NULL), r DESC
-    """))
+    """, (AGE,)))
     meas = [r for r in rows if r["r"] is not None]
     supp = [r for r in rows if r["r"] is None]
 
@@ -55,10 +63,22 @@ def main():
         print(f"  {r['state']:<22}{r['x']:>7}{r['y']:>7}{r['r']*100:>10.2f}")
 
     if meas:
-        lo, hi = meas[-1], meas[0]
-        print(f"\n  spread: {hi['state']} {hi['r']*100:.2f} vs "
-              f"{lo['state']} {lo['r']*100:.2f}  "
-              f"({hi['r']/lo['r']:.1f}x)")
+        hi = meas[0]
+        # A state can have a visible, real zero -- Montana records 0
+        # undetermined against 426 ruled suicide, and that cell is shown,
+        # not suppressed. Dividing by it prints inf and reads as a spread
+        # of infinity, so the fold-difference is quoted against the lowest
+        # NON-zero state and the zero is reported as the finding it is.
+        nonzero = [r for r in meas if r["r"] > 0]
+        print(f"\n  highest: {hi['state']} {hi['r']*100:.2f} per 100")
+        if len(nonzero) > 1:
+            lo_nz = nonzero[-1]
+            print(f"  lowest non-zero: {lo_nz['state']} {lo_nz['r']*100:.2f}"
+                  f"   ({hi['r']/lo_nz['r']:.1f}x)")
+        for z in [r for r in meas if r["r"] == 0]:
+            print(f"  true zero: {z['state']} recorded 0 undetermined against "
+                  f"{z['x']} ruled suicide")
+            print("             (that cell is visible, not suppressed)")
 
     print(f"\n  measurable: {len(meas)} states")
     print(f"  unmeasurable: {len(supp)} states (Y20 under 10 even pooled)")
@@ -67,7 +87,7 @@ def main():
     print("  across seven years, withheld under confidentiality rules.")
 
     print("\n" + "=" * 66)
-    print("  NATIONAL TREND BY YEAR")
+    print("  NATIONAL TREND BY YEAR, AGES 15+")
     print("  From a no-state export: nothing suppressed, these are counts.")
     print("=" * 66)
     print(f"\n  {'year':<8}{'X70':>9}{'X91':>8}{'Y20':>8}{'Y20 per 100 X70':>18}")
@@ -79,8 +99,9 @@ def main():
                SUM(CASE WHEN icd10_code='Y20' THEN deaths END) y20
         FROM mortality_agg
         WHERE state IS NULL AND year IS NOT NULL AND deaths IS NOT NULL
+          AND age_filter = ?
         GROUP BY year ORDER BY year
-    """))
+    """, (AGE,)))
     if not nat:
         print("\n  No national rows loaded. Export grouped by Year + Cause with")
         print("  no State breakdown, then load it. Summing the state export")
@@ -94,9 +115,9 @@ def main():
         floors = {r[0]: r[1] for r in conn.execute("""
             SELECT year, SUM(deaths) FROM mortality_agg
             WHERE state IS NOT NULL AND year IS NOT NULL
-              AND icd10_code='Y20' AND deaths IS NOT NULL
+              AND icd10_code='Y20' AND deaths IS NOT NULL AND age_filter = ?
             GROUP BY year
-        """)}
+        """, (AGE,))}
         if floors:
             print("\n  Why this export is separate: summing the state-broken")
             print("  export instead would have given these Y20 figures --")
@@ -112,18 +133,18 @@ def main():
             print("  and rare is what this project measures.")
 
     print("\n" + "=" * 66)
-    print("  NATIONAL BREAKDOWN, AND A PROBLEM WITH THE HEADLINE")
+    print("  NATIONAL BREAKDOWN BY RACE, SEX AND AGE (15+)")
     print("  Pooled 2018-2024, no state, so nothing is a floor.")
     print("=" * 66)
 
-    def axis(col, label):
+    def axis(col, label, af=AGE):
         rows = list(conn.execute(f"""
             SELECT {col} g, suicide_hanging x, assault_hanging a,
                    undetermined_hanging y, suppressed_cells s, undetermined_ratio r
             FROM v_undetermined_ratio
-            WHERE state IS NULL AND {col} IS NOT NULL
+            WHERE state IS NULL AND {col} IS NOT NULL AND age_filter = ?
             ORDER BY (r IS NULL), r DESC
-        """))
+        """, (af,)))
         if not rows:
             return []
         print(f"\n  {label}")
@@ -136,9 +157,15 @@ def main():
             print(f"  {r['g']:<36}{f(r['x']):>7}{f(r['a']):>6}{f(r['y']):>6}{rr:>9}")
         return rows
 
-    ages = axis("age_group", "BY AGE")
-    axis("race", "BY RACE (see the warning below before quoting these)")
-    axis("sex", "BY SEX (same warning)")
+    axis("race", "BY RACE, ages 15+")
+    axis("sex", "BY SEX, ages 15+")
+    axis("age_group", "BY AGE, within 15+")
+
+    print("\n" + "=" * 66)
+    print("  WHY EVERYTHING ABOVE IS 15+ AND NOT ALL AGES")
+    print("=" * 66)
+    ages = axis("age_group", "ALL AGES -- the export that found the problem",
+                af=ALL)
 
     if ages:
         under5 = [r for r in ages if r["g"] in ("< 1 year", "1-4 years")]
@@ -192,7 +219,8 @@ def main():
     sysrows = [dict(r) for r in conn.execute("""
         SELECT * FROM v_undetermined_by_system
         WHERE undetermined_ratio IS NOT NULL AND system_type IS NOT NULL
-    """)]
+          AND age_filter = ?
+    """, (AGE,))]
     if not sysrows:
         print("\n  No state_systems rows. Run tools/load_state_systems.py.")
     else:
@@ -222,25 +250,42 @@ def main():
             print(f"  {k:<24}{len(v):>4}{median(v):>9.2f}"
                   f"{min(v):>10.2f}-{max(v):.2f}")
 
-        print("""
-  Read this as a negative result. None of these correlations is
-  distinguishable from chance at n=29, and the categorical medians
-  overlap across nearly their whole range: the highest and lowest
-  states in the table are both medical examiner jurisdictions.
+        # Leave-one-out, because at this n a single state can manufacture
+        # or destroy the whole correlation, and reporting one p-value
+        # without saying so would be reporting an artefact.
+        base = stats.correlate([r["coroner_share"] for r in sysrows], y)
+        loo = []
+        for i, r in enumerate(sysrows):
+            sub = sysrows[:i] + sysrows[i + 1:]
+            s2 = stats.correlate([q["coroner_share"] for q in sub],
+                                 [q["undetermined_ratio"] for q in sub])
+            loo.append((s2["rho"], s2["p"], r["state"]))
+        loo.sort()
 
-  So the intuitive explanation -- that states electing lay coroners
-  leave intent undetermined at different rates than states running
-  medical examiner offices -- is not what is driving the sevenfold
-  spread. That is worth knowing. It removes the readiest explanation
-  and leaves the variation needing a different one, which may be
-  office-level rather than state-level: caseload, autopsy rate, local
-  convention, or how a single large county certifies.
+        print(f"""
+  DO NOT read this as either result yet.
 
-  What this does NOT show is that structure never matters. A rank
-  correlation over 29 states has little power, half the states are
-  unmeasurable, and 'mixed' states are averages of counties that
-  differ from each other. It rules the explanation out as the driver
-  of the spread, not out of the picture.""")
+  On the all-ages data this section reported a clean null: every
+  correlation indistinguishable from chance at n=29. Restricting to 15+
+  removed the infant-suffocation contamination and also removed nine
+  states from the measurable set, and the coroner-share correlation moved
+  to rho = {base['rho']:+.3f}, p = {base['p']:.3f}. That is not significant, and it is
+  also no longer nothing.
+
+  It is not stable either. Dropping any single state moves it to:
+
+      lowest   rho = {loo[0][0]:+.3f}, p = {loo[0][1]:.3f}   (without {loo[0][2]})
+      highest  rho = {loo[-1][0]:+.3f}, p = {loo[-1][1]:.3f}   (without {loo[-1][2]})
+
+  A result whose significance is decided by which single observation you
+  include is not a result. With n={len(sysrows)} and four variables tested, the
+  honest statement is that this data cannot answer the question -- not
+  that structure explains the spread, and no longer that it clearly
+  does not.
+
+  The earlier null was reported at n=29 on contaminated data. The right
+  correction is to say the test lost its power when the contamination was
+  removed, not to keep quoting the tidier answer.""")
 
     print("\n" + "=" * 66)
     print("  WHAT THIS DOES NOT SHOW")

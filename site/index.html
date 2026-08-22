@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Classifying Hanging Deaths</title>
-<meta name="description" content="How US jurisdictions classify hanging deaths: a national baseline, a sevenfold state spread, and the CDC suppression rule that hides most of the data.">
+<meta name="description" content="How US jurisdictions classify hanging deaths: a national baseline, a several-fold state spread, and the CDC suppression rule that hides most of the data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -49,6 +49,7 @@ h2+.sub{color:var(--ink-soft);font-size:.93rem;margin:0 0 1.25rem;max-width:62ch
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cell{height:1.05rem;background:var(--withheld);position:relative}
 .cell.on{background:var(--ink)}
+.cell.zero{background:transparent;box-shadow:inset 0 0 0 1px var(--rule)}
 .grid-key{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1rem;font-size:.8rem;color:var(--ink-soft)}
 .grid-key span{display:flex;align-items:center;gap:.45rem}
 .swatch{width:.85rem;height:.85rem;display:inline-block}
@@ -114,36 +115,39 @@ footer{border-top:2px solid var(--ink);padding:1.5rem 0 3rem;margin-top:2rem;
   <div class="eyebrow">Analysis · CDC WONDER 2018–2024</div>
   <h1>How jurisdictions classify hanging deaths</h1>
   <p class="lede">A hanging death can be ruled suicide, homicide, or undetermined
-  intent. Which one gets recorded varies about sevenfold between states. Here is
-  that variation, what does not explain it, and why most of the underlying data
-  is invisible unless you query it a particular way.</p>
+  intent. Which one gets recorded varies several-fold between states. Here is
+  that variation, what this data can and cannot say about why, and the reason
+  almost all of it is invisible unless you query it a particular way.</p>
 </header>
 
 <section>
   <h2>Start here: most of this data is withheld</h2>
-  <p class="sub">Each cell is one state in one year. Filled means CDC published a
-  count of undetermined-intent hangings. Grey means fewer than ten deaths, so the
-  figure is suppressed for confidentiality.</p>
+  <p class="sub">Each cell is one state in one year, ages 15+. Black means CDC
+  published a usable count of undetermined-intent deaths. Grey means the count is
+  withheld because it is between one and nine. Outlined means a true zero.</p>
   <div class="grid-figure">
     <div class="sgrid" id="sgrid"><div class="err">Loading…</div></div>
     <div class="grid-key">
-      <span><i class="swatch" style="background:var(--ink)"></i> count published</span>
-      <span><i class="swatch" style="background:var(--withheld)"></i> withheld (under 10)</span>
+      <span><i class="swatch" style="background:var(--ink)"></i> usable count</span>
+      <span><i class="swatch" style="background:var(--withheld)"></i> withheld (1&ndash;9)</span>
+      <span><i class="swatch" style="background:transparent;box-shadow:inset 0 0 0 1px var(--rule)"></i> true zero</span>
       <span id="gridstat" class="mono"></span>
     </div>
   </div>
   <div class="callout">
     <strong>If you take one thing from this page:</strong> a withheld cell is not
-    zero. Summing the state-level figures CDC publishes undercounts
-    undetermined-intent hangings by <span id="undercount">70–90</span>%, because
-    every small count disappears. Suicide counts are large enough that none are
-    withheld, so the error lands entirely on the rarer category. Anyone pulling
-    state-level WONDER data on a rare cause of death will hit this.
+    zero, and only <strong>2 of 357</strong> cells here carry a usable count.
+    Summing the state figures CDC publishes gives <strong>zero</strong>
+    undetermined-intent deaths nationally in five of these seven years, against
+    68&ndash;91 actual. Suicide counts are large enough that none are withheld, so
+    they sum to the last death — 0% error, every year. The entire error lands on
+    the rarer category. Anyone pulling state-level WONDER data on a rare cause of
+    death will hit this.
   </div>
 </section>
 
 <section>
-  <h2>National counts</h2>
+  <h2>National counts, ages 15+</h2>
   <p class="sub">From a query with no state breakdown, so nothing is suppressed.
   These are complete counts. The last column shows what you would have gotten by
   adding up the published state figures instead.</p>
@@ -151,63 +155,65 @@ footer{border-top:2px solid var(--ink);padding:1.5rem 0 3rem;margin-top:2rem;
 </section>
 
 <section>
-  <h2>By state, 2018–2024 combined</h2>
+  <h2>By state, 2018–2024 combined, ages 15+</h2>
   <p class="sub">Undetermined-intent hangings per 100 ruled suicide, pooled across
-  seven years so more states clear the suppression threshold. The national rate is
-  about 1.1 per 100. Note where Mississippi lands: third highest, not lowest,
-  which is the opposite of the intuition this analysis started from.</p>
+  seven years so more states clear the suppression threshold. The national rate
+  is 0.62 per 100. Note where Mississippi lands: highest of the twenty states
+  that can be measured, which is the opposite of the intuition this analysis
+  started from. Montana, at the other end, recorded a true zero — no
+  undetermined-intent deaths against 426 ruled suicide.</p>
   <table id="statetable"><caption>Rate of undetermined-intent classification</caption></table>
 </section>
 
 <section>
   <h2>Does it matter who certifies the death?</h2>
-  <p class="sub">The readiest explanation for that spread is structural. Some
+  <p class="sub">The readiest explanation for that variation is structural. Some
   states elect county coroners who need no medical training; some run a
   centralized medical examiner office staffed by forensic pathologists; most are
   a mixture. We joined CDC's county-level table of who certifies deaths, weighted
   by how many deaths each county actually certifies, and tested it against the
   rate above.</p>
   <div class="callout">
-    <strong>It does not explain the spread.</strong> Across
-    <span id="syn">29</span> measurable states there is no relationship between
-    the share of deaths certified by an elected official and how often intent is
-    left undetermined (<span class="mono" id="syrho"></span>). The highest and
-    lowest states in the table are both medical examiner jurisdictions. We are
-    publishing this because a ruled-out explanation is still a result, and
-    because it was the explanation we expected to find.
+    <strong>This data cannot answer it.</strong> Across
+    <span id="syn">20</span> measurable states, the share of deaths certified by
+    an elected official has no relationship with how often intent is left
+    undetermined (<span class="mono" id="syrho"></span>). Coroner share shows a
+    weak positive trend that is not significant, and dropping any single state
+    moves it anywhere from p&nbsp;=&nbsp;0.04 to p&nbsp;=&nbsp;0.20. A result
+    decided by one observation is not a result. An earlier version of this page
+    reported a clean null here; correcting the age contamination removed nine
+    states from the measurable set and took the statistical power with them.
   </div>
   <table id="systable"><caption>Undetermined rate against certification structure</caption></table>
-  <p class="sub" style="margin-top:1rem">This rules the explanation out as the
-  driver of the state spread, not out of the picture. A rank correlation over 29
-  states has little power, half the states are unmeasurable, and a state labelled
-  "mixed" is an average of counties that differ from each other. What it does
-  say is that the variation needs a different explanation, and one that may live
-  at the level of individual offices rather than state law: caseload, autopsy
-  rate, local convention, or how a single large county certifies.</p>
+  <p class="sub" style="margin-top:1rem">Twenty states is too few to settle this
+  either way, most states are unmeasurable, and a state labelled "mixed" is an
+  average of counties that differ from each other. The variation is real; what
+  explains it is open, and may live at the level of individual offices rather
+  than state law — caseload, autopsy rate, local convention, or how one large
+  county certifies.</p>
 </section>
 
 <section id="demosec" hidden>
-  <h2>By age — and why the headline rate is too high</h2>
+  <h2>By race and sex, nationally, ages 15+</h2>
   <p class="sub">National query, no state breakdown, so these are counts rather
-  than floors. Age groups are CDC's own labels, shown verbatim.</p>
+  than floors. Categories are CDC's own labels, shown verbatim.</p>
+  <table id="demotable"><caption>Undetermined-intent rate by group</caption></table>
   <div class="callout">
-    <strong>A third of these deaths are children under 5</strong>, and their
-    suicide count is zero — it cannot be anything else, since intentional
-    self-harm is not assigned at that age. These ICD-10 codes cover hanging
-    <em>and strangulation and suffocation</em>, so under age 5 they are counting
-    infant suffocation deaths where intent was left undetermined. That is a real
-    and serious category of death, but it is not this one, and it has no
-    denominator here. Restricted to ages 15+ the rate is
-    <span class="mono" id="adultrate">—</span> per 100 rather than the
-    <span class="mono" id="allrate">—</span> shown further up this page.
+    <strong>Why 15+, and why this was not published sooner.</strong> On all-ages
+    data the same query showed a much larger gap. These ICD-10 codes cover
+    suffocation as well as hanging, and
+    <span class="mono" id="u5share">—</span>% of all undetermined-intent deaths
+    are children under 5 — whose suicide count is structurally zero, so they add
+    to the numerator and nothing to the denominator. Infant suffocation mortality
+    differs sharply between groups, so roughly half the apparent gap was that and
+    not classification practice. The age-filtered figures above are what survives
+    the correction, and they are what gets published.
   </div>
-  <table id="demotable"><caption>Undetermined-intent rate by age group</caption></table>
-  <p class="sub" style="margin-top:1rem">Every other figure on this page is
-  all-ages and carries the same inflation. Infant suffocation mortality varies
-  by state, so the state spread is affected too, by an amount this export cannot
-  measure. Breakdowns by race and sex have been run and are deliberately not
-  shown here: the same confound distorts them, and correcting it needs an
-  age-filtered export rather than an adjustment after the fact.</p>
+  <table id="agetable"><caption>All ages — the table that found the problem</caption></table>
+  <p class="sub" style="margin-top:1rem">Restricted to ages 15+ the national rate
+  is <span class="mono" id="adultrate">—</span> per 100, against
+  <span class="mono" id="allrate">—</span> across all ages. Every figure on this
+  page uses the 15+ exports.</p>
 </section>
 
 <section>
@@ -272,14 +278,16 @@ function render(d){
   let h = '<div></div>' + g.years.map(y => `<div class="yr">${y}</div>`).join('');
   g.states.forEach((st, i) => {
     h += `<div class="st" title="${esc(st)}">${esc(st)}</div>`;
+    const KIND = ['true zero', 'usable count', 'withheld (1-9)'];
+    const CLS = [' zero', ' on', ''];
     h += g.cells[i].map((c, j) =>
-      `<div class="cell${c ? ' on' : ''}" style="animation-delay:${(i*7+j)*1.2}ms" ` +
-      `title="${esc(st)} ${g.years[j]}: ${c ? 'published' : 'withheld (under 10)'}"></div>`
+      `<div class="cell${CLS[c]}" style="animation-delay:${(i*7+j)*1.2}ms" ` +
+      `title="${esc(st)} ${g.years[j]}: ${KIND[c]}"></div>`
     ).join('');
   });
   sg.innerHTML = h;
-  const pct = Math.round(100 * g.visible / g.total);
-  $('#gridstat').textContent = `${g.visible} of ${g.total} published (${pct}%)`;
+  $('#gridstat').textContent =
+    `${g.published} usable · ${g.withheld} withheld · ${g.zero} true zero`;
 
   // --- national ---
   const worst = Math.max(...d.national.map(n =>
@@ -352,33 +360,43 @@ function render(d){
   }
 
   // --- national demographic breakdown, only if that export was loaded ---
-  const demo = d.demographics || [];
-  if (demo.length) {
+  const dm = d.demographics || {};
+  const rows = (dm.race || []).concat(dm.sex || []);
+  if (rows.length || (dm.age || []).length) {
     $('#demosec').hidden = false;
+    const all = dm.age_all_ages || [];
     const young = g => g === '< 1 year' || g === '1-4 years';
-    const adult = demo.filter(r => !young(r.age_group)
-      && r.age_group !== '5-14 years' && r.age_group !== 'Not Stated');
-    const sum = (rows, k) => rows.reduce((t, r) => t + (r[k] || 0), 0);
-    const ax = sum(adult, 'suicide_hanging'), ay = sum(adult, 'undetermined_hanging');
-    const tx = sum(demo, 'suicide_hanging'), ty = sum(demo, 'undetermined_hanging');
+    const sum = (rs, k) => rs.reduce((t, r) => t + (r[k] || 0), 0);
+    const ax = sum(dm.age || [], 'suicide_hanging');
+    const ay = sum(dm.age || [], 'undetermined_hanging');
+    const tx = sum(all, 'suicide_hanging'), ty = sum(all, 'undetermined_hanging');
+    const u5 = all.filter(r => young(r.grp));
     if (ax) $('#adultrate').textContent = (ay / ax * 100).toFixed(2);
     if (tx) $('#allrate').textContent = (ty / tx * 100).toFixed(2);
+    if (ty) $('#u5share').textContent = Math.round(sum(u5, 'undetermined_hanging') / ty * 100);
 
-    $('#demotable').innerHTML += `<thead><tr>
-      <th>Age group</th>
+    const body = rs => rs.map(r => `<tr><td>${esc(r.grp)}</td>
+      <td class="num">${(r.suicide_hanging ?? 0).toLocaleString()}</td>
+      <td class="num">${r.undetermined_hanging ?? '—'}</td>
+      ${r.undetermined_ratio === null
+        ? `<td class="withheld">${r.suppressed_cells ? 'withheld' : 'no denominator'}</td>`
+        : `<td class="num">${(r.undetermined_ratio*100).toFixed(2)}</td>`}</tr>`).join('');
+    const head = what => `<thead><tr><th>${what}</th>
       <th style="text-align:right">Suicide</th>
-      <th style="text-align:right">Assault</th>
       <th style="text-align:right">Undetermined</th>
-      <th style="text-align:right">Undet. per 100</th></tr></thead><tbody>` +
-      demo.map(r => `<tr${young(r.age_group) ? ' style="color:var(--flag)"' : ''}>
-        <td>${esc(r.age_group)}</td>
+      <th style="text-align:right">Per 100</th></tr></thead>`;
+
+    $('#demotable').innerHTML += head('Group') +
+      '<tbody>' + body(dm.race || []) + body(dm.sex || []) + '</tbody>';
+    $('#agetable').innerHTML += head('Age group, all ages') +
+      '<tbody>' + all.map(r => `<tr${young(r.grp) ? ' style="color:var(--flag)"' : ''}>
+        <td>${esc(r.grp)}</td>
         <td class="num">${(r.suicide_hanging ?? 0).toLocaleString()}</td>
-        <td class="num">${r.assault_hanging ?? '—'}</td>
         <td class="num">${r.undetermined_hanging ?? '—'}</td>
         ${r.undetermined_ratio === null
           ? `<td class="withheld">${r.suppressed_cells ? 'withheld' : 'no denominator'}</td>`
-          : `<td class="num">${(r.undetermined_ratio*100).toFixed(2)}</td>`}
-        </tr>`).join('') + '</tbody>';
+          : `<td class="num">${(r.undetermined_ratio*100).toFixed(2)}</td>`}</tr>`).join('') +
+      '</tbody>';
   }
 
   // --- cases, appendix ---
