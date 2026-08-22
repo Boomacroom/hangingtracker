@@ -25,6 +25,14 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import stats  # noqa: E402
 
+# Everything published is ages 15+. The all-ages exports stay loaded and
+# stay exported as `age_all`, because they are the evidence for why: these
+# ICD-10 codes cover suffocation as well as hanging, so below 15 the
+# numerator fills with infant suffocation deaths whose denominator is
+# structurally zero.
+AGE = "15+"
+ALL = "all ages"
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DB = ROOT / "data" / "tracker.db"
 OUT = ROOT / "site" / "data"
@@ -53,9 +61,9 @@ def main():
         SELECT state, suicide_hanging, undetermined_hanging, assault_hanging,
                suppressed_cells, undetermined_ratio
         FROM v_undetermined_ratio
-        WHERE period IS NOT NULL AND state IS NOT NULL
+        WHERE period IS NOT NULL AND state IS NOT NULL AND age_filter = ?
         ORDER BY (undetermined_ratio IS NULL), undetermined_ratio DESC
-    """)]
+    """, (AGE,))]
 
     # --- true national trend (no-state export only) ---
     national = [dict(r) for r in conn.execute("""
@@ -65,15 +73,16 @@ def main():
                SUM(CASE WHEN icd10_code='Y20' THEN deaths END) AS y20
         FROM mortality_agg
         WHERE state IS NULL AND year IS NOT NULL AND deaths IS NOT NULL
+          AND age_filter = ?
         GROUP BY year ORDER BY year
-    """)]
+    """, (AGE,))]
 
     # --- certification structure, and whether it explains the spread ---
     systems = [dict(r) for r in conn.execute("""
         SELECT * FROM v_undetermined_by_system
-        WHERE system_type IS NOT NULL
+        WHERE system_type IS NOT NULL AND age_filter = ?
         ORDER BY (undetermined_ratio IS NULL), undetermined_ratio DESC
-    """)]
+    """, (AGE,))]
     meas = [s for s in systems if s["undetermined_ratio"] is not None]
     correlations = {}
     if len(meas) >= 3:
@@ -105,56 +114,70 @@ def main():
     # the one place a race or age breakdown can be reported as counts
     # rather than as a floor. Absent until someone runs the export; the
     # site simply omits the section rather than showing an empty shell.
-    # Age only, deliberately. The race and sex exports are loaded and the
-    # numbers are in the database, but they are not publishable yet and the
-    # age table is the reason why: 36% of all undetermined-intent deaths are
-    # children under 5, whose X70 count is structurally 0, because these are
-    # ICD-10 mechanism codes and under age 5 they are picking up infant
-    # suffocation rather than hanging. Infant suffocation mortality differs
-    # by race, so the group with the highest ratio in the race table is also
-    # the group with the highest infant suffocation mortality, and this
-    # export cannot separate the two. Publishing that ratio as a statement
-    # about how hanging deaths are classified would be exactly the overclaim
-    # this project exists not to make.
-    #
-    # The fix is an age filter on the WONDER exports, not an adjustment here.
-    # When the age-restricted exports land, widen this filter.
-    demographics = [dict(r) for r in conn.execute("""
-        SELECT year, race, sex, age_group, suicide_hanging, undetermined_hanging,
-               assault_hanging, suppressed_cells, undetermined_ratio
-        FROM v_undetermined_ratio
-        WHERE state IS NULL AND age_group IS NOT NULL
-        ORDER BY suicide_hanging DESC
-    """)]
-    held = [r[0] for r in conn.execute("""
-        SELECT DISTINCT CASE WHEN race IS NOT NULL THEN 'race' ELSE 'sex' END
-        FROM v_undetermined_ratio
-        WHERE state IS NULL AND (race IS NOT NULL OR sex IS NOT NULL)
-    """)]
+    # The age-filtered exports have landed, so race and sex are publishable
+    # now. They were held back on the all-ages data for a real reason and
+    # the correction was large: Black or African American read 3.50 per 100
+    # against White 0.98 all-ages, and 1.15 against 0.58 at 15+. Roughly
+    # half the apparent gap was infant suffocation, which these ICD-10 codes
+    # also count and which has no denominator in X70. The remaining
+    # difference is real and is published; the discarded half is why nothing
+    # went out before the age filter existed.
+    def demo(col, af=AGE):
+        return [dict(r) for r in conn.execute(f"""
+            SELECT {col} AS grp, suicide_hanging, undetermined_hanging,
+                   assault_hanging, suppressed_cells, undetermined_ratio
+            FROM v_undetermined_ratio
+            WHERE state IS NULL AND {col} IS NOT NULL AND age_filter = ?
+            ORDER BY (undetermined_ratio IS NULL), undetermined_ratio DESC
+        """, (af,))]
+
+    demographics = {
+        "race": demo("race"),
+        "sex": demo("sex"),
+        "age": demo("age_group"),
+        # Shipped so the correction is checkable rather than asserted: this
+        # is the table that showed the problem, under-5 rows included.
+        "age_all_ages": demo("age_group", ALL),
+    }
 
     # --- the suppression grid: which state-year cells are visible at all ---
     years = sorted({r[0] for r in conn.execute(
-        "SELECT DISTINCT year FROM mortality_agg WHERE year IS NOT NULL AND state IS NOT NULL")})
+        "SELECT DISTINCT year FROM mortality_agg WHERE year IS NOT NULL "
+        "AND state IS NOT NULL AND age_filter = ?", (AGE,))})
     all_states = sorted({r[0] for r in conn.execute(
-        "SELECT DISTINCT state FROM mortality_agg WHERE state IS NOT NULL")})
-    visible = {(r[0], r[1]) for r in conn.execute(
-        "SELECT state, year FROM mortality_agg "
-        "WHERE icd10_code='Y20' AND state IS NOT NULL AND year IS NOT NULL "
-        "AND deaths IS NOT NULL")}
+        "SELECT DISTINCT state FROM mortality_agg WHERE state IS NOT NULL "
+        "AND age_filter = ?", (AGE,))})
+    # Three states, not two. The original export was run with Show Zero
+    # Values and Show Suppressed both False, so 339 of 357 cells were simply
+    # absent -- and an absent row is EITHER zero deaths OR 1-9 withheld.
+    # That is the exact ambiguity this project documents as the trap, and
+    # the grid was labelling all of it "withheld". With a complete export
+    # the two are separable and they are not close to the same thing.
+    cell_state = {}
+    for st, yr, deaths, supp in conn.execute(
+            "SELECT state, year, deaths, suppressed FROM mortality_agg "
+            "WHERE icd10_code='Y20' AND state IS NOT NULL AND year IS NOT NULL "
+            "AND age_filter = ?", (AGE,)):
+        cell_state[(st, yr)] = (2 if supp else (1 if (deaths or 0) > 0 else 0))
     grid = {
         "years": years,
         "states": all_states,
-        "cells": [[1 if (s, y) in visible else 0 for y in years] for s in all_states],
-        "visible": len(visible),
+        # 0 = a real zero, 1 = a usable published count, 2 = withheld (1-9)
+        "cells": [[cell_state.get((s, y), 2) for y in years] for s in all_states],
+        "published": sum(1 for v in cell_state.values() if v == 1),
+        "zero": sum(1 for v in cell_state.values() if v == 0),
+        "withheld": sum(1 for v in cell_state.values() if v == 2),
         "total": len(all_states) * len(years),
     }
+    grid["visible"] = grid["published"]
 
     # Floors vs truth, so the methods warning is data rather than a claim.
     floors = {r[0]: r[1] for r in conn.execute("""
         SELECT year, SUM(deaths) FROM mortality_agg
         WHERE state IS NOT NULL AND year IS NOT NULL
-          AND icd10_code='Y20' AND deaths IS NOT NULL GROUP BY year
-    """)}
+          AND icd10_code='Y20' AND deaths IS NOT NULL AND age_filter = ?
+        GROUP BY year
+    """, (AGE,))}
     for n in national:
         n["y20_state_sum"] = floors.get(n["year"], 0)
 
@@ -164,7 +187,7 @@ def main():
         "national": national,
         "grid": grid,
         "demographics": demographics,
-        "demographics_held": held,
+        "age_filter": AGE,
         "systems": {
             "states": system_rows,
             "joined": systems,
@@ -199,19 +222,14 @@ def main():
     c = payload["counts"]
     print(f"exported {c['cases']} cases ({c['verified']} verified), "
           f"{len(states)} states, {len(national)} years")
-    print(f"suppression grid: {grid['visible']}/{grid['total']} cells visible")
+    print(f"suppression grid: {grid['published']} usable, {grid['withheld']} "
+          f"withheld, {grid['zero']} true zero, of {grid['total']}")
     if correlations:
         e = correlations["elected_share"]
         print(f"system-type test: n={e['n']}, elected-share rho={e['rho']:+.3f} "
               f"(p={e['p']:.3f})")
-    if demographics:
-        print(f"demographic rows: {len(demographics)} (age)")
-    else:
-        print("no national demographic export loaded yet (item 2); "
-              "the site omits that section")
-    if held:
-        print(f"HELD BACK from the site: {', '.join(sorted(held))} -- "
-              "confounded by under-5 suffocation deaths, see analyze.py")
+    print("demographics: " + ", ".join(
+        f"{k} {len(v)}" for k, v in demographics.items() if v) or "none loaded")
     print(f"wrote {OUT / 'tracker.json'} and site/tracker.db")
     return 0
 

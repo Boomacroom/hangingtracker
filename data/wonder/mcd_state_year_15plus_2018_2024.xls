@@ -1,0 +1,1151 @@
+"Notes"	"State"	"State Code"	"Year"	"Year Code"	"Underlying Cause of death"	"Underlying Cause of death Code"	Deaths	Population	Crude Rate	Crude Rate Lower 95% Confidence Interval	Crude Rate Upper 95% Confidence Interval
+	"Alabama"	"01"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	182	3986273	4.6	3.9	5.2
+	"Alabama"	"01"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3986273	Suppressed	Suppressed	Suppressed
+	"Alabama"	"01"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3986273	Suppressed	Suppressed	Suppressed
+	"Alabama"	"01"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	171	4000362	4.3	3.6	4.9
+	"Alabama"	"01"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4000362	Suppressed	Suppressed	Suppressed
+	"Alabama"	"01"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	4000362	0.0	0.0	0.0
+	"Alabama"	"01"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	175	4019998	4.4	3.7	5.0
+	"Alabama"	"01"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4019998	Suppressed	Suppressed	Suppressed
+	"Alabama"	"01"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	4019998	0.0	0.0	0.0
+	"Alabama"	"01"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	124	4113847	3.0	2.5	3.5
+	"Alabama"	"01"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4113847	Suppressed	Suppressed	Suppressed
+	"Alabama"	"01"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4113847	Suppressed	Suppressed	Suppressed
+	"Alabama"	"01"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	139	4160277	3.3	2.8	3.9
+	"Alabama"	"01"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4160277	Suppressed	Suppressed	Suppressed
+	"Alabama"	"01"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	4160277	0.0	0.0	0.0
+	"Alabama"	"01"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	159	4182935	3.8	3.2	4.4
+	"Alabama"	"01"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4182935	Suppressed	Suppressed	Suppressed
+	"Alabama"	"01"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4182935	Suppressed	Suppressed	Suppressed
+	"Alabama"	"01"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	145	4230019	3.4	2.9	4.0
+	"Alabama"	"01"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4230019	Suppressed	Suppressed	Suppressed
+	"Alabama"	"01"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4230019	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	54	582508	9.3	7.0	12.1
+	"Alaska"	"02"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	582508	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	582508	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	60	579803	10.3	7.9	13.3
+	"Alaska"	"02"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	579803	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	579803	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	48	580736	8.3	6.1	11.0
+	"Alaska"	"02"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	580736	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	580736	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	62	582197	10.6	8.2	13.7
+	"Alaska"	"02"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	582197	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	582197	0.0	0.0	0.0
+	"Alaska"	"02"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	65	585987	11.1	8.6	14.1
+	"Alaska"	"02"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	585987	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	585987	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	61	587378	10.4	7.9	13.3
+	"Alaska"	"02"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	587378	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	587378	0.0	0.0	0.0
+	"Alaska"	"02"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	56	595220	9.4	7.1	12.2
+	"Alaska"	"02"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	595220	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	595220	Suppressed	Suppressed	Suppressed
+	"Arizona"	"04"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	364	5807563	6.3	5.6	6.9
+	"Arizona"	"04"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	12	5807563	0.2	0.1	0.4
+	"Arizona"	"04"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5807563	Suppressed	Suppressed	Suppressed
+	"Arizona"	"04"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	329	5918184	5.6	5.0	6.2
+	"Arizona"	"04"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5918184	Suppressed	Suppressed	Suppressed
+	"Arizona"	"04"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5918184	Suppressed	Suppressed	Suppressed
+	"Arizona"	"04"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	291	6059586	4.8	4.3	5.4
+	"Arizona"	"04"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	13	6059586	0.2	0.1	0.4
+	"Arizona"	"04"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6059586	Suppressed	Suppressed	Suppressed
+	"Arizona"	"04"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	329	5951839	5.5	4.9	6.1
+	"Arizona"	"04"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	10	5951839	0.2	0.1	0.3
+	"Arizona"	"04"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5951839	Suppressed	Suppressed	Suppressed
+	"Arizona"	"04"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	318	6062683	5.2	4.7	5.8
+	"Arizona"	"04"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	15	6062683	0.2	0.1	0.4
+	"Arizona"	"04"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6062683	Suppressed	Suppressed	Suppressed
+	"Arizona"	"04"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	304	6145725	4.9	4.4	5.5
+	"Arizona"	"04"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	6145725	Suppressed	Suppressed	Suppressed
+	"Arizona"	"04"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6145725	Suppressed	Suppressed	Suppressed
+	"Arizona"	"04"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	315	6293483	5.0	4.5	5.6
+	"Arizona"	"04"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	6293483	Suppressed	Suppressed	Suppressed
+	"Arizona"	"04"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6293483	Suppressed	Suppressed	Suppressed
+	"Arkansas"	"05"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	121	2429412	5.0	4.1	5.9
+	"Arkansas"	"05"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2429412	Suppressed	Suppressed	Suppressed
+	"Arkansas"	"05"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2429412	Suppressed	Suppressed	Suppressed
+	"Arkansas"	"05"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	139	2436127	5.7	4.8	6.7
+	"Arkansas"	"05"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2436127	Suppressed	Suppressed	Suppressed
+	"Arkansas"	"05"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2436127	0.0	0.0	0.0
+	"Arkansas"	"05"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	135	2450560	5.5	4.6	6.4
+	"Arkansas"	"05"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2450560	Suppressed	Suppressed	Suppressed
+	"Arkansas"	"05"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2450560	Suppressed	Suppressed	Suppressed
+	"Arkansas"	"05"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	138	2446136	5.6	4.7	6.6
+	"Arkansas"	"05"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2446136	Suppressed	Suppressed	Suppressed
+	"Arkansas"	"05"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2446136	0.0	0.0	0.0
+	"Arkansas"	"05"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	132	2473281	5.3	4.4	6.2
+	"Arkansas"	"05"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2473281	Suppressed	Suppressed	Suppressed
+	"Arkansas"	"05"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2473281	Suppressed	Suppressed	Suppressed
+	"Arkansas"	"05"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	146	2491373	5.9	4.9	6.8
+	"Arkansas"	"05"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2491373	Suppressed	Suppressed	Suppressed
+	"Arkansas"	"05"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2491373	Suppressed	Suppressed	Suppressed
+	"Arkansas"	"05"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	122	2515508	4.8	4.0	5.7
+	"Arkansas"	"05"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2515508	Suppressed	Suppressed	Suppressed
+	"Arkansas"	"05"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2515508	0.0	0.0	0.0
+	"California"	"06"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1621	32078870	5.1	4.8	5.3
+	"California"	"06"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	45	32078870	0.1	0.1	0.2
+	"California"	"06"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	32078870	Suppressed	Suppressed	Suppressed
+	"California"	"06"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1534	32120520	4.8	4.5	5.0
+	"California"	"06"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	34	32120520	0.1	0.1	0.1
+	"California"	"06"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	32120520	Suppressed	Suppressed	Suppressed
+	"California"	"06"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1420	32083794	4.4	4.2	4.7
+	"California"	"06"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	45	32083794	0.1	0.1	0.2
+	"California"	"06"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	32083794	Suppressed	Suppressed	Suppressed
+	"California"	"06"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1379	32018534	4.3	4.1	4.5
+	"California"	"06"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	40	32018534	0.1	0.1	0.2
+	"California"	"06"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	32018534	Suppressed	Suppressed	Suppressed
+	"California"	"06"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1370	32067285	4.3	4.0	4.5
+	"California"	"06"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	30	32067285	0.1	0.1	0.1
+	"California"	"06"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	11	32067285	0.0	0.0	0.1
+	"California"	"06"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1325	32088463	4.1	3.9	4.4
+	"California"	"06"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	31	32088463	0.1	0.1	0.1
+	"California"	"06"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	32088463	Suppressed	Suppressed	Suppressed
+	"California"	"06"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1271	32583274	3.9	3.7	4.1
+	"California"	"06"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	43	32583274	0.1	0.1	0.2
+	"California"	"06"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	32583274	Suppressed	Suppressed	Suppressed
+	"Colorado"	"08"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	356	4645379	7.7	6.9	8.5
+	"Colorado"	"08"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4645379	Suppressed	Suppressed	Suppressed
+	"Colorado"	"08"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4645379	Suppressed	Suppressed	Suppressed
+	"Colorado"	"08"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	356	4716213	7.5	6.8	8.3
+	"Colorado"	"08"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	18	4716213	0.4	0.2	0.6
+	"Colorado"	"08"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4716213	Suppressed	Suppressed	Suppressed
+	"Colorado"	"08"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	350	4776860	7.3	6.6	8.1
+	"Colorado"	"08"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	11	4776860	0.2	0.1	0.4
+	"Colorado"	"08"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	4776860	0.0	0.0	0.0
+	"Colorado"	"08"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	334	4792422	7.0	6.2	7.7
+	"Colorado"	"08"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4792422	Suppressed	Suppressed	Suppressed
+	"Colorado"	"08"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	4792422	0.0	0.0	0.0
+	"Colorado"	"08"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	305	4845793	6.3	5.6	7.0
+	"Colorado"	"08"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	13	4845793	0.3	0.1	0.5
+	"Colorado"	"08"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4845793	Suppressed	Suppressed	Suppressed
+	"Colorado"	"08"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	273	4887652	5.6	4.9	6.2
+	"Colorado"	"08"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4887652	Suppressed	Suppressed	Suppressed
+	"Colorado"	"08"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4887652	Suppressed	Suppressed	Suppressed
+	"Colorado"	"08"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	285	4968768	5.7	5.1	6.4
+	"Colorado"	"08"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	10	4968768	0.2	0.1	0.4
+	"Colorado"	"08"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4968768	Suppressed	Suppressed	Suppressed
+	"Connecticut"	"09"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	154	2975623	5.2	4.4	6.0
+	"Connecticut"	"09"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2975623	Suppressed	Suppressed	Suppressed
+	"Connecticut"	"09"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2975623	0.0	0.0	0.0
+	"Connecticut"	"09"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	162	2974577	5.4	4.6	6.3
+	"Connecticut"	"09"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2974577	Suppressed	Suppressed	Suppressed
+	"Connecticut"	"09"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2974577	Suppressed	Suppressed	Suppressed
+	"Connecticut"	"09"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	130	2973352	4.4	3.6	5.1
+	"Connecticut"	"09"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2973352	Suppressed	Suppressed	Suppressed
+	"Connecticut"	"09"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2973352	Suppressed	Suppressed	Suppressed
+	"Connecticut"	"09"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	124	3015106	4.1	3.4	4.8
+	"Connecticut"	"09"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3015106	Suppressed	Suppressed	Suppressed
+	"Connecticut"	"09"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3015106	Suppressed	Suppressed	Suppressed
+	"Connecticut"	"09"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	134	3034800	4.4	3.7	5.2
+	"Connecticut"	"09"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	0	3034800	0.0	0.0	0.0
+	"Connecticut"	"09"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3034800	0.0	0.0	0.0
+	"Connecticut"	"09"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	115	3033078	3.8	3.1	4.5
+	"Connecticut"	"09"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3033078	Suppressed	Suppressed	Suppressed
+	"Connecticut"	"09"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3033078	0.0	0.0	0.0
+	"Connecticut"	"09"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	112	3086123	3.6	3.0	4.3
+	"Connecticut"	"09"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3086123	Suppressed	Suppressed	Suppressed
+	"Connecticut"	"09"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3086123	0.0	0.0	0.0
+	"Delaware"	"10"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	41	798459	5.1	3.7	7.0
+	"Delaware"	"10"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	798459	Suppressed	Suppressed	Suppressed
+	"Delaware"	"10"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	798459	0.0	0.0	0.0
+	"Delaware"	"10"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	34	805070	4.2	2.9	5.9
+	"Delaware"	"10"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	0	805070	0.0	0.0	0.0
+	"Delaware"	"10"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	805070	0.0	0.0	0.0
+	"Delaware"	"10"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	39	817430	4.8	3.4	6.5
+	"Delaware"	"10"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	817430	Suppressed	Suppressed	Suppressed
+	"Delaware"	"10"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	817430	Suppressed	Suppressed	Suppressed
+	"Delaware"	"10"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	32	831956	3.8	2.6	5.4
+	"Delaware"	"10"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	831956	Suppressed	Suppressed	Suppressed
+	"Delaware"	"10"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	831956	0.0	0.0	0.0
+	"Delaware"	"10"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	29	847321	3.4	2.3	4.9
+	"Delaware"	"10"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	847321	Suppressed	Suppressed	Suppressed
+	"Delaware"	"10"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	847321	0.0	0.0	0.0
+	"Delaware"	"10"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	38	858527	4.4	3.1	6.1
+	"Delaware"	"10"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	858527	Suppressed	Suppressed	Suppressed
+	"Delaware"	"10"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	858527	0.0	0.0	0.0
+	"Delaware"	"10"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	31	877221	3.5	2.4	5.0
+	"Delaware"	"10"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	877221	Suppressed	Suppressed	Suppressed
+	"Delaware"	"10"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	877221	0.0	0.0	0.0
+	"District of Columbia"	"11"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	23	590643	3.9	2.5	5.8
+	"District of Columbia"	"11"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	590643	Suppressed	Suppressed	Suppressed
+	"District of Columbia"	"11"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	590643	Suppressed	Suppressed	Suppressed
+	"District of Columbia"	"11"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	14	592983	2.4	1.3	4.0
+	"District of Columbia"	"11"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	592983	Suppressed	Suppressed	Suppressed
+	"District of Columbia"	"11"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	592983	0.0	0.0	0.0
+	"District of Columbia"	"11"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	12	598746	2.0	1.0	3.5
+	"District of Columbia"	"11"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	598746	Suppressed	Suppressed	Suppressed
+	"District of Columbia"	"11"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	598746	0.0	0.0	0.0
+	"District of Columbia"	"11"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	16	560003	2.9	1.6	4.6
+	"District of Columbia"	"11"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	560003	Suppressed	Suppressed	Suppressed
+	"District of Columbia"	"11"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	560003	0.0	0.0	0.0
+	"District of Columbia"	"11"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	15	563834	2.7	1.5	4.4
+	"District of Columbia"	"11"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	0	563834	0.0	0.0	0.0
+	"District of Columbia"	"11"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	563834	Suppressed	Suppressed	Suppressed
+	"District of Columbia"	"11"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	14	569918	2.5	1.3	4.1
+	"District of Columbia"	"11"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	569918	Suppressed	Suppressed	Suppressed
+	"District of Columbia"	"11"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	569918	0.0	0.0	0.0
+	"District of Columbia"	"11"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	13	590976	2.2	1.2	3.8
+	"District of Columbia"	"11"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	590976	Suppressed	Suppressed	Suppressed
+	"District of Columbia"	"11"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	590976	0.0	0.0	0.0
+	"Florida"	"12"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	847	17792308	4.8	4.4	5.1
+	"Florida"	"12"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	38	17792308	0.2	0.2	0.3
+	"Florida"	"12"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	17792308	Suppressed	Suppressed	Suppressed
+	"Florida"	"12"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	835	17965598	4.6	4.3	5.0
+	"Florida"	"12"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	33	17965598	0.2	0.1	0.3
+	"Florida"	"12"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	17965598	0.0	0.0	0.0
+	"Florida"	"12"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	695	18207739	3.8	3.5	4.1
+	"Florida"	"12"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	25	18207739	0.1	0.1	0.2
+	"Florida"	"12"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	18207739	Suppressed	Suppressed	Suppressed
+	"Florida"	"12"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	710	18249343	3.9	3.6	4.2
+	"Florida"	"12"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	27	18249343	0.1	0.1	0.2
+	"Florida"	"12"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	18249343	Suppressed	Suppressed	Suppressed
+	"Florida"	"12"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	698	18720195	3.7	3.5	4.0
+	"Florida"	"12"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	29	18720195	0.2	0.1	0.2
+	"Florida"	"12"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	18720195	Suppressed	Suppressed	Suppressed
+	"Florida"	"12"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	699	19028708	3.7	3.4	3.9
+	"Florida"	"12"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	37	19028708	0.2	0.1	0.3
+	"Florida"	"12"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	19028708	Suppressed	Suppressed	Suppressed
+	"Florida"	"12"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	671	19693194	3.4	3.1	3.7
+	"Florida"	"12"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	26	19693194	0.1	0.1	0.2
+	"Florida"	"12"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	19693194	Suppressed	Suppressed	Suppressed
+	"Georgia"	"13"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	320	8448399	3.8	3.4	4.2
+	"Georgia"	"13"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	18	8448399	0.2	0.1	0.3
+	"Georgia"	"13"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8448399	Suppressed	Suppressed	Suppressed
+	"Georgia"	"13"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	383	8547854	4.5	4.0	4.9
+	"Georgia"	"13"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	19	8547854	0.2	0.1	0.3
+	"Georgia"	"13"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	8547854	0.0	0.0	0.0
+	"Georgia"	"13"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	338	8648292	3.9	3.5	4.3
+	"Georgia"	"13"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	13	8648292	0.2	0.1	0.3
+	"Georgia"	"13"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8648292	Suppressed	Suppressed	Suppressed
+	"Georgia"	"13"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	342	8731004	3.9	3.5	4.3
+	"Georgia"	"13"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	13	8731004	0.1	0.1	0.3
+	"Georgia"	"13"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8731004	Suppressed	Suppressed	Suppressed
+	"Georgia"	"13"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	337	8864571	3.8	3.4	4.2
+	"Georgia"	"13"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	14	8864571	0.2	0.1	0.3
+	"Georgia"	"13"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8864571	Suppressed	Suppressed	Suppressed
+	"Georgia"	"13"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	352	8966498	3.9	3.5	4.3
+	"Georgia"	"13"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	14	8966498	0.2	0.1	0.3
+	"Georgia"	"13"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	8966498	0.0	0.0	0.0
+	"Georgia"	"13"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	310	9117873	3.4	3.0	3.8
+	"Georgia"	"13"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	18	9117873	0.2	0.1	0.3
+	"Georgia"	"13"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	9117873	Suppressed	Suppressed	Suppressed
+	"Hawaii"	"15"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	98	1163964	8.4	6.8	10.3
+	"Hawaii"	"15"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1163964	Suppressed	Suppressed	Suppressed
+	"Hawaii"	"15"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1163964	0.0	0.0	0.0
+	"Hawaii"	"15"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	111	1163067	9.5	7.8	11.3
+	"Hawaii"	"15"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1163067	Suppressed	Suppressed	Suppressed
+	"Hawaii"	"15"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1163067	0.0	0.0	0.0
+	"Hawaii"	"15"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	104	1156837	9.0	7.3	10.7
+	"Hawaii"	"15"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1156837	0.0	0.0	0.0
+	"Hawaii"	"15"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1156837	0.0	0.0	0.0
+	"Hawaii"	"15"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	107	1185088	9.0	7.3	10.7
+	"Hawaii"	"15"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1185088	Suppressed	Suppressed	Suppressed
+	"Hawaii"	"15"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1185088	Suppressed	Suppressed	Suppressed
+	"Hawaii"	"15"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	125	1190239	10.5	8.7	12.3
+	"Hawaii"	"15"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1190239	Suppressed	Suppressed	Suppressed
+	"Hawaii"	"15"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1190239	Suppressed	Suppressed	Suppressed
+	"Hawaii"	"15"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	108	1189593	9.1	7.4	10.8
+	"Hawaii"	"15"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1189593	Suppressed	Suppressed	Suppressed
+	"Hawaii"	"15"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1189593	0.0	0.0	0.0
+	"Hawaii"	"15"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	109	1201211	9.1	7.4	10.8
+	"Hawaii"	"15"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1201211	Suppressed	Suppressed	Suppressed
+	"Hawaii"	"15"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1201211	0.0	0.0	0.0
+	"Idaho"	"16"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	89	1383868	6.4	5.2	7.9
+	"Idaho"	"16"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1383868	0.0	0.0	0.0
+	"Idaho"	"16"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1383868	Suppressed	Suppressed	Suppressed
+	"Idaho"	"16"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	74	1416077	5.2	4.1	6.6
+	"Idaho"	"16"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1416077	Suppressed	Suppressed	Suppressed
+	"Idaho"	"16"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1416077	Suppressed	Suppressed	Suppressed
+	"Idaho"	"16"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	70	1455238	4.8	3.7	6.1
+	"Idaho"	"16"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1455238	Suppressed	Suppressed	Suppressed
+	"Idaho"	"16"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1455238	0.0	0.0	0.0
+	"Idaho"	"16"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	70	1516651	4.6	3.6	5.8
+	"Idaho"	"16"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1516651	Suppressed	Suppressed	Suppressed
+	"Idaho"	"16"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1516651	Suppressed	Suppressed	Suppressed
+	"Idaho"	"16"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	65	1561015	4.2	3.2	5.3
+	"Idaho"	"16"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1561015	0.0	0.0	0.0
+	"Idaho"	"16"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1561015	0.0	0.0	0.0
+	"Idaho"	"16"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	72	1585778	4.5	3.6	5.7
+	"Idaho"	"16"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1585778	0.0	0.0	0.0
+	"Idaho"	"16"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1585778	Suppressed	Suppressed	Suppressed
+	"Idaho"	"16"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	71	1622442	4.4	3.4	5.5
+	"Idaho"	"16"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1622442	0.0	0.0	0.0
+	"Idaho"	"16"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1622442	Suppressed	Suppressed	Suppressed
+	"Illinois"	"17"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	497	10383211	4.8	4.4	5.2
+	"Illinois"	"17"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	13	10383211	0.1	0.1	0.2
+	"Illinois"	"17"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10383211	Suppressed	Suppressed	Suppressed
+	"Illinois"	"17"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	508	10349142	4.9	4.5	5.3
+	"Illinois"	"17"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	20	10349142	0.2	0.1	0.3
+	"Illinois"	"17"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10349142	Suppressed	Suppressed	Suppressed
+	"Illinois"	"17"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	465	10301730	4.5	4.1	4.9
+	"Illinois"	"17"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	18	10301730	0.2	0.1	0.3
+	"Illinois"	"17"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	10301730	0.0	0.0	0.0
+	"Illinois"	"17"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	440	10377560	4.2	3.8	4.6
+	"Illinois"	"17"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	14	10377560	0.1	0.1	0.2
+	"Illinois"	"17"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10377560	Suppressed	Suppressed	Suppressed
+	"Illinois"	"17"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	462	10363971	4.5	4.1	4.9
+	"Illinois"	"17"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	10363971	Suppressed	Suppressed	Suppressed
+	"Illinois"	"17"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10363971	Suppressed	Suppressed	Suppressed
+	"Illinois"	"17"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	483	10353612	4.7	4.2	5.1
+	"Illinois"	"17"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	13	10353612	0.1	0.1	0.2
+	"Illinois"	"17"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10353612	Suppressed	Suppressed	Suppressed
+	"Illinois"	"17"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	404	10522446	3.8	3.5	4.2
+	"Illinois"	"17"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	10522446	Suppressed	Suppressed	Suppressed
+	"Illinois"	"17"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10522446	Suppressed	Suppressed	Suppressed
+	"Indiana"	"18"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	303	5394638	5.6	5.0	6.2
+	"Indiana"	"18"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	14	5394638	0.3	0.1	0.4
+	"Indiana"	"18"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5394638	Suppressed	Suppressed	Suppressed
+	"Indiana"	"18"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	238	5434898	4.4	3.8	4.9
+	"Indiana"	"18"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	17	5434898	0.3	0.2	0.5
+	"Indiana"	"18"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5434898	Suppressed	Suppressed	Suppressed
+	"Indiana"	"18"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	264	5459479	4.8	4.3	5.4
+	"Indiana"	"18"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5459479	Suppressed	Suppressed	Suppressed
+	"Indiana"	"18"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5459479	Suppressed	Suppressed	Suppressed
+	"Indiana"	"18"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	260	5499891	4.7	4.2	5.3
+	"Indiana"	"18"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5499891	Suppressed	Suppressed	Suppressed
+	"Indiana"	"18"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5499891	Suppressed	Suppressed	Suppressed
+	"Indiana"	"18"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	264	5544235	4.8	4.2	5.3
+	"Indiana"	"18"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5544235	Suppressed	Suppressed	Suppressed
+	"Indiana"	"18"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5544235	Suppressed	Suppressed	Suppressed
+	"Indiana"	"18"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	251	5564214	4.5	4.0	5.1
+	"Indiana"	"18"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5564214	Suppressed	Suppressed	Suppressed
+	"Indiana"	"18"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5564214	Suppressed	Suppressed	Suppressed
+	"Indiana"	"18"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	244	5627933	4.3	3.8	4.9
+	"Indiana"	"18"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	10	5627933	0.2	0.1	0.3
+	"Indiana"	"18"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5627933	Suppressed	Suppressed	Suppressed
+	"Iowa"	"19"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	150	2548248	5.9	4.9	6.8
+	"Iowa"	"19"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2548248	Suppressed	Suppressed	Suppressed
+	"Iowa"	"19"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2548248	Suppressed	Suppressed	Suppressed
+	"Iowa"	"19"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	177	2550939	6.9	5.9	8.0
+	"Iowa"	"19"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2550939	Suppressed	Suppressed	Suppressed
+	"Iowa"	"19"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2550939	Suppressed	Suppressed	Suppressed
+	"Iowa"	"19"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	175	2561977	6.8	5.8	7.8
+	"Iowa"	"19"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2561977	Suppressed	Suppressed	Suppressed
+	"Iowa"	"19"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2561977	0.0	0.0	0.0
+	"Iowa"	"19"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	157	2586599	6.1	5.1	7.0
+	"Iowa"	"19"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2586599	Suppressed	Suppressed	Suppressed
+	"Iowa"	"19"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2586599	0.0	0.0	0.0
+	"Iowa"	"19"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	181	2606245	6.9	5.9	8.0
+	"Iowa"	"19"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2606245	Suppressed	Suppressed	Suppressed
+	"Iowa"	"19"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2606245	Suppressed	Suppressed	Suppressed
+	"Iowa"	"19"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	137	2611367	5.2	4.4	6.1
+	"Iowa"	"19"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2611367	Suppressed	Suppressed	Suppressed
+	"Iowa"	"19"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2611367	Suppressed	Suppressed	Suppressed
+	"Iowa"	"19"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	128	2645824	4.8	4.0	5.7
+	"Iowa"	"19"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2645824	Suppressed	Suppressed	Suppressed
+	"Iowa"	"19"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2645824	0.0	0.0	0.0
+	"Kansas"	"20"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	160	2324103	6.9	5.8	8.0
+	"Kansas"	"20"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2324103	Suppressed	Suppressed	Suppressed
+	"Kansas"	"20"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2324103	Suppressed	Suppressed	Suppressed
+	"Kansas"	"20"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	141	2331717	6.0	5.0	7.0
+	"Kansas"	"20"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2331717	Suppressed	Suppressed	Suppressed
+	"Kansas"	"20"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2331717	0.0	0.0	0.0
+	"Kansas"	"20"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	127	2336386	5.4	4.5	6.4
+	"Kansas"	"20"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2336386	Suppressed	Suppressed	Suppressed
+	"Kansas"	"20"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2336386	0.0	0.0	0.0
+	"Kansas"	"20"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	123	2355159	5.2	4.3	6.1
+	"Kansas"	"20"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	0	2355159	0.0	0.0	0.0
+	"Kansas"	"20"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2355159	Suppressed	Suppressed	Suppressed
+	"Kansas"	"20"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	141	2369657	6.0	5.0	6.9
+	"Kansas"	"20"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2369657	Suppressed	Suppressed	Suppressed
+	"Kansas"	"20"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2369657	Suppressed	Suppressed	Suppressed
+	"Kansas"	"20"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	145	2372992	6.1	5.1	7.1
+	"Kansas"	"20"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2372992	Suppressed	Suppressed	Suppressed
+	"Kansas"	"20"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2372992	Suppressed	Suppressed	Suppressed
+	"Kansas"	"20"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	124	2406346	5.2	4.2	6.1
+	"Kansas"	"20"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2406346	Suppressed	Suppressed	Suppressed
+	"Kansas"	"20"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2406346	Suppressed	Suppressed	Suppressed
+	"Kentucky"	"21"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	184	3630476	5.1	4.3	5.8
+	"Kentucky"	"21"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3630476	Suppressed	Suppressed	Suppressed
+	"Kentucky"	"21"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3630476	0.0	0.0	0.0
+	"Kentucky"	"21"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	198	3634646	5.4	4.7	6.2
+	"Kentucky"	"21"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3634646	Suppressed	Suppressed	Suppressed
+	"Kentucky"	"21"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3634646	Suppressed	Suppressed	Suppressed
+	"Kentucky"	"21"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	183	3646638	5.0	4.3	5.7
+	"Kentucky"	"21"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3646638	Suppressed	Suppressed	Suppressed
+	"Kentucky"	"21"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3646638	Suppressed	Suppressed	Suppressed
+	"Kentucky"	"21"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	189	3671547	5.1	4.4	5.9
+	"Kentucky"	"21"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3671547	Suppressed	Suppressed	Suppressed
+	"Kentucky"	"21"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3671547	0.0	0.0	0.0
+	"Kentucky"	"21"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	173	3685847	4.7	4.0	5.4
+	"Kentucky"	"21"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3685847	Suppressed	Suppressed	Suppressed
+	"Kentucky"	"21"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3685847	Suppressed	Suppressed	Suppressed
+	"Kentucky"	"21"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	145	3692828	3.9	3.3	4.6
+	"Kentucky"	"21"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3692828	Suppressed	Suppressed	Suppressed
+	"Kentucky"	"21"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3692828	Suppressed	Suppressed	Suppressed
+	"Kentucky"	"21"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	144	3748212	3.8	3.2	4.5
+	"Kentucky"	"21"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3748212	Suppressed	Suppressed	Suppressed
+	"Kentucky"	"21"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3748212	Suppressed	Suppressed	Suppressed
+	"Louisiana"	"22"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	144	3744034	3.8	3.2	4.5
+	"Louisiana"	"22"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3744034	Suppressed	Suppressed	Suppressed
+	"Louisiana"	"22"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3744034	Suppressed	Suppressed	Suppressed
+	"Louisiana"	"22"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	153	3739389	4.1	3.4	4.7
+	"Louisiana"	"22"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	10	3739389	0.3	0.1	0.5
+	"Louisiana"	"22"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3739389	Suppressed	Suppressed	Suppressed
+	"Louisiana"	"22"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	143	3742874	3.8	3.2	4.4
+	"Louisiana"	"22"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3742874	Suppressed	Suppressed	Suppressed
+	"Louisiana"	"22"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3742874	0.0	0.0	0.0
+	"Louisiana"	"22"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	142	3725751	3.8	3.2	4.4
+	"Louisiana"	"22"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3725751	Suppressed	Suppressed	Suppressed
+	"Louisiana"	"22"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3725751	0.0	0.0	0.0
+	"Louisiana"	"22"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	142	3713972	3.8	3.2	4.5
+	"Louisiana"	"22"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3713972	Suppressed	Suppressed	Suppressed
+	"Louisiana"	"22"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3713972	Suppressed	Suppressed	Suppressed
+	"Louisiana"	"22"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	131	3697326	3.5	2.9	4.1
+	"Louisiana"	"22"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3697326	Suppressed	Suppressed	Suppressed
+	"Louisiana"	"22"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3697326	Suppressed	Suppressed	Suppressed
+	"Louisiana"	"22"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	136	3723504	3.7	3.0	4.3
+	"Louisiana"	"22"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3723504	Suppressed	Suppressed	Suppressed
+	"Louisiana"	"22"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3723504	0.0	0.0	0.0
+	"Maine"	"23"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	58	1133291	5.1	3.9	6.6
+	"Maine"	"23"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1133291	Suppressed	Suppressed	Suppressed
+	"Maine"	"23"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1133291	0.0	0.0	0.0
+	"Maine"	"23"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	68	1140575	6.0	4.6	7.6
+	"Maine"	"23"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1140575	Suppressed	Suppressed	Suppressed
+	"Maine"	"23"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1140575	0.0	0.0	0.0
+	"Maine"	"23"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	53	1147568	4.6	3.5	6.0
+	"Maine"	"23"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1147568	0.0	0.0	0.0
+	"Maine"	"23"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1147568	Suppressed	Suppressed	Suppressed
+	"Maine"	"23"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	74	1167643	6.3	5.0	8.0
+	"Maine"	"23"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1167643	0.0	0.0	0.0
+	"Maine"	"23"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1167643	Suppressed	Suppressed	Suppressed
+	"Maine"	"23"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	55	1184123	4.6	3.5	6.0
+	"Maine"	"23"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1184123	Suppressed	Suppressed	Suppressed
+	"Maine"	"23"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1184123	0.0	0.0	0.0
+	"Maine"	"23"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	48	1194147	4.0	3.0	5.3
+	"Maine"	"23"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1194147	Suppressed	Suppressed	Suppressed
+	"Maine"	"23"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1194147	Suppressed	Suppressed	Suppressed
+	"Maine"	"23"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	68	1205307	5.6	4.4	7.2
+	"Maine"	"23"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1205307	Suppressed	Suppressed	Suppressed
+	"Maine"	"23"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1205307	Suppressed	Suppressed	Suppressed
+	"Maryland"	"24"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	215	4929264	4.4	3.8	4.9
+	"Maryland"	"24"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4929264	Suppressed	Suppressed	Suppressed
+	"Maryland"	"24"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4929264	Suppressed	Suppressed	Suppressed
+	"Maryland"	"24"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	200	4935874	4.1	3.5	4.6
+	"Maryland"	"24"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4935874	Suppressed	Suppressed	Suppressed
+	"Maryland"	"24"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4935874	Suppressed	Suppressed	Suppressed
+	"Maryland"	"24"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	175	4947847	3.5	3.0	4.1
+	"Maryland"	"24"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4947847	Suppressed	Suppressed	Suppressed
+	"Maryland"	"24"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	4947847	0.0	0.0	0.0
+	"Maryland"	"24"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	183	5038713	3.6	3.1	4.2
+	"Maryland"	"24"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5038713	Suppressed	Suppressed	Suppressed
+	"Maryland"	"24"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5038713	Suppressed	Suppressed	Suppressed
+	"Maryland"	"24"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	182	5056176	3.6	3.1	4.1
+	"Maryland"	"24"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5056176	Suppressed	Suppressed	Suppressed
+	"Maryland"	"24"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	5056176	0.0	0.0	0.0
+	"Maryland"	"24"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	149	5064041	2.9	2.5	3.4
+	"Maryland"	"24"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	10	5064041	0.2	0.1	0.4
+	"Maryland"	"24"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5064041	Suppressed	Suppressed	Suppressed
+	"Maryland"	"24"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	147	5140981	2.9	2.4	3.3
+	"Maryland"	"24"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5140981	Suppressed	Suppressed	Suppressed
+	"Maryland"	"24"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5140981	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	354	5782836	6.1	5.5	6.8
+	"Massachusetts"	"25"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5782836	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5782836	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	299	5784106	5.2	4.6	5.8
+	"Massachusetts"	"25"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5784106	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5784106	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	276	5794525	4.8	4.2	5.3
+	"Massachusetts"	"25"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5794525	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5794525	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	244	5872211	4.2	3.6	4.7
+	"Massachusetts"	"25"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5872211	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5872211	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	234	5891178	4.0	3.5	4.5
+	"Massachusetts"	"25"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5891178	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	5891178	0.0	0.0	0.0
+	"Massachusetts"	"25"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	273	5909495	4.6	4.1	5.2
+	"Massachusetts"	"25"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5909495	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5909495	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	252	6032323	4.2	3.7	4.7
+	"Massachusetts"	"25"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	6032323	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6032323	Suppressed	Suppressed	Suppressed
+	"Michigan"	"26"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	443	8217682	5.4	4.9	5.9
+	"Michigan"	"26"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	15	8217682	0.2	0.1	0.3
+	"Michigan"	"26"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8217682	Suppressed	Suppressed	Suppressed
+	"Michigan"	"26"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	431	8223726	5.2	4.7	5.7
+	"Michigan"	"26"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	13	8223726	0.2	0.1	0.3
+	"Michigan"	"26"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8223726	Suppressed	Suppressed	Suppressed
+	"Michigan"	"26"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	383	8217567	4.7	4.2	5.1
+	"Michigan"	"26"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	11	8217567	0.1	0.1	0.2
+	"Michigan"	"26"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8217567	Suppressed	Suppressed	Suppressed
+	"Michigan"	"26"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	384	8287166	4.6	4.2	5.1
+	"Michigan"	"26"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	8287166	Suppressed	Suppressed	Suppressed
+	"Michigan"	"26"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8287166	Suppressed	Suppressed	Suppressed
+	"Michigan"	"26"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	355	8309215	4.3	3.8	4.7
+	"Michigan"	"26"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	13	8309215	0.2	0.1	0.3
+	"Michigan"	"26"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8309215	Suppressed	Suppressed	Suppressed
+	"Michigan"	"26"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	375	8316124	4.5	4.1	5.0
+	"Michigan"	"26"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	17	8316124	0.2	0.1	0.3
+	"Michigan"	"26"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8316124	Suppressed	Suppressed	Suppressed
+	"Michigan"	"26"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	347	8421780	4.1	3.7	4.6
+	"Michigan"	"26"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	15	8421780	0.2	0.1	0.3
+	"Michigan"	"26"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8421780	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	222	4524802	4.9	4.3	5.6
+	"Minnesota"	"27"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4524802	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4524802	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	248	4555417	5.4	4.8	6.1
+	"Minnesota"	"27"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4555417	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4555417	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	204	4578252	4.5	3.8	5.1
+	"Minnesota"	"27"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4578252	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4578252	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	213	4620871	4.6	4.0	5.2
+	"Minnesota"	"27"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4620871	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	4620871	0.0	0.0	0.0
+	"Minnesota"	"27"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	233	4653614	5.0	4.4	5.6
+	"Minnesota"	"27"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4653614	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4653614	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	241	4673627	5.2	4.5	5.8
+	"Minnesota"	"27"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4673627	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4673627	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	209	4732150	4.4	3.8	5.0
+	"Minnesota"	"27"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4732150	Suppressed	Suppressed	Suppressed
+	"Minnesota"	"27"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4732150	Suppressed	Suppressed	Suppressed
+	"Mississippi"	"28"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	75	2401159	3.1	2.5	3.9
+	"Mississippi"	"28"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2401159	Suppressed	Suppressed	Suppressed
+	"Mississippi"	"28"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2401159	Suppressed	Suppressed	Suppressed
+	"Mississippi"	"28"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	86	2397012	3.6	2.9	4.4
+	"Mississippi"	"28"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2397012	Suppressed	Suppressed	Suppressed
+	"Mississippi"	"28"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2397012	Suppressed	Suppressed	Suppressed
+	"Mississippi"	"28"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	89	2393835	3.7	3.0	4.6
+	"Mississippi"	"28"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2393835	Suppressed	Suppressed	Suppressed
+	"Mississippi"	"28"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2393835	0.0	0.0	0.0
+	"Mississippi"	"28"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	114	2381634	4.8	3.9	5.7
+	"Mississippi"	"28"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2381634	Suppressed	Suppressed	Suppressed
+	"Mississippi"	"28"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2381634	Suppressed	Suppressed	Suppressed
+	"Mississippi"	"28"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	72	2387573	3.0	2.4	3.8
+	"Mississippi"	"28"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2387573	Suppressed	Suppressed	Suppressed
+	"Mississippi"	"28"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2387573	0.0	0.0	0.0
+	"Mississippi"	"28"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	85	2389643	3.6	2.8	4.4
+	"Mississippi"	"28"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2389643	Suppressed	Suppressed	Suppressed
+	"Mississippi"	"28"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2389643	Suppressed	Suppressed	Suppressed
+	"Mississippi"	"28"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	93	2397973	3.9	3.1	4.8
+	"Mississippi"	"28"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2397973	Suppressed	Suppressed	Suppressed
+	"Mississippi"	"28"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2397973	Suppressed	Suppressed	Suppressed
+	"Missouri"	"29"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	300	4983852	6.0	5.3	6.7
+	"Missouri"	"29"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4983852	Suppressed	Suppressed	Suppressed
+	"Missouri"	"29"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4983852	Suppressed	Suppressed	Suppressed
+	"Missouri"	"29"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	268	4999808	5.4	4.7	6.0
+	"Missouri"	"29"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4999808	Suppressed	Suppressed	Suppressed
+	"Missouri"	"29"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4999808	Suppressed	Suppressed	Suppressed
+	"Missouri"	"29"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	256	5014833	5.1	4.5	5.7
+	"Missouri"	"29"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5014833	Suppressed	Suppressed	Suppressed
+	"Missouri"	"29"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5014833	Suppressed	Suppressed	Suppressed
+	"Missouri"	"29"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	268	5027062	5.3	4.7	6.0
+	"Missouri"	"29"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5027062	Suppressed	Suppressed	Suppressed
+	"Missouri"	"29"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5027062	Suppressed	Suppressed	Suppressed
+	"Missouri"	"29"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	218	5057135	4.3	3.7	4.9
+	"Missouri"	"29"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5057135	Suppressed	Suppressed	Suppressed
+	"Missouri"	"29"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5057135	Suppressed	Suppressed	Suppressed
+	"Missouri"	"29"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	234	5072680	4.6	4.0	5.2
+	"Missouri"	"29"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	10	5072680	0.2	0.1	0.4
+	"Missouri"	"29"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	10	5072680	0.2	0.1	0.4
+	"Missouri"	"29"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	234	5124557	4.6	4.0	5.2
+	"Missouri"	"29"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5124557	Suppressed	Suppressed	Suppressed
+	"Missouri"	"29"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	5124557	0.0	0.0	0.0
+	"Montana"	"30"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	54	870962	6.2	4.7	8.1
+	"Montana"	"30"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	870962	Suppressed	Suppressed	Suppressed
+	"Montana"	"30"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	870962	0.0	0.0	0.0
+	"Montana"	"30"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	68	878317	7.7	6.0	9.8
+	"Montana"	"30"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	878317	Suppressed	Suppressed	Suppressed
+	"Montana"	"30"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	878317	0.0	0.0	0.0
+	"Montana"	"30"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	61	889794	6.9	5.2	8.8
+	"Montana"	"30"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	889794	Suppressed	Suppressed	Suppressed
+	"Montana"	"30"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	889794	0.0	0.0	0.0
+	"Montana"	"30"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	65	910539	7.1	5.5	9.1
+	"Montana"	"30"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	910539	Suppressed	Suppressed	Suppressed
+	"Montana"	"30"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	910539	0.0	0.0	0.0
+	"Montana"	"30"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	65	931139	7.0	5.4	8.9
+	"Montana"	"30"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	0	931139	0.0	0.0	0.0
+	"Montana"	"30"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	931139	0.0	0.0	0.0
+	"Montana"	"30"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	60	940753	6.4	4.9	8.2
+	"Montana"	"30"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	940753	Suppressed	Suppressed	Suppressed
+	"Montana"	"30"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	940753	0.0	0.0	0.0
+	"Montana"	"30"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	53	947980	5.6	4.2	7.3
+	"Montana"	"30"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	947980	Suppressed	Suppressed	Suppressed
+	"Montana"	"30"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	947980	0.0	0.0	0.0
+	"Nebraska"	"31"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	76	1530478	5.0	3.9	6.2
+	"Nebraska"	"31"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1530478	Suppressed	Suppressed	Suppressed
+	"Nebraska"	"31"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1530478	0.0	0.0	0.0
+	"Nebraska"	"31"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	90	1537232	5.9	4.7	7.2
+	"Nebraska"	"31"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1537232	0.0	0.0	0.0
+	"Nebraska"	"31"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1537232	Suppressed	Suppressed	Suppressed
+	"Nebraska"	"31"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	84	1542131	5.4	4.3	6.7
+	"Nebraska"	"31"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1542131	Suppressed	Suppressed	Suppressed
+	"Nebraska"	"31"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1542131	Suppressed	Suppressed	Suppressed
+	"Nebraska"	"31"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	85	1563956	5.4	4.3	6.7
+	"Nebraska"	"31"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1563956	Suppressed	Suppressed	Suppressed
+	"Nebraska"	"31"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1563956	0.0	0.0	0.0
+	"Nebraska"	"31"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	74	1574585	4.7	3.7	5.9
+	"Nebraska"	"31"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1574585	Suppressed	Suppressed	Suppressed
+	"Nebraska"	"31"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1574585	Suppressed	Suppressed	Suppressed
+	"Nebraska"	"31"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	76	1583251	4.8	3.8	6.0
+	"Nebraska"	"31"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1583251	Suppressed	Suppressed	Suppressed
+	"Nebraska"	"31"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1583251	0.0	0.0	0.0
+	"Nebraska"	"31"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	80	1608555	5.0	3.9	6.2
+	"Nebraska"	"31"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1608555	0.0	0.0	0.0
+	"Nebraska"	"31"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1608555	Suppressed	Suppressed	Suppressed
+	"Nevada"	"32"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	137	2459768	5.6	4.6	6.5
+	"Nevada"	"32"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2459768	Suppressed	Suppressed	Suppressed
+	"Nevada"	"32"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2459768	0.0	0.0	0.0
+	"Nevada"	"32"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	142	2502515	5.7	4.7	6.6
+	"Nevada"	"32"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2502515	Suppressed	Suppressed	Suppressed
+	"Nevada"	"32"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2502515	Suppressed	Suppressed	Suppressed
+	"Nevada"	"32"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	115	2557685	4.5	3.7	5.3
+	"Nevada"	"32"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2557685	Suppressed	Suppressed	Suppressed
+	"Nevada"	"32"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2557685	0.0	0.0	0.0
+	"Nevada"	"32"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	122	2566596	4.8	3.9	5.6
+	"Nevada"	"32"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2566596	Suppressed	Suppressed	Suppressed
+	"Nevada"	"32"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2566596	Suppressed	Suppressed	Suppressed
+	"Nevada"	"32"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	122	2611473	4.7	3.8	5.5
+	"Nevada"	"32"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2611473	Suppressed	Suppressed	Suppressed
+	"Nevada"	"32"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2611473	0.0	0.0	0.0
+	"Nevada"	"32"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	137	2634484	5.2	4.3	6.1
+	"Nevada"	"32"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	10	2634484	0.4	0.2	0.7
+	"Nevada"	"32"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2634484	0.0	0.0	0.0
+	"Nevada"	"32"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	136	2706779	5.0	4.2	5.9
+	"Nevada"	"32"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2706779	Suppressed	Suppressed	Suppressed
+	"Nevada"	"32"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2706779	0.0	0.0	0.0
+	"New Hampshire"	"33"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	78	1146964	6.8	5.4	8.5
+	"New Hampshire"	"33"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1146964	Suppressed	Suppressed	Suppressed
+	"New Hampshire"	"33"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1146964	0.0	0.0	0.0
+	"New Hampshire"	"33"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	67	1152641	5.8	4.5	7.4
+	"New Hampshire"	"33"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1152641	Suppressed	Suppressed	Suppressed
+	"New Hampshire"	"33"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1152641	0.0	0.0	0.0
+	"New Hampshire"	"33"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	66	1160912	5.7	4.4	7.2
+	"New Hampshire"	"33"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1160912	0.0	0.0	0.0
+	"New Hampshire"	"33"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1160912	0.0	0.0	0.0
+	"New Hampshire"	"33"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	55	1181460	4.7	3.5	6.1
+	"New Hampshire"	"33"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1181460	Suppressed	Suppressed	Suppressed
+	"New Hampshire"	"33"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1181460	0.0	0.0	0.0
+	"New Hampshire"	"33"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	58	1190452	4.9	3.7	6.3
+	"New Hampshire"	"33"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1190452	0.0	0.0	0.0
+	"New Hampshire"	"33"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1190452	0.0	0.0	0.0
+	"New Hampshire"	"33"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	50	1198480	4.2	3.1	5.5
+	"New Hampshire"	"33"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1198480	Suppressed	Suppressed	Suppressed
+	"New Hampshire"	"33"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1198480	0.0	0.0	0.0
+	"New Hampshire"	"33"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	53	1207610	4.4	3.3	5.7
+	"New Hampshire"	"33"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1207610	0.0	0.0	0.0
+	"New Hampshire"	"33"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1207610	0.0	0.0	0.0
+	"New Jersey"	"34"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	340	7297716	4.7	4.2	5.2
+	"New Jersey"	"34"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	7297716	Suppressed	Suppressed	Suppressed
+	"New Jersey"	"34"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	7297716	Suppressed	Suppressed	Suppressed
+	"New Jersey"	"34"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	337	7283533	4.6	4.1	5.1
+	"New Jersey"	"34"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	7283533	Suppressed	Suppressed	Suppressed
+	"New Jersey"	"34"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	7283533	0.0	0.0	0.0
+	"New Jersey"	"34"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	267	7287236	3.7	3.2	4.1
+	"New Jersey"	"34"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	7287236	Suppressed	Suppressed	Suppressed
+	"New Jersey"	"34"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	7287236	0.0	0.0	0.0
+	"New Jersey"	"34"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	255	7606177	3.4	2.9	3.8
+	"New Jersey"	"34"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	7606177	Suppressed	Suppressed	Suppressed
+	"New Jersey"	"34"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	7606177	Suppressed	Suppressed	Suppressed
+	"New Jersey"	"34"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	298	7626547	3.9	3.5	4.4
+	"New Jersey"	"34"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	7626547	Suppressed	Suppressed	Suppressed
+	"New Jersey"	"34"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	7626547	Suppressed	Suppressed	Suppressed
+	"New Jersey"	"34"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	264	7646498	3.5	3.0	3.9
+	"New Jersey"	"34"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	7646498	Suppressed	Suppressed	Suppressed
+	"New Jersey"	"34"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	7646498	Suppressed	Suppressed	Suppressed
+	"New Jersey"	"34"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	246	7826052	3.1	2.8	3.5
+	"New Jersey"	"34"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	7826052	Suppressed	Suppressed	Suppressed
+	"New Jersey"	"34"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	7826052	Suppressed	Suppressed	Suppressed
+	"New Mexico"	"35"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	141	1696419	8.3	6.9	9.7
+	"New Mexico"	"35"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1696419	Suppressed	Suppressed	Suppressed
+	"New Mexico"	"35"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1696419	0.0	0.0	0.0
+	"New Mexico"	"35"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	148	1703575	8.7	7.3	10.1
+	"New Mexico"	"35"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1703575	Suppressed	Suppressed	Suppressed
+	"New Mexico"	"35"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1703575	0.0	0.0	0.0
+	"New Mexico"	"35"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	130	1717291	7.6	6.3	8.9
+	"New Mexico"	"35"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1717291	Suppressed	Suppressed	Suppressed
+	"New Mexico"	"35"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1717291	Suppressed	Suppressed	Suppressed
+	"New Mexico"	"35"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	136	1728712	7.9	6.5	9.2
+	"New Mexico"	"35"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1728712	Suppressed	Suppressed	Suppressed
+	"New Mexico"	"35"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1728712	0.0	0.0	0.0
+	"New Mexico"	"35"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	121	1740005	7.0	5.7	8.2
+	"New Mexico"	"35"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1740005	Suppressed	Suppressed	Suppressed
+	"New Mexico"	"35"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1740005	0.0	0.0	0.0
+	"New Mexico"	"35"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	138	1750224	7.9	6.6	9.2
+	"New Mexico"	"35"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1750224	Suppressed	Suppressed	Suppressed
+	"New Mexico"	"35"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1750224	Suppressed	Suppressed	Suppressed
+	"New Mexico"	"35"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	135	1769604	7.6	6.3	8.9
+	"New Mexico"	"35"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1769604	Suppressed	Suppressed	Suppressed
+	"New Mexico"	"35"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1769604	Suppressed	Suppressed	Suppressed
+	"New York"	"36"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	640	16164571	4.0	3.7	4.3
+	"New York"	"36"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	19	16164571	0.1	0.1	0.2
+	"New York"	"36"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	16164571	Suppressed	Suppressed	Suppressed
+	"New York"	"36"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	661	16107964	4.1	3.8	4.4
+	"New York"	"36"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	15	16107964	0.1	0.1	0.2
+	"New York"	"36"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	16107964	Suppressed	Suppressed	Suppressed
+	"New York"	"36"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	581	16023789	3.6	3.3	3.9
+	"New York"	"36"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	13	16023789	0.1	0.0	0.1
+	"New York"	"36"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	16023789	Suppressed	Suppressed	Suppressed
+	"New York"	"36"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	567	16433443	3.5	3.2	3.7
+	"New York"	"36"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	25	16433443	0.2	0.1	0.2
+	"New York"	"36"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	16433443	Suppressed	Suppressed	Suppressed
+	"New York"	"36"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	584	16383852	3.6	3.3	3.9
+	"New York"	"36"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	13	16383852	0.1	0.0	0.1
+	"New York"	"36"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	16383852	Suppressed	Suppressed	Suppressed
+	"New York"	"36"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	601	16311906	3.7	3.4	4.0
+	"New York"	"36"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	23	16311906	0.1	0.1	0.2
+	"New York"	"36"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	16311906	Suppressed	Suppressed	Suppressed
+	"New York"	"36"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	560	16589771	3.4	3.1	3.7
+	"New York"	"36"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	19	16589771	0.1	0.1	0.2
+	"New York"	"36"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	16589771	Suppressed	Suppressed	Suppressed
+	"North Carolina"	"37"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	330	8481190	3.9	3.5	4.3
+	"North Carolina"	"37"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	16	8481190	0.2	0.1	0.3
+	"North Carolina"	"37"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8481190	Suppressed	Suppressed	Suppressed
+	"North Carolina"	"37"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	317	8583842	3.7	3.3	4.1
+	"North Carolina"	"37"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	13	8583842	0.2	0.1	0.3
+	"North Carolina"	"37"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8583842	Suppressed	Suppressed	Suppressed
+	"North Carolina"	"37"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	304	8695133	3.5	3.1	3.9
+	"North Carolina"	"37"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	8695133	Suppressed	Suppressed	Suppressed
+	"North Carolina"	"37"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8695133	Suppressed	Suppressed	Suppressed
+	"North Carolina"	"37"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	307	8659366	3.5	3.1	3.9
+	"North Carolina"	"37"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	12	8659366	0.1	0.1	0.2
+	"North Carolina"	"37"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8659366	Suppressed	Suppressed	Suppressed
+	"North Carolina"	"37"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	323	8818384	3.7	3.3	4.1
+	"North Carolina"	"37"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	8818384	Suppressed	Suppressed	Suppressed
+	"North Carolina"	"37"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8818384	Suppressed	Suppressed	Suppressed
+	"North Carolina"	"37"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	322	8927486	3.6	3.2	4.0
+	"North Carolina"	"37"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	11	8927486	0.1	0.1	0.2
+	"North Carolina"	"37"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8927486	Suppressed	Suppressed	Suppressed
+	"North Carolina"	"37"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	313	9118142	3.4	3.1	3.8
+	"North Carolina"	"37"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	11	9118142	0.1	0.1	0.2
+	"North Carolina"	"37"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	9118142	Suppressed	Suppressed	Suppressed
+	"North Dakota"	"38"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	46	607528	7.6	5.5	10.1
+	"North Dakota"	"38"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	607528	Suppressed	Suppressed	Suppressed
+	"North Dakota"	"38"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	607528	0.0	0.0	0.0
+	"North Dakota"	"38"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	34	608466	5.6	3.9	7.8
+	"North Dakota"	"38"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	608466	Suppressed	Suppressed	Suppressed
+	"North Dakota"	"38"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	608466	0.0	0.0	0.0
+	"North Dakota"	"38"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	36	611068	5.9	4.1	8.2
+	"North Dakota"	"38"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	611068	Suppressed	Suppressed	Suppressed
+	"North Dakota"	"38"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	611068	0.0	0.0	0.0
+	"North Dakota"	"38"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	34	618709	5.5	3.8	7.7
+	"North Dakota"	"38"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	0	618709	0.0	0.0	0.0
+	"North Dakota"	"38"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	618709	0.0	0.0	0.0
+	"North Dakota"	"38"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	40	626178	6.4	4.6	8.7
+	"North Dakota"	"38"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	0	626178	0.0	0.0	0.0
+	"North Dakota"	"38"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	626178	0.0	0.0	0.0
+	"North Dakota"	"38"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	33	630035	5.2	3.6	7.4
+	"North Dakota"	"38"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	0	630035	0.0	0.0	0.0
+	"North Dakota"	"38"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	630035	0.0	0.0	0.0
+	"North Dakota"	"38"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	32	642597	5.0	3.4	7.0
+	"North Dakota"	"38"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	642597	Suppressed	Suppressed	Suppressed
+	"North Dakota"	"38"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	642597	0.0	0.0	0.0
+	"Ohio"	"39"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	511	9548718	5.4	4.9	5.8
+	"Ohio"	"39"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	19	9548718	0.2	0.1	0.3
+	"Ohio"	"39"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	9548718	Suppressed	Suppressed	Suppressed
+	"Ohio"	"39"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	485	9557993	5.1	4.6	5.5
+	"Ohio"	"39"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	14	9557993	0.1	0.1	0.2
+	"Ohio"	"39"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	9557993	Suppressed	Suppressed	Suppressed
+	"Ohio"	"39"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	420	9570376	4.4	4.0	4.8
+	"Ohio"	"39"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	14	9570376	0.1	0.1	0.2
+	"Ohio"	"39"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	9570376	0.0	0.0	0.0
+	"Ohio"	"39"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	442	9636311	4.6	4.2	5.0
+	"Ohio"	"39"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	11	9636311	0.1	0.1	0.2
+	"Ohio"	"39"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	9636311	Suppressed	Suppressed	Suppressed
+	"Ohio"	"39"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	425	9653126	4.4	4.0	4.8
+	"Ohio"	"39"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	9653126	Suppressed	Suppressed	Suppressed
+	"Ohio"	"39"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	9653126	0.0	0.0	0.0
+	"Ohio"	"39"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	409	9677200	4.2	3.8	4.6
+	"Ohio"	"39"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	15	9677200	0.2	0.1	0.3
+	"Ohio"	"39"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	9677200	Suppressed	Suppressed	Suppressed
+	"Ohio"	"39"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	402	9778825	4.1	3.7	4.5
+	"Ohio"	"39"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	12	9778825	0.1	0.1	0.2
+	"Ohio"	"39"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	9778825	Suppressed	Suppressed	Suppressed
+	"Oklahoma"	"40"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	218	3144743	6.9	6.0	7.9
+	"Oklahoma"	"40"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3144743	Suppressed	Suppressed	Suppressed
+	"Oklahoma"	"40"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3144743	Suppressed	Suppressed	Suppressed
+	"Oklahoma"	"40"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	224	3163390	7.1	6.2	8.0
+	"Oklahoma"	"40"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3163390	Suppressed	Suppressed	Suppressed
+	"Oklahoma"	"40"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3163390	0.0	0.0	0.0
+	"Oklahoma"	"40"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	222	3187209	7.0	6.0	7.9
+	"Oklahoma"	"40"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3187209	Suppressed	Suppressed	Suppressed
+	"Oklahoma"	"40"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3187209	0.0	0.0	0.0
+	"Oklahoma"	"40"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	202	3190528	6.3	5.5	7.2
+	"Oklahoma"	"40"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3190528	Suppressed	Suppressed	Suppressed
+	"Oklahoma"	"40"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3190528	Suppressed	Suppressed	Suppressed
+	"Oklahoma"	"40"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	224	3233896	6.9	6.0	7.8
+	"Oklahoma"	"40"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3233896	Suppressed	Suppressed	Suppressed
+	"Oklahoma"	"40"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3233896	0.0	0.0	0.0
+	"Oklahoma"	"40"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	197	3261326	6.0	5.2	6.9
+	"Oklahoma"	"40"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3261326	Suppressed	Suppressed	Suppressed
+	"Oklahoma"	"40"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3261326	Suppressed	Suppressed	Suppressed
+	"Oklahoma"	"40"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	197	3305126	6.0	5.1	6.8
+	"Oklahoma"	"40"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3305126	Suppressed	Suppressed	Suppressed
+	"Oklahoma"	"40"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3305126	Suppressed	Suppressed	Suppressed
+	"Oregon"	"41"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	217	3464710	6.3	5.4	7.1
+	"Oregon"	"41"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3464710	Suppressed	Suppressed	Suppressed
+	"Oregon"	"41"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3464710	Suppressed	Suppressed	Suppressed
+	"Oregon"	"41"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	225	3498390	6.4	5.6	7.3
+	"Oregon"	"41"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3498390	Suppressed	Suppressed	Suppressed
+	"Oregon"	"41"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3498390	0.0	0.0	0.0
+	"Oregon"	"41"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	189	3528941	5.4	4.6	6.1
+	"Oregon"	"41"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3528941	Suppressed	Suppressed	Suppressed
+	"Oregon"	"41"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3528941	Suppressed	Suppressed	Suppressed
+	"Oregon"	"41"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	193	3537769	5.5	4.7	6.2
+	"Oregon"	"41"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3537769	Suppressed	Suppressed	Suppressed
+	"Oregon"	"41"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3537769	Suppressed	Suppressed	Suppressed
+	"Oregon"	"41"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	202	3555514	5.7	4.9	6.5
+	"Oregon"	"41"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3555514	Suppressed	Suppressed	Suppressed
+	"Oregon"	"41"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3555514	0.0	0.0	0.0
+	"Oregon"	"41"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	200	3557754	5.6	4.8	6.4
+	"Oregon"	"41"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3557754	Suppressed	Suppressed	Suppressed
+	"Oregon"	"41"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	3557754	0.0	0.0	0.0
+	"Oregon"	"41"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	184	3603456	5.1	4.4	5.8
+	"Oregon"	"41"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3603456	Suppressed	Suppressed	Suppressed
+	"Oregon"	"41"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3603456	Suppressed	Suppressed	Suppressed
+	"Pennsylvania"	"42"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	545	10623216	5.1	4.7	5.6
+	"Pennsylvania"	"42"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	11	10623216	0.1	0.1	0.2
+	"Pennsylvania"	"42"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10623216	Suppressed	Suppressed	Suppressed
+	"Pennsylvania"	"42"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	518	10628425	4.9	4.5	5.3
+	"Pennsylvania"	"42"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	13	10628425	0.1	0.1	0.2
+	"Pennsylvania"	"42"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10628425	Suppressed	Suppressed	Suppressed
+	"Pennsylvania"	"42"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	439	10623338	4.1	3.7	4.5
+	"Pennsylvania"	"42"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	10623338	Suppressed	Suppressed	Suppressed
+	"Pennsylvania"	"42"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10623338	Suppressed	Suppressed	Suppressed
+	"Pennsylvania"	"42"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	472	10769576	4.4	4.0	4.8
+	"Pennsylvania"	"42"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	16	10769576	0.1	0.1	0.2
+	"Pennsylvania"	"42"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10769576	Suppressed	Suppressed	Suppressed
+	"Pennsylvania"	"42"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	475	10821808	4.4	4.0	4.8
+	"Pennsylvania"	"42"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	10821808	Suppressed	Suppressed	Suppressed
+	"Pennsylvania"	"42"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10821808	Suppressed	Suppressed	Suppressed
+	"Pennsylvania"	"42"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	463	10815553	4.3	3.9	4.7
+	"Pennsylvania"	"42"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	14	10815553	0.1	0.1	0.2
+	"Pennsylvania"	"42"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	10815553	0.0	0.0	0.0
+	"Pennsylvania"	"42"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	381	10933930	3.5	3.1	3.8
+	"Pennsylvania"	"42"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	10	10933930	0.1	0.0	0.2
+	"Pennsylvania"	"42"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10933930	Suppressed	Suppressed	Suppressed
+	"Rhode Island"	"44"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	45	889241	5.1	3.7	6.8
+	"Rhode Island"	"44"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	0	889241	0.0	0.0	0.0
+	"Rhode Island"	"44"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	889241	Suppressed	Suppressed	Suppressed
+	"Rhode Island"	"44"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	42	891972	4.7	3.4	6.4
+	"Rhode Island"	"44"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	891972	Suppressed	Suppressed	Suppressed
+	"Rhode Island"	"44"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	891972	Suppressed	Suppressed	Suppressed
+	"Rhode Island"	"44"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	33	891559	3.7	2.5	5.2
+	"Rhode Island"	"44"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	891559	Suppressed	Suppressed	Suppressed
+	"Rhode Island"	"44"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	891559	0.0	0.0	0.0
+	"Rhode Island"	"44"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	40	925054	4.3	3.1	5.9
+	"Rhode Island"	"44"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	925054	Suppressed	Suppressed	Suppressed
+	"Rhode Island"	"44"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	925054	0.0	0.0	0.0
+	"Rhode Island"	"44"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	59	927364	6.4	4.8	8.2
+	"Rhode Island"	"44"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	0	927364	0.0	0.0	0.0
+	"Rhode Island"	"44"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	927364	0.0	0.0	0.0
+	"Rhode Island"	"44"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	43	930007	4.6	3.3	6.2
+	"Rhode Island"	"44"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	930007	Suppressed	Suppressed	Suppressed
+	"Rhode Island"	"44"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	930007	0.0	0.0	0.0
+	"Rhode Island"	"44"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	33	945521	3.5	2.4	4.9
+	"Rhode Island"	"44"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	0	945521	0.0	0.0	0.0
+	"Rhode Island"	"44"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	945521	0.0	0.0	0.0
+	"South Carolina"	"45"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	183	4165927	4.4	3.8	5.0
+	"South Carolina"	"45"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	10	4165927	0.2	0.1	0.4
+	"South Carolina"	"45"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	4165927	0.0	0.0	0.0
+	"South Carolina"	"45"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	189	4225534	4.5	3.8	5.1
+	"South Carolina"	"45"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	10	4225534	0.2	0.1	0.4
+	"South Carolina"	"45"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4225534	Suppressed	Suppressed	Suppressed
+	"South Carolina"	"45"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	178	4290605	4.1	3.5	4.8
+	"South Carolina"	"45"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4290605	Suppressed	Suppressed	Suppressed
+	"South Carolina"	"45"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4290605	Suppressed	Suppressed	Suppressed
+	"South Carolina"	"45"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	145	4270540	3.4	2.8	3.9
+	"South Carolina"	"45"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4270540	Suppressed	Suppressed	Suppressed
+	"South Carolina"	"45"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4270540	Suppressed	Suppressed	Suppressed
+	"South Carolina"	"45"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	147	4366159	3.4	2.8	3.9
+	"South Carolina"	"45"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	11	4366159	0.3	0.1	0.5
+	"South Carolina"	"45"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4366159	Suppressed	Suppressed	Suppressed
+	"South Carolina"	"45"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	147	4440896	3.3	2.8	3.8
+	"South Carolina"	"45"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4440896	Suppressed	Suppressed	Suppressed
+	"South Carolina"	"45"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4440896	Suppressed	Suppressed	Suppressed
+	"South Carolina"	"45"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	151	4541346	3.3	2.8	3.9
+	"South Carolina"	"45"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4541346	Suppressed	Suppressed	Suppressed
+	"South Carolina"	"45"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4541346	Suppressed	Suppressed	Suppressed
+	"South Dakota"	"46"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	51	698459	7.3	5.4	9.6
+	"South Dakota"	"46"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	698459	Suppressed	Suppressed	Suppressed
+	"South Dakota"	"46"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	698459	0.0	0.0	0.0
+	"South Dakota"	"46"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	57	701826	8.1	6.2	10.5
+	"South Dakota"	"46"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	701826	Suppressed	Suppressed	Suppressed
+	"South Dakota"	"46"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	701826	Suppressed	Suppressed	Suppressed
+	"South Dakota"	"46"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	73	709581	10.3	8.1	12.9
+	"South Dakota"	"46"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	709581	Suppressed	Suppressed	Suppressed
+	"South Dakota"	"46"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	709581	Suppressed	Suppressed	Suppressed
+	"South Dakota"	"46"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	71	711961	10.0	7.8	12.6
+	"South Dakota"	"46"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	0	711961	0.0	0.0	0.0
+	"South Dakota"	"46"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	711961	0.0	0.0	0.0
+	"South Dakota"	"46"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	65	728043	8.9	6.9	11.4
+	"South Dakota"	"46"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	728043	Suppressed	Suppressed	Suppressed
+	"South Dakota"	"46"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	728043	0.0	0.0	0.0
+	"South Dakota"	"46"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	59	736337	8.0	6.1	10.3
+	"South Dakota"	"46"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	0	736337	0.0	0.0	0.0
+	"South Dakota"	"46"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	736337	0.0	0.0	0.0
+	"South Dakota"	"46"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	49	743048	6.6	4.9	8.7
+	"South Dakota"	"46"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	743048	Suppressed	Suppressed	Suppressed
+	"South Dakota"	"46"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	743048	0.0	0.0	0.0
+	"Tennessee"	"47"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	276	5520982	5.0	4.4	5.6
+	"Tennessee"	"47"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	18	5520982	0.3	0.2	0.5
+	"Tennessee"	"47"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5520982	Suppressed	Suppressed	Suppressed
+	"Tennessee"	"47"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	274	5575888	4.9	4.3	5.5
+	"Tennessee"	"47"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	14	5575888	0.3	0.1	0.4
+	"Tennessee"	"47"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5575888	Suppressed	Suppressed	Suppressed
+	"Tennessee"	"47"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	264	5631846	4.7	4.1	5.3
+	"Tennessee"	"47"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	10	5631846	0.2	0.1	0.3
+	"Tennessee"	"47"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5631846	Suppressed	Suppressed	Suppressed
+	"Tennessee"	"47"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	225	5704364	3.9	3.4	4.5
+	"Tennessee"	"47"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	11	5704364	0.2	0.1	0.3
+	"Tennessee"	"47"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5704364	Suppressed	Suppressed	Suppressed
+	"Tennessee"	"47"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	231	5786566	4.0	3.5	4.5
+	"Tennessee"	"47"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	13	5786566	0.2	0.1	0.4
+	"Tennessee"	"47"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5786566	Suppressed	Suppressed	Suppressed
+	"Tennessee"	"47"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	223	5840482	3.8	3.3	4.3
+	"Tennessee"	"47"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5840482	Suppressed	Suppressed	Suppressed
+	"Tennessee"	"47"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5840482	Suppressed	Suppressed	Suppressed
+	"Tennessee"	"47"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	222	5932401	3.7	3.2	4.2
+	"Tennessee"	"47"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	10	5932401	0.2	0.1	0.3
+	"Tennessee"	"47"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5932401	Suppressed	Suppressed	Suppressed
+	"Texas"	"48"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1022	22538553	4.5	4.3	4.8
+	"Texas"	"48"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	45	22538553	0.2	0.1	0.3
+	"Texas"	"48"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	22538553	Suppressed	Suppressed	Suppressed
+	"Texas"	"48"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1012	22838288	4.4	4.2	4.7
+	"Texas"	"48"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	35	22838288	0.2	0.1	0.2
+	"Texas"	"48"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	22838288	Suppressed	Suppressed	Suppressed
+	"Texas"	"48"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	992	23185459	4.3	4.0	4.5
+	"Texas"	"48"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	25	23185459	0.1	0.1	0.2
+	"Texas"	"48"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	23185459	Suppressed	Suppressed	Suppressed
+	"Texas"	"48"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1042	23352641	4.5	4.2	4.7
+	"Texas"	"48"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	30	23352641	0.1	0.1	0.2
+	"Texas"	"48"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	23352641	Suppressed	Suppressed	Suppressed
+	"Texas"	"48"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1018	23890769	4.3	4.0	4.5
+	"Texas"	"48"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	33	23890769	0.1	0.1	0.2
+	"Texas"	"48"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	23890769	Suppressed	Suppressed	Suppressed
+	"Texas"	"48"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1007	24299854	4.1	3.9	4.4
+	"Texas"	"48"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	52	24299854	0.2	0.2	0.3
+	"Texas"	"48"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	24299854	Suppressed	Suppressed	Suppressed
+	"Texas"	"48"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	988	25005748	4.0	3.7	4.2
+	"Texas"	"48"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	33	25005748	0.1	0.1	0.2
+	"Texas"	"48"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	25005748	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	174	2382224	7.3	6.2	8.4
+	"Utah"	"49"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2382224	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2382224	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	182	2431194	7.5	6.4	8.6
+	"Utah"	"49"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2431194	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2431194	0.0	0.0	0.0
+	"Utah"	"49"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	152	2480274	6.1	5.2	7.1
+	"Utah"	"49"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2480274	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2480274	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	145	2558992	5.7	4.7	6.6
+	"Utah"	"49"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2558992	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2558992	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	157	2618598	6.0	5.1	6.9
+	"Utah"	"49"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2618598	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2618598	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	132	2659598	5.0	4.1	5.8
+	"Utah"	"49"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2659598	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	2659598	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	129	2748000	4.7	3.9	5.5
+	"Utah"	"49"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	2748000	Suppressed	Suppressed	Suppressed
+	"Utah"	"49"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	2748000	0.0	0.0	0.0
+	"Vermont"	"50"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	30	531585	5.6	3.8	8.1
+	"Vermont"	"50"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	0	531585	0.0	0.0	0.0
+	"Vermont"	"50"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	531585	Suppressed	Suppressed	Suppressed
+	"Vermont"	"50"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	30	530790	5.7	3.8	8.1
+	"Vermont"	"50"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	0	530790	0.0	0.0	0.0
+	"Vermont"	"50"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	530790	0.0	0.0	0.0
+	"Vermont"	"50"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	27	531024	5.1	3.4	7.4
+	"Vermont"	"50"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	0	531024	0.0	0.0	0.0
+	"Vermont"	"50"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	531024	0.0	0.0	0.0
+	"Vermont"	"50"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	33	550518	6.0	4.1	8.4
+	"Vermont"	"50"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	0	550518	0.0	0.0	0.0
+	"Vermont"	"50"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	550518	0.0	0.0	0.0
+	"Vermont"	"50"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	22	554089	4.0	2.5	6.0
+	"Vermont"	"50"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	0	554089	0.0	0.0	0.0
+	"Vermont"	"50"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	554089	0.0	0.0	0.0
+	"Vermont"	"50"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	26	554916	4.7	3.1	6.9
+	"Vermont"	"50"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	554916	Suppressed	Suppressed	Suppressed
+	"Vermont"	"50"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	554916	0.0	0.0	0.0
+	"Vermont"	"50"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	26	557456	4.7	3.0	6.8
+	"Vermont"	"50"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	557456	Suppressed	Suppressed	Suppressed
+	"Vermont"	"50"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	557456	0.0	0.0	0.0
+	"Virginia"	"51"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	297	6963942	4.3	3.8	4.7
+	"Virginia"	"51"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	11	6963942	0.2	0.1	0.3
+	"Virginia"	"51"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	6963942	0.0	0.0	0.0
+	"Virginia"	"51"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	262	6989921	3.7	3.3	4.2
+	"Virginia"	"51"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	6989921	Suppressed	Suppressed	Suppressed
+	"Virginia"	"51"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6989921	Suppressed	Suppressed	Suppressed
+	"Virginia"	"51"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	286	7041875	4.1	3.6	4.5
+	"Virginia"	"51"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	7041875	Suppressed	Suppressed	Suppressed
+	"Virginia"	"51"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	7041875	Suppressed	Suppressed	Suppressed
+	"Virginia"	"51"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	251	7086705	3.5	3.1	4.0
+	"Virginia"	"51"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	7086705	Suppressed	Suppressed	Suppressed
+	"Virginia"	"51"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	7086705	Suppressed	Suppressed	Suppressed
+	"Virginia"	"51"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	273	7147186	3.8	3.4	4.3
+	"Virginia"	"51"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	7147186	Suppressed	Suppressed	Suppressed
+	"Virginia"	"51"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	7147186	Suppressed	Suppressed	Suppressed
+	"Virginia"	"51"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	266	7173333	3.7	3.3	4.2
+	"Virginia"	"51"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	7173333	Suppressed	Suppressed	Suppressed
+	"Virginia"	"51"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	7173333	Suppressed	Suppressed	Suppressed
+	"Virginia"	"51"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	232	7268413	3.2	2.8	3.6
+	"Virginia"	"51"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	7268413	Suppressed	Suppressed	Suppressed
+	"Virginia"	"51"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	7268413	Suppressed	Suppressed	Suppressed
+	"Washington"	"53"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	309	6143172	5.0	4.5	5.6
+	"Washington"	"53"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	6143172	Suppressed	Suppressed	Suppressed
+	"Washington"	"53"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6143172	Suppressed	Suppressed	Suppressed
+	"Washington"	"53"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	317	6222646	5.1	4.5	5.7
+	"Washington"	"53"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	6222646	Suppressed	Suppressed	Suppressed
+	"Washington"	"53"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6222646	Suppressed	Suppressed	Suppressed
+	"Washington"	"53"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	299	6301212	4.7	4.2	5.3
+	"Washington"	"53"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	15	6301212	0.2	0.1	0.4
+	"Washington"	"53"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6301212	Suppressed	Suppressed	Suppressed
+	"Washington"	"53"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	311	6346227	4.9	4.4	5.4
+	"Washington"	"53"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	6346227	Suppressed	Suppressed	Suppressed
+	"Washington"	"53"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6346227	Suppressed	Suppressed	Suppressed
+	"Washington"	"53"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	272	6424411	4.2	3.7	4.7
+	"Washington"	"53"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	10	6424411	0.2	0.1	0.3
+	"Washington"	"53"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6424411	Suppressed	Suppressed	Suppressed
+	"Washington"	"53"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	265	6457985	4.1	3.6	4.6
+	"Washington"	"53"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	13	6457985	0.2	0.1	0.3
+	"Washington"	"53"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	6457985	0.0	0.0	0.0
+	"Washington"	"53"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	246	6600526	3.7	3.3	4.2
+	"Washington"	"53"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	6600526	Suppressed	Suppressed	Suppressed
+	"Washington"	"53"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6600526	Suppressed	Suppressed	Suppressed
+	"West Virginia"	"54"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	83	1505144	5.5	4.4	6.8
+	"West Virginia"	"54"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1505144	0.0	0.0	0.0
+	"West Virginia"	"54"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1505144	0.0	0.0	0.0
+	"West Virginia"	"54"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	82	1495650	5.5	4.4	6.8
+	"West Virginia"	"54"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1495650	Suppressed	Suppressed	Suppressed
+	"West Virginia"	"54"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1495650	Suppressed	Suppressed	Suppressed
+	"West Virginia"	"54"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	78	1491257	5.2	4.1	6.5
+	"West Virginia"	"54"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	0	1491257	0.0	0.0	0.0
+	"West Virginia"	"54"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1491257	Suppressed	Suppressed	Suppressed
+	"West Virginia"	"54"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	90	1488636	6.0	4.9	7.4
+	"West Virginia"	"54"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1488636	Suppressed	Suppressed	Suppressed
+	"West Virginia"	"54"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1488636	0.0	0.0	0.0
+	"West Virginia"	"54"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	66	1487660	4.4	3.4	5.6
+	"West Virginia"	"54"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1487660	Suppressed	Suppressed	Suppressed
+	"West Virginia"	"54"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1487660	Suppressed	Suppressed	Suppressed
+	"West Virginia"	"54"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	67	1483970	4.5	3.5	5.7
+	"West Virginia"	"54"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1483970	Suppressed	Suppressed	Suppressed
+	"West Virginia"	"54"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	1483970	Suppressed	Suppressed	Suppressed
+	"West Virginia"	"54"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	66	1487608	4.4	3.4	5.6
+	"West Virginia"	"54"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	1487608	Suppressed	Suppressed	Suppressed
+	"West Virginia"	"54"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	1487608	0.0	0.0	0.0
+	"Wisconsin"	"55"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	271	4760039	5.7	5.0	6.4
+	"Wisconsin"	"55"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4760039	Suppressed	Suppressed	Suppressed
+	"Wisconsin"	"55"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	4760039	0.0	0.0	0.0
+	"Wisconsin"	"55"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	223	4777907	4.7	4.1	5.3
+	"Wisconsin"	"55"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4777907	Suppressed	Suppressed	Suppressed
+	"Wisconsin"	"55"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	4777907	0.0	0.0	0.0
+	"Wisconsin"	"55"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	241	4796467	5.0	4.4	5.7
+	"Wisconsin"	"55"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4796467	Suppressed	Suppressed	Suppressed
+	"Wisconsin"	"55"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4796467	Suppressed	Suppressed	Suppressed
+	"Wisconsin"	"55"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	219	4852288	4.5	3.9	5.1
+	"Wisconsin"	"55"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4852288	Suppressed	Suppressed	Suppressed
+	"Wisconsin"	"55"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4852288	Suppressed	Suppressed	Suppressed
+	"Wisconsin"	"55"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	194	4876712	4.0	3.4	4.5
+	"Wisconsin"	"55"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4876712	Suppressed	Suppressed	Suppressed
+	"Wisconsin"	"55"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	4876712	0.0	0.0	0.0
+	"Wisconsin"	"55"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	210	4896942	4.3	3.7	4.9
+	"Wisconsin"	"55"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4896942	Suppressed	Suppressed	Suppressed
+	"Wisconsin"	"55"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4896942	Suppressed	Suppressed	Suppressed
+	"Wisconsin"	"55"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	211	4955149	4.3	3.7	4.8
+	"Wisconsin"	"55"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4955149	Suppressed	Suppressed	Suppressed
+	"Wisconsin"	"55"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4955149	Suppressed	Suppressed	Suppressed
+	"Wyoming"	"56"	"2018"	"2018"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	22	464874	4.7	3.0	7.2
+	"Wyoming"	"56"	"2018"	"2018"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	464874	Suppressed	Suppressed	Suppressed
+	"Wyoming"	"56"	"2018"	"2018"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	464874	0.0	0.0	0.0
+	"Wyoming"	"56"	"2019"	"2019"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	31	467094	6.6	4.5	9.4
+	"Wyoming"	"56"	"2019"	"2019"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	467094	Suppressed	Suppressed	Suppressed
+	"Wyoming"	"56"	"2019"	"2019"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	467094	0.0	0.0	0.0
+	"Wyoming"	"56"	"2020"	"2020"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	28	471956	5.9	3.9	8.6
+	"Wyoming"	"56"	"2020"	"2020"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	471956	Suppressed	Suppressed	Suppressed
+	"Wyoming"	"56"	"2020"	"2020"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	471956	0.0	0.0	0.0
+	"Wyoming"	"56"	"2021"	"2021"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	42	470074	8.9	6.4	12.1
+	"Wyoming"	"56"	"2021"	"2021"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	470074	Suppressed	Suppressed	Suppressed
+	"Wyoming"	"56"	"2021"	"2021"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	470074	Suppressed	Suppressed	Suppressed
+	"Wyoming"	"56"	"2022"	"2022"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	26	475432	5.5	3.6	8.0
+	"Wyoming"	"56"	"2022"	"2022"	"Assault by hanging, strangulation and suffocation"	"X91"	0	475432	0.0	0.0	0.0
+	"Wyoming"	"56"	"2022"	"2022"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	475432	0.0	0.0	0.0
+	"Wyoming"	"56"	"2023"	"2023"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	17	479422	3.5	2.1	5.7
+	"Wyoming"	"56"	"2023"	"2023"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	479422	Suppressed	Suppressed	Suppressed
+	"Wyoming"	"56"	"2023"	"2023"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	479422	0.0	0.0	0.0
+	"Wyoming"	"56"	"2024 "	"2024"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	22	484557	4.5	2.8	6.9
+	"Wyoming"	"56"	"2024 "	"2024"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	484557	Suppressed	Suppressed	Suppressed
+	"Wyoming"	"56"	"2024 "	"2024"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	484557	0.0	0.0	0.0
+"---"
+"Dataset: Multiple Cause of Death, 2018-2024, Single Race"
+"Query Parameters:"
+"Ten-Year Age Groups: 15-24 years; 25-34 years; 35-44 years; 45-54 years; 55-64 years; 65-74 years; 75-84 years; 85+ years"
+"UCD - ICD-10 Codes: X70 (Intentional self-harm by hanging, strangulation and suffocation); X91 (Assault by hanging,"
+"strangulation and suffocation); Y20 (Hanging, strangulation and suffocation, undetermined intent)"
+"Group By: State; Year; Underlying Cause of death"
+"Show Totals: Disabled"
+"Show Zero Values: True"
+"Show Suppressed: True"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/mcd-expanded.html for more information."
+"---"
+"Query Date: Aug 22, 2026 5:07:21 AM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
+"System, Mortality 2018-2024 on CDC WONDER Online Database, released in 2026. Data are from the Multiple Cause of Death Files,"
+"2018-2024, as compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative"
+"Program. Accessed at http://wonder.cdc.gov/mcd-icd10-expanded.html on Aug 22, 2026 5:07:21 AM"
+"---"
+Messages:
+"1. Totals are not available for these results due to suppression constraints. More Information:"
+"http://wonder.cdc.gov/wonder/help/faq.html#Privacy."
+"---"
+Caveats:
+"1. Data are Suppressed when the data meet the criteria for confidentiality constraints. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-expanded.html#Assurance of Confidentiality."
+"2. Deaths of persons with Age ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among age groups,"
+"so are not included in age-specific counts, age-specific rates or in any age-adjusted rates. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-expanded.html#Not Stated."
+"3. The method used to calculate 95% confidence intervals is documented here: More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-expanded.html#Confidence-Intervals."
+"4. The population figures for year 2024 are single-race estimates of the July 1 resident population, from the Vintage 2024"
+"postcensal series released by the Census Bureau on June 27, 2024. The 2024 series is based on the Modified Blended Base produced"
+"by the US Census Bureau in lieu of the April 1, 2020 decennial population count. The Modified Blended Base consists of the blend"
+"of Vintage 2020 postcensal population estimates for April 1, 2020, 2020 Demographic Analysis Estimates, and 2020 Census data"
+"from the internal Census Edited File (CEF). The population figures for year 2023 are single-race estimates of the July 1"
+"resident population, from the Vintage 2023 postcensal series released by the Census Bureau on June 27, 2024. The 2023 series is"
+"based on the Modified Blended Base produced by the US Census Bureau in lieu of the April 1, 2020 decennial population count. The"
+"Modified Blended Base consists of the blend of Vintage 2020 postcensal population estimates for April 1, 2020, 2020 Demographic"
+"Analysis Estimates, and 2020 Census data from the internal Census Edited File (CEF). The population figures for years 2022 are"
+"single-race estimates of the July 1 resident population, from the Vintage 2022 postcensal series released by the Census Bureau"
+"on June 22, 2023. The 2022 series is based on the Modified Blended Base produced by the US Census Bureau in lieu of the April 1,"
+"2020 decennial population count. The Modified Blended Base consists of the blend of Vintage 2020 postcensal population estimates"
+"for April 1, 2020, 2020 Demographic Analysis Estimates, and 2020 Census data from the internal Census Edited File (CEF). The"
+"population figures for year 2021 are single-race estimates of the July 1 resident population, based on the Blended Base produced"
+"by the US Census Bureau in lieu of the April 1, 2020 decennial population count, from the Vintage 2021 postcensal series"
+"released by the Census Bureau on June 30, 2022. The population figures for year 2020 are single-race estimates of the July 1"
+"resident population, from the Vintage 2020 postcensal series based on April 2010 Census, released by the Census Bureau on July"
+"27, 2021. The population figures for year 2019 are single-race estimates of the July 1 resident population, from the Vintage"
+"2019 postcensal series based on April 2010 Census, released by the Census Bureau on June 25, 2020. The population figures for"
+"year 2018 are single-race estimates of the July 1 resident population, from the Vintage 2018 postcensal series based on April"
+"2010 Census, released by the Census Bureau on June 20, 2019. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-expanded.html#Population Data."
+"5. Beginning with the 2018 data, changes have been implemented that affect the counts for ICD-10 cause of death codes O00-O99"
+"compared to previous practice. In addition, data for the cause of death codes O00-O99 for 2003 through 2017 reflect differences"
+"in information available to individual states and probable errors. Caution should be used in interpreting these data. More"
+"information can be found at: https://www.cdc.gov/nchs/maternal-mortality/."
+"6. On March 11, 2021, the 2019 mortality data on CDC WONDER was updated with the 2019 mortality data updated by NCHS on March 4,"
+"2021 to include corrected information for residents of Texas affecting 5 records previously coded to cause code *U01.4,"
+"Terrorism involving firearms (homicide). The underlying and multiple cause of death codes for 5 records were corrected in the"
+"2019 data. Underlying and multiple cause of death codes for those 5 records were recoded to Assault (homicide) by other and"
+"unspecified firearm discharge, ICD-10 code X95. The corrected final death records replaces the data released on December 22,"
+"2020."
+"7. Connecticut population estimates for 2022 and later years are reported for 9 planning regions as county equivalent areas,"
+"instead of the former 8 legacy counties in the Vintage 2022 postcensal series released by the Census Bureau on June 22, 2023,"
+"and in the Vintage 2023 postcensal series released by the Census Bureau on June 27, 2024. Populations estimates for the former"
+"counties are not available for 2022 and later years. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-expanded.html#Connecticut-2022."
+"8. After the creation of the final 2023 dataset, North Carolina updated the cause of death information for over 900 death"
+"certificates to include a cause of death code indicating drug overdose (ICD-10 underlying cause-of-death codes: X40-X44,"
+"X60-X64, X85, and Y10-Y14). Jurisdictions can continue to update death certificates after the closing of the mortality file. As"
+"a result, users should consider that the actual death count for drug overdose deaths for North Carolina in 2023 is over 4,400"
+"deaths, with a crude rate of approximately 41.0 per 100,000 population, and an age-adjusted rate of approximately 42.1 per"
+"100,000 population. These deaths will not be updated on the final mortality datasets."
+"9. Changes to cause of death classification affect reporting trends. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-expanded.html#ICD-10 Changes."

@@ -6,18 +6,24 @@ sourced case records.
 
 Three things came out of this that were not assembled anywhere else:
 
-1. **Summing published state-level CDC counts undercounts a rare cause of
-   death by up to 91%**, while leaving common causes untouched. Anyone
-   pulling state WONDER data on anything uncommon hits this silently.
-   Written up separately in [SUPPRESSION.md](SUPPRESSION.md), because it
-   has nothing to do with this subject and affects a lot of other work.
-2. **A national baseline**: 0.62 undetermined-intent hangings per 100
-   ruled suicide among ages 15+, stable across 2018-2024. The all-ages
-   figure of 1.16 that this project published first is inflated about
-   1.9x by infant suffocation deaths — see Finding 2.
-3. **A sevenfold spread between states** in that rate — and, on testing,
-   *not* explained by whether a state elects lay coroners or runs a
-   medical examiner system.
+1. **Summing published state-level CDC counts can undercount a rare cause
+   of death by 100%** — in five of seven years the state figures for this
+   cause sum to exactly zero — while leaving common causes untouched.
+   Anyone pulling state WONDER data on anything uncommon hits this
+   silently. Written up separately in [SUPPRESSION.md](SUPPRESSION.md),
+   because it has nothing to do with this subject and affects a lot of
+   other work.
+2. **A national baseline**: 0.62 undetermined-intent deaths per 100 ruled
+   suicide, ages 15+, stable across 2018-2024.
+3. **A several-fold spread between states**, with Mississippi highest of
+   the 20 measurable states and Montana at a true zero.
+4. **A roughly twofold difference by race** that survives correction, and
+   an equally large one that does not — about half the apparent gap was
+   infant suffocation deaths these ICD-10 codes also count.
+
+Two published figures in this repository have already been corrected by
+later exports. Both corrections are recorded rather than quietly folded
+in: see Finding 2 and Finding 5.
 
 ## What this answers, and what it does not
 
@@ -36,21 +42,29 @@ isn't, and it will be dismissed by exactly the people it needs to reach.
 
 ## Finding 1: most of the state-level data is withheld
 
-WONDER hides any cell under 10 deaths. At State × Year granularity, **18
-of 357** cells for undetermined-intent hangings are published; 339 are
-withheld, and 43 states show no visible count in any year.
+WONDER hides any cell under 10 deaths. At State × Year granularity, of
+357 cells for undetermined-intent deaths, **2 carry a usable count**, 222
+are withheld as 1-9 deaths, and 133 are true zeros.
 
 The consequence people miss is what this does to a national figure built
 by adding up states:
 
 | Year | Summed from states | Actual national | Missing |
 |---:|---:|---:|---:|
-| 2021 | 13 | 144 | **91%** |
-| 2023 | 44 | 143 | 69% |
+| 2021 | 0 | 76 | **100%** |
+| 2023 | 10 | 91 | 89% |
 
 Meanwhile suicide-ruled hangings (`X70`), a common cause, sum correctly
 to the last death — 0% error every year. The error is invisible if you
 sanity-check your pipeline against a common cause.
+
+**This repository fell into the adjacent trap first.** The original State
+× Year export was run with Show Zero Values and Show Suppressed both
+False, so 339 of 357 cells were simply absent — and an absent row is
+either a zero or a withheld 1-9. Those were reported as "withheld", on a
+page whose subject is suppression. The loader printed a warning at the
+time and it went unactioned for several days. Re-running the query
+properly separated them: 133 zeros, 222 withheld.
 
 Full worked writeup, including what to do instead:
 **[SUPPRESSION.md](SUPPRESSION.md)**.
@@ -98,86 +112,111 @@ can both actually happen:
 
 **X70 85,925 · Y20 534 · 0.62 per 100**
 
-Every state figure in this repository is still all-ages and carries the
-same inflation. Infant suffocation mortality varies by state, so the
-sevenfold spread in Finding 3 is contaminated by it in a proportion this
-export cannot measure. Fixing that means re-running the state exports
-with an age filter, not adjusting after the fact. See [NEXT.md](NEXT.md).
+**This has been fixed.** All six exports were re-run with an age filter
+and every figure in this repository is now ages 15+. The all-ages exports
+are kept and still shipped, because they are the evidence for the
+correction rather than a discarded draft. `mortality_agg.age_filter`
+records which regime each row came from, so the two can never be summed
+together.
 
-## Finding 3: a sevenfold state spread
+## Finding 3: a several-fold state spread
 
-Pooled 2018-2024, so more states clear the suppression threshold:
+Pooled 2018-2024, ages 15+, so more states clear the suppression
+threshold. 20 of 51 jurisdictions are measurable:
 
 | | state | X70 | Y20 | per 100 |
-|---|---|---|---|---|
-| highest | Alaska | 417 | 16 | 3.84 |
-| | Arizona | 2311 | 63 | 2.73 |
-| | Mississippi | 632 | 17 | 2.69 |
-| | North Carolina | 2276 | 49 | 2.15 |
+|---|---|---:|---:|---:|
+| highest | Mississippi | 614 | 15 | 2.44 |
+| | Missouri | 1,778 | 25 | 1.41 |
+| | Kansas | 961 | 11 | 1.14 |
+| | South Carolina | 1,140 | 13 | 1.14 |
 | … | | | | |
-| | New Jersey | 2043 | 15 | 0.73 |
-| | California | 10109 | 64 | 0.63 |
-| lowest | Colorado | 2331 | 13 | 0.56 |
+| | New York | 4,194 | 20 | 0.48 |
+| | California | 9,920 | 43 | 0.43 |
+| true zero | Montana | 426 | 0 | 0.00 |
 
-29 states measurable, 22 withheld even pooled across seven years — those
-are reported as unmeasurable, never as zero. `python tools/analyze.py`
-prints the full table.
+Mississippi is 1.7x the next state and 5.7x the lowest non-zero.
+Montana's zero is real — that cell is published, not suppressed.
+
+31 states are withheld even pooled across seven years, reported as
+unmeasurable, never as zero. `python tools/analyze.py` prints the full
+table.
 
 **Note where Mississippi lands.** The intuitive hypothesis behind a
 project like this is that Southern jurisdictions close these cases as
 suicide too readily and under-use "undetermined". The data says the
-reverse: Mississippi ranks 3rd highest, and the lowest users are
-Colorado, California, and New York.
+reverse, and says it more strongly after the age correction than before:
+Mississippi is the highest of every state that can be measured.
 
 This is stated up front deliberately. The willingness to lead with the
 inconvenient number is the only reason anyone should believe the
 convenient ones.
 
-## Finding 4: certification structure does not explain the spread
+## Finding 4: a twofold difference by race, after correction
+
+National, pooled, ages 15+, no state, so these are counts and not floors:
+
+| group | X70 | Y20 | per 100 |
+|---|---:|---:|---:|
+| Black or African American | 5,722 | 66 | 1.15 |
+| More than one race | 1,709 | 14 | 0.82 |
+| American Indian or Alaska Native | 2,080 | 17 | 0.82 |
+| White | 71,963 | 419 | 0.58 |
+| Asian | 4,070 | 15 | 0.37 |
+| Native Hawaiian or Other Pacific Islander | 381 | withheld | — |
+
+| group | X70 | Y20 | per 100 |
+|---|---:|---:|---:|
+| Female | 18,556 | 158 | 0.85 |
+| Male | 67,369 | 376 | 0.56 |
+
+Among hanging and suffocation deaths of Black decedents aged 15+, intent
+was left undetermined about **twice as often** as among White decedents.
+
+**Half of the apparent gap was an artefact, and it is worth knowing which
+half.** On all-ages data the same query gives 3.50 against 0.98, a 3.6x
+gap. These ICD-10 codes cover suffocation as well as hanging, and 36% of
+all undetermined-intent deaths are children under 5 whose X70 count is
+structurally zero. Infant suffocation mortality differs sharply by race,
+so a large part of that 3.6x was infant deaths with no denominator. The
+age-filtered 2.0x is what survives.
+
+What this does **not** say: nothing here indicates any individual ruling
+was wrong, and a higher undetermined rate is not evidence of foul play in
+either direction. It is a statement about how often intent was recorded
+as unresolved, in aggregate, and the reasons are not in this data.
+
+## Finding 5: certification structure — this data cannot answer it
 
 A ranked table of states with no explanation attached is not neutral —
-readers supply their own. So we tested the readiest explanation.
+readers supply their own. So we tested the readiest explanation: who
+certifies deaths. `state_systems` joins CDC's county-level table,
+weighting each county by **how many deaths it actually certifies**,
+because a state's undetermined rate is a property of its death
+certificates and counting counties would let its smallest jurisdictions
+outvote the ones doing most of the certifying.
 
-States differ in who certifies deaths. Some elect county coroners who
-need no medical training; some run a centralized medical examiner office
-staffed by forensic pathologists; most are a mixture, county by county.
-CDC publishes this at county level. `state_systems` joins it to the
-mortality data, with each county weighted by **how many deaths it
-actually certifies** — a state's undetermined rate is a property of its
-death certificates, and counting counties would let a state's smallest
-jurisdictions outvote the ones doing most of the certifying.
-
-The result, over the 29 measurable states:
+Over the 20 measurable states:
 
 | variable | Spearman ρ | p |
 |---|---:|---:|
-| share of deaths certified by an elected official | −0.10 | 0.62 |
-| share certified by a coroner | +0.04 | 0.82 |
-| share certified by a medical examiner | +0.04 | 0.84 |
-| state has a state medical examiner | +0.25 | 0.20 |
+| share of deaths certified by an elected official | 0.00 | 1.00 |
+| share certified by a coroner | +0.40 | 0.08 |
+| share certified by a medical examiner | −0.15 | 0.53 |
+| state has a state medical examiner | +0.02 | 0.96 |
 
-| system type | n | median per 100 | range |
-|---|---:|---:|---|
-| coroner | 6 | 1.71 | 1.28 – 2.69 |
-| medical examiner | 10 | 1.61 | 0.73 – 3.84 |
-| mixed | 13 | 1.10 | 0.56 – 2.08 |
+**An earlier version of this README reported a clean null here**, at
+n=29, on all-ages data. Correcting the age contamination removed nine
+states from the measurable set and took the statistical power with them.
+The coroner-share correlation is now weakly positive and not significant,
+and it is not stable: dropping Mississippi moves it to p=0.20, dropping
+Arizona to p=0.04. A result whose significance is decided by which single
+observation you include is not a result.
 
-*p from a 20,000-shuffle permutation test; rank correlation because 29
-bounded, right-skewed rates are not a job for Pearson.*
-
-**Nothing here is distinguishable from chance**, and the categorical
-medians overlap across nearly their whole range — the highest and lowest
-states in the table are *both* medical examiner jurisdictions.
-
-A ruled-out confound is still a result. It removes the readiest
-explanation and leaves the variation needing a different one, plausibly
-at the level of individual offices rather than state law: caseload,
-autopsy rate, local convention, or how one large county certifies.
-
-What it does **not** show is that structure never matters. n=29 has
-little power, half the states are unmeasurable, and a "mixed" state is an
-average of counties that differ from each other. The explanation is ruled
-out as the driver of this spread, not out of the picture.
+The honest statement is that **20 states cannot answer this question** —
+not that structure explains the spread, and no longer that it clearly
+does not. Reporting the earlier, tidier null would mean quoting a number
+computed on data now known to be contaminated.
 
 ## Appendix: the cases that prompted this question
 
@@ -261,11 +300,22 @@ Then take these exports, save under `data/wonder/`, and load each with
 | 5 | Ten-Year Age Groups + Cause, pooled, no state | national breakdown by age | some groups withheld |
 | 6 | Sex + Cause, pooled, no state | national breakdown by sex | none |
 
-Exports 4-6 are loaded. **Every one of them, and exports 1-3, needs
-re-running with an age filter** — see Finding 2. The race and sex tables
-are in the database and are deliberately not published, because the group
-with the highest ratio is also the group with the highest infant
-suffocation mortality and this data cannot separate the two.
+**Every one of these must be run twice: once unfiltered and once with
+Ten-Year Age Groups set to 15+.** The 15+ set is what gets published; the
+all-ages set is the evidence for why (Finding 2). `mortality_agg` records
+which regime a row came from in `age_filter`, and the derived view groups
+by it, so the two can never be summed together. Load the 15+ files under
+distinct names — `mcd_*_15plus_*.xls` here.
+
+Two things that will bite:
+
+- **The WONDER UI names files after the dataset, not the query.** Three
+  different queries all arrive as `Multiple Cause of Death, 2018-2024,
+  Single Race.xls`. Rename before loading or you will overwrite another
+  export's footnotes sidecar and file two queries under one dataset id.
+- **A new column means a migration.** `python tools/migrate.py` adds
+  missing columns and reapplies `schema.sql`; run it before loading if
+  you have pulled schema changes.
 
 **Pooled, not by year, and one axis at a time.** "No suppression at the
 national level" is true of the national *total* and not of a breakdown of
@@ -355,6 +405,7 @@ history is a better integrity story than a managed database anyway.
 pip install -e .
 python -m tracker.cli init                    # create data/tracker.db
 python -m tracker.seed                        # seed sourced cases (unverified)
+python tools/migrate.py                       # bring an existing db up to schema
 python tools/load_wonder.py <export.xls>      # load a WONDER export
 python tools/load_state_systems.py            # build state_systems from CDC COMEC
 python tools/analyze.py                       # every finding above, printed

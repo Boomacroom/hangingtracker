@@ -244,6 +244,54 @@ recomputed clean, and the certification-structure test should be re-run
 against the corrected ratios -- n=29 may change if the age filter pushes
 more states under the suppression threshold, which it probably will.
 
+### 2026-08-22 (later) — age-filtered exports loaded; two figures corrected
+
+All six exports re-run at 15+ and loaded. Findings 2-5 in the README are
+rewritten. Two previously published numbers were wrong and both
+corrections are recorded in place rather than folded in silently.
+
+**1. The suppression grid was mislabelled.** The original State x Year
+export was run with Show Zero Values and Show Suppressed both **False**,
+so 339 of 357 cells were absent — and an absent row is either a zero or a
+withheld 1-9. The site called all 339 "withheld", in a figure whose whole
+subject is suppression. `load_wonder.py` printed its warning at load time
+and it went unactioned for days. Re-run properly: **2 usable counts, 222
+withheld, 133 true zeros**. The grid now renders three states, not two.
+
+**2. The certification null did not survive.** At 15+ the measurable set
+drops from 29 states to 20, and coroner share moves to rho = +0.40,
+p = 0.084 — not significant, and not stable: without Mississippi p = 0.20,
+without Arizona p = 0.035. The README now says this data cannot answer the
+question, instead of the tidier null it reported before. Re-check this if
+the measurable set ever grows.
+
+Other results: national baseline 0.62 per 100 at 15+ (all-ages 1.16).
+Mississippi is now the **highest** measurable state at 2.44, up from 3rd.
+Montana is a true published zero, 0 undetermined against 426 ruled
+suicide. Race gap survives correction at about 2x (Black 1.15, White 0.58)
+against 3.6x all-ages, so roughly half the apparent gap was infant
+suffocation; that half is documented rather than dropped.
+
+**Schema:** `mortality_agg.age_filter` records what a query *restricted*
+to, as opposed to what it grouped by. Without it a 15+ pooled state row
+and an all-ages pooled state row are identical in every other column and
+the view sums them into a number that counts nothing. Added to the unique
+index and the view's GROUP BY. `tools/migrate.py` is new: `schema.sql`
+alone cannot add a column to an existing database, and a rebuilt index
+referencing a missing column fails the whole script.
+
+### Still open
+
+- Cases 3 and 9 remain `unverified`; that is a human confirmation.
+- `check_repo.py` warns on `kyle-bassinga-ga-2026` and
+  `tory-medley-wi-2025`, both recording a manner ruled on a police
+  statement rather than a coroner or ME certification.
+- The 5-14 age band sits at 5.52 per 100, far above every adult band. It
+  is inside the published 15+ cut only by exclusion, and nobody has looked
+  at what it is. Likely the same mechanism-code problem in a milder form.
+- Whether the race gap holds *within* age bands is untested and needs a
+  race x age export, which will suppress heavily.
+
 ### Watch for
 
 - **Filenames from the WONDER UI collide.** The race export arrived as

@@ -1,0 +1,233 @@
+"Notes"	"State"	"State Code"	"Underlying Cause of death"	"Underlying Cause of death Code"	Deaths	Population	Crude Rate	Crude Rate Lower 95% Confidence Interval	Crude Rate Upper 95% Confidence Interval
+	"Alabama"	"01"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1095	28693711	3.8	3.6	4.0
+	"Alabama"	"01"	"Assault by hanging, strangulation and suffocation"	"X91"	47	28693711	0.2	0.1	0.2
+	"Alabama"	"01"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	28693711	Suppressed	Suppressed	Suppressed
+	"Alaska"	"02"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	406	4093829	9.9	9.0	10.9
+	"Alaska"	"02"	"Assault by hanging, strangulation and suffocation"	"X91"	24	4093829	0.6	0.4	0.9
+	"Alaska"	"02"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4093829	Suppressed	Suppressed	Suppressed
+	"Arizona"	"04"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	2250	42239063	5.3	5.1	5.5
+	"Arizona"	"04"	"Assault by hanging, strangulation and suffocation"	"X91"	73	42239063	0.2	0.1	0.2
+	"Arizona"	"04"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	25	42239063	0.1	0.0	0.1
+	"Arkansas"	"05"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	933	17242397	5.4	5.1	5.8
+	"Arkansas"	"05"	"Assault by hanging, strangulation and suffocation"	"X91"	32	17242397	0.2	0.1	0.3
+	"Arkansas"	"05"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	17242397	Suppressed	Suppressed	Suppressed
+	"California"	"06"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	9920	225040740	4.4	4.3	4.5
+	"California"	"06"	"Assault by hanging, strangulation and suffocation"	"X91"	268	225040740	0.1	0.1	0.1
+	"California"	"06"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	43	225040740	0.0	0.0	0.0
+	"Colorado"	"08"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	2259	33633087	6.7	6.4	7.0
+	"Colorado"	"08"	"Assault by hanging, strangulation and suffocation"	"X91"	76	33633087	0.2	0.2	0.3
+	"Colorado"	"08"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	33633087	Suppressed	Suppressed	Suppressed
+	"Connecticut"	"09"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	931	21092659	4.4	4.1	4.7
+	"Connecticut"	"09"	"Assault by hanging, strangulation and suffocation"	"X91"	18	21092659	0.1	0.1	0.1
+	"Connecticut"	"09"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	21092659	Suppressed	Suppressed	Suppressed
+	"Delaware"	"10"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	244	5835984	4.2	3.7	4.7
+	"Delaware"	"10"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	5835984	Suppressed	Suppressed	Suppressed
+	"Delaware"	"10"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5835984	Suppressed	Suppressed	Suppressed
+	"District of Columbia"	"11"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	107	4067103	2.6	2.1	3.1
+	"District of Columbia"	"11"	"Assault by hanging, strangulation and suffocation"	"X91"	12	4067103	0.3	0.2	0.5
+	"District of Columbia"	"11"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	4067103	Suppressed	Suppressed	Suppressed
+	"Florida"	"12"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	5155	129657085	4.0	3.9	4.1
+	"Florida"	"12"	"Assault by hanging, strangulation and suffocation"	"X91"	215	129657085	0.2	0.1	0.2
+	"Florida"	"12"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	26	129657085	0.0	0.0	0.0
+	"Georgia"	"13"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	2382	61324491	3.9	3.7	4.0
+	"Georgia"	"13"	"Assault by hanging, strangulation and suffocation"	"X91"	109	61324491	0.2	0.1	0.2
+	"Georgia"	"13"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	15	61324491	0.0	0.0	0.0
+	"Hawaii"	"15"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	762	8249999	9.2	8.6	9.9
+	"Hawaii"	"15"	"Assault by hanging, strangulation and suffocation"	"X91"	11	8249999	0.1	0.1	0.2
+	"Hawaii"	"15"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8249999	Suppressed	Suppressed	Suppressed
+	"Idaho"	"16"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	511	10541069	4.8	4.4	5.3
+	"Idaho"	"16"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	10541069	Suppressed	Suppressed	Suppressed
+	"Idaho"	"16"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10541069	Suppressed	Suppressed	Suppressed
+	"Illinois"	"17"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	3259	72651672	4.5	4.3	4.6
+	"Illinois"	"17"	"Assault by hanging, strangulation and suffocation"	"X91"	92	72651672	0.1	0.1	0.2
+	"Illinois"	"17"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	16	72651672	0.0	0.0	0.0
+	"Indiana"	"18"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1824	38525288	4.7	4.5	5.0
+	"Indiana"	"18"	"Assault by hanging, strangulation and suffocation"	"X91"	71	38525288	0.2	0.1	0.2
+	"Indiana"	"18"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	19	38525288	0.0	0.0	0.1
+	"Iowa"	"19"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1105	18111199	6.1	5.7	6.5
+	"Iowa"	"19"	"Assault by hanging, strangulation and suffocation"	"X91"	22	18111199	0.1	0.1	0.2
+	"Iowa"	"19"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	18111199	Suppressed	Suppressed	Suppressed
+	"Kansas"	"20"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	961	16496360	5.8	5.5	6.2
+	"Kansas"	"20"	"Assault by hanging, strangulation and suffocation"	"X91"	16	16496360	0.1	0.1	0.2
+	"Kansas"	"20"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	11	16496360	0.1	0.0	0.1
+	"Kentucky"	"21"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1216	25710194	4.7	4.5	5.0
+	"Kentucky"	"21"	"Assault by hanging, strangulation and suffocation"	"X91"	40	25710194	0.2	0.1	0.2
+	"Kentucky"	"21"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	25710194	Suppressed	Suppressed	Suppressed
+	"Louisiana"	"22"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	991	26086850	3.8	3.6	4.0
+	"Louisiana"	"22"	"Assault by hanging, strangulation and suffocation"	"X91"	57	26086850	0.2	0.2	0.3
+	"Louisiana"	"22"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	26086850	Suppressed	Suppressed	Suppressed
+	"Maine"	"23"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	424	8172654	5.2	4.7	5.7
+	"Maine"	"23"	"Assault by hanging, strangulation and suffocation"	"X91"	11	8172654	0.1	0.1	0.2
+	"Maine"	"23"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	8172654	Suppressed	Suppressed	Suppressed
+	"Maryland"	"24"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1251	35112896	3.6	3.4	3.8
+	"Maryland"	"24"	"Assault by hanging, strangulation and suffocation"	"X91"	36	35112896	0.1	0.1	0.1
+	"Maryland"	"24"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	35112896	Suppressed	Suppressed	Suppressed
+	"Massachusetts"	"25"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1932	41066674	4.7	4.5	4.9
+	"Massachusetts"	"25"	"Assault by hanging, strangulation and suffocation"	"X91"	27	41066674	0.1	0.0	0.1
+	"Massachusetts"	"25"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	41066674	Suppressed	Suppressed	Suppressed
+	"Michigan"	"26"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	2718	57993260	4.7	4.5	4.9
+	"Michigan"	"26"	"Assault by hanging, strangulation and suffocation"	"X91"	93	57993260	0.2	0.1	0.2
+	"Michigan"	"26"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	18	57993260	0.0	0.0	0.0
+	"Minnesota"	"27"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1570	32338733	4.9	4.6	5.1
+	"Minnesota"	"27"	"Assault by hanging, strangulation and suffocation"	"X91"	36	32338733	0.1	0.1	0.2
+	"Minnesota"	"27"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	14	32338733	0.0	0.0	0.1
+	"Mississippi"	"28"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	614	16748829	3.7	3.4	4.0
+	"Mississippi"	"28"	"Assault by hanging, strangulation and suffocation"	"X91"	30	16748829	0.2	0.1	0.3
+	"Mississippi"	"28"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	15	16748829	0.1	0.1	0.1
+	"Missouri"	"29"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1778	35279927	5.0	4.8	5.3
+	"Missouri"	"29"	"Assault by hanging, strangulation and suffocation"	"X91"	51	35279927	0.1	0.1	0.2
+	"Missouri"	"29"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	25	35279927	0.1	0.0	0.1
+	"Montana"	"30"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	426	6369484	6.7	6.1	7.3
+	"Montana"	"30"	"Assault by hanging, strangulation and suffocation"	"X91"	14	6369484	0.2	0.1	0.4
+	"Montana"	"30"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	6369484	0.0	0.0	0.0
+	"Nebraska"	"31"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	565	10940188	5.2	4.7	5.6
+	"Nebraska"	"31"	"Assault by hanging, strangulation and suffocation"	"X91"	12	10940188	0.1	0.1	0.2
+	"Nebraska"	"31"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10940188	Suppressed	Suppressed	Suppressed
+	"Nevada"	"32"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	911	18039300	5.1	4.7	5.4
+	"Nevada"	"32"	"Assault by hanging, strangulation and suffocation"	"X91"	40	18039300	0.2	0.2	0.3
+	"Nevada"	"32"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	18039300	Suppressed	Suppressed	Suppressed
+	"New Hampshire"	"33"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	427	8238519	5.2	4.7	5.7
+	"New Hampshire"	"33"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	8238519	Suppressed	Suppressed	Suppressed
+	"New Hampshire"	"33"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	8238519	0.0	0.0	0.0
+	"New Jersey"	"34"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	2007	52573759	3.8	3.7	4.0
+	"New Jersey"	"34"	"Assault by hanging, strangulation and suffocation"	"X91"	36	52573759	0.1	0.0	0.1
+	"New Jersey"	"34"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	52573759	Suppressed	Suppressed	Suppressed
+	"New Mexico"	"35"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	949	12105830	7.8	7.3	8.3
+	"New Mexico"	"35"	"Assault by hanging, strangulation and suffocation"	"X91"	30	12105830	0.2	0.2	0.4
+	"New Mexico"	"35"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	12105830	Suppressed	Suppressed	Suppressed
+	"New York"	"36"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	4194	114015296	3.7	3.6	3.8
+	"New York"	"36"	"Assault by hanging, strangulation and suffocation"	"X91"	127	114015296	0.1	0.1	0.1
+	"New York"	"36"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	20	114015296	0.0	0.0	0.0
+	"North Carolina"	"37"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	2216	61283543	3.6	3.5	3.8
+	"North Carolina"	"37"	"Assault by hanging, strangulation and suffocation"	"X91"	77	61283543	0.1	0.1	0.2
+	"North Carolina"	"37"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	12	61283543	0.0	0.0	0.0
+	"North Dakota"	"38"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	255	4344581	5.9	5.1	6.6
+	"North Dakota"	"38"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	4344581	Suppressed	Suppressed	Suppressed
+	"North Dakota"	"38"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	0	4344581	0.0	0.0	0.0
+	"Ohio"	"39"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	3094	67422549	4.6	4.4	4.8
+	"Ohio"	"39"	"Assault by hanging, strangulation and suffocation"	"X91"	91	67422549	0.1	0.1	0.2
+	"Ohio"	"39"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	15	67422549	0.0	0.0	0.0
+	"Oklahoma"	"40"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1484	22486218	6.6	6.3	6.9
+	"Oklahoma"	"40"	"Assault by hanging, strangulation and suffocation"	"X91"	51	22486218	0.2	0.2	0.3
+	"Oklahoma"	"40"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	22486218	Suppressed	Suppressed	Suppressed
+	"Oregon"	"41"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1410	24746534	5.7	5.4	6.0
+	"Oregon"	"41"	"Assault by hanging, strangulation and suffocation"	"X91"	26	24746534	0.1	0.1	0.2
+	"Oregon"	"41"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	24746534	Suppressed	Suppressed	Suppressed
+	"Pennsylvania"	"42"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	3293	75215846	4.4	4.2	4.5
+	"Pennsylvania"	"42"	"Assault by hanging, strangulation and suffocation"	"X91"	78	75215846	0.1	0.1	0.1
+	"Pennsylvania"	"42"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	30	75215846	0.0	0.0	0.1
+	"Rhode Island"	"44"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	295	6400718	4.6	4.1	5.1
+	"Rhode Island"	"44"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	6400718	Suppressed	Suppressed	Suppressed
+	"Rhode Island"	"44"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	6400718	Suppressed	Suppressed	Suppressed
+	"South Carolina"	"45"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1140	30301007	3.8	3.5	4.0
+	"South Carolina"	"45"	"Assault by hanging, strangulation and suffocation"	"X91"	54	30301007	0.2	0.1	0.2
+	"South Carolina"	"45"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	13	30301007	0.0	0.0	0.1
+	"South Dakota"	"46"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	425	5029255	8.5	7.6	9.3
+	"South Dakota"	"46"	"Assault by hanging, strangulation and suffocation"	"X91"	10	5029255	0.2	0.1	0.4
+	"South Dakota"	"46"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	5029255	Suppressed	Suppressed	Suppressed
+	"Tennessee"	"47"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1715	39992529	4.3	4.1	4.5
+	"Tennessee"	"47"	"Assault by hanging, strangulation and suffocation"	"X91"	85	39992529	0.2	0.2	0.3
+	"Tennessee"	"47"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	17	39992529	0.0	0.0	0.1
+	"Texas"	"48"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	7081	165111312	4.3	4.2	4.4
+	"Texas"	"48"	"Assault by hanging, strangulation and suffocation"	"X91"	253	165111312	0.2	0.1	0.2
+	"Texas"	"48"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	34	165111312	0.0	0.0	0.0
+	"Utah"	"49"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1071	17878880	6.0	5.6	6.3
+	"Utah"	"49"	"Assault by hanging, strangulation and suffocation"	"X91"	14	17878880	0.1	0.0	0.1
+	"Utah"	"49"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	17878880	Suppressed	Suppressed	Suppressed
+	"Vermont"	"50"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	194	3810378	5.1	4.4	5.8
+	"Vermont"	"50"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3810378	Suppressed	Suppressed	Suppressed
+	"Vermont"	"50"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3810378	Suppressed	Suppressed	Suppressed
+	"Virginia"	"51"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1867	49671375	3.8	3.6	3.9
+	"Virginia"	"51"	"Assault by hanging, strangulation and suffocation"	"X91"	54	49671375	0.1	0.1	0.1
+	"Virginia"	"51"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	49671375	Suppressed	Suppressed	Suppressed
+	"Washington"	"53"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	2019	44496179	4.5	4.3	4.7
+	"Washington"	"53"	"Assault by hanging, strangulation and suffocation"	"X91"	59	44496179	0.1	0.1	0.2
+	"Washington"	"53"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	17	44496179	0.0	0.0	0.1
+	"West Virginia"	"54"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	532	10439925	5.1	4.7	5.5
+	"West Virginia"	"54"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	10439925	Suppressed	Suppressed	Suppressed
+	"West Virginia"	"54"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	10439925	Suppressed	Suppressed	Suppressed
+	"Wisconsin"	"55"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	1569	33915504	4.6	4.4	4.9
+	"Wisconsin"	"55"	"Assault by hanging, strangulation and suffocation"	"X91"	32	33915504	0.1	0.1	0.1
+	"Wisconsin"	"55"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	33915504	Suppressed	Suppressed	Suppressed
+	"Wyoming"	"56"	"Intentional self-harm by hanging, strangulation and suffocation"	"X70"	188	3313409	5.7	4.9	6.5
+	"Wyoming"	"56"	"Assault by hanging, strangulation and suffocation"	"X91"	Suppressed	3313409	Suppressed	Suppressed	Suppressed
+	"Wyoming"	"56"	"Hanging, strangulation and suffocation, undetermined intent"	"Y20"	Suppressed	3313409	Suppressed	Suppressed	Suppressed
+"---"
+"Dataset: Multiple Cause of Death, 2018-2024, Single Race"
+"Query Parameters:"
+"Ten-Year Age Groups: 15-24 years; 25-34 years; 35-44 years; 45-54 years; 55-64 years; 65-74 years; 75-84 years; 85+ years"
+"UCD - ICD-10 Codes: X70 (Intentional self-harm by hanging, strangulation and suffocation); X91 (Assault by hanging,"
+"strangulation and suffocation); Y20 (Hanging, strangulation and suffocation, undetermined intent)"
+"Group By: State; Underlying Cause of death"
+"Show Totals: Disabled"
+"Show Zero Values: True"
+"Show Suppressed: True"
+"Calculate Rates Per: 100,000"
+"Rate Options: Default intercensal populations for years 2001-2009 (except Infant Age Groups)"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/mcd-expanded.html for more information."
+"---"
+"Query Date: Aug 22, 2026 4:59:41 AM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
+"System, Mortality 2018-2024 on CDC WONDER Online Database, released in 2026. Data are from the Multiple Cause of Death Files,"
+"2018-2024, as compiled from data provided by the 57 vital statistics jurisdictions through the Vital Statistics Cooperative"
+"Program. Accessed at http://wonder.cdc.gov/mcd-icd10-expanded.html on Aug 22, 2026 4:59:41 AM"
+"---"
+Messages:
+"1. Totals are not available for these results due to suppression constraints. More Information:"
+"http://wonder.cdc.gov/wonder/help/faq.html#Privacy."
+"---"
+Caveats:
+"1. Data are Suppressed when the data meet the criteria for confidentiality constraints. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-expanded.html#Assurance of Confidentiality."
+"2. Deaths of persons with Age ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among age groups,"
+"so are not included in age-specific counts, age-specific rates or in any age-adjusted rates. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-expanded.html#Not Stated."
+"3. The method used to calculate 95% confidence intervals is documented here: More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-expanded.html#Confidence-Intervals."
+"4. The population figures for year 2024 are single-race estimates of the July 1 resident population, from the Vintage 2024"
+"postcensal series released by the Census Bureau on June 27, 2024. The 2024 series is based on the Modified Blended Base produced"
+"by the US Census Bureau in lieu of the April 1, 2020 decennial population count. The Modified Blended Base consists of the blend"
+"of Vintage 2020 postcensal population estimates for April 1, 2020, 2020 Demographic Analysis Estimates, and 2020 Census data"
+"from the internal Census Edited File (CEF). The population figures for year 2023 are single-race estimates of the July 1"
+"resident population, from the Vintage 2023 postcensal series released by the Census Bureau on June 27, 2024. The 2023 series is"
+"based on the Modified Blended Base produced by the US Census Bureau in lieu of the April 1, 2020 decennial population count. The"
+"Modified Blended Base consists of the blend of Vintage 2020 postcensal population estimates for April 1, 2020, 2020 Demographic"
+"Analysis Estimates, and 2020 Census data from the internal Census Edited File (CEF). The population figures for years 2022 are"
+"single-race estimates of the July 1 resident population, from the Vintage 2022 postcensal series released by the Census Bureau"
+"on June 22, 2023. The 2022 series is based on the Modified Blended Base produced by the US Census Bureau in lieu of the April 1,"
+"2020 decennial population count. The Modified Blended Base consists of the blend of Vintage 2020 postcensal population estimates"
+"for April 1, 2020, 2020 Demographic Analysis Estimates, and 2020 Census data from the internal Census Edited File (CEF). The"
+"population figures for year 2021 are single-race estimates of the July 1 resident population, based on the Blended Base produced"
+"by the US Census Bureau in lieu of the April 1, 2020 decennial population count, from the Vintage 2021 postcensal series"
+"released by the Census Bureau on June 30, 2022. The population figures for year 2020 are single-race estimates of the July 1"
+"resident population, from the Vintage 2020 postcensal series based on April 2010 Census, released by the Census Bureau on July"
+"27, 2021. The population figures for year 2019 are single-race estimates of the July 1 resident population, from the Vintage"
+"2019 postcensal series based on April 2010 Census, released by the Census Bureau on June 25, 2020. The population figures for"
+"year 2018 are single-race estimates of the July 1 resident population, from the Vintage 2018 postcensal series based on April"
+"2010 Census, released by the Census Bureau on June 20, 2019. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-expanded.html#Population Data."
+"5. Beginning with the 2018 data, changes have been implemented that affect the counts for ICD-10 cause of death codes O00-O99"
+"compared to previous practice. In addition, data for the cause of death codes O00-O99 for 2003 through 2017 reflect differences"
+"in information available to individual states and probable errors. Caution should be used in interpreting these data. More"
+"information can be found at: https://www.cdc.gov/nchs/maternal-mortality/."
+"6. On March 11, 2021, the 2019 mortality data on CDC WONDER was updated with the 2019 mortality data updated by NCHS on March 4,"
+"2021 to include corrected information for residents of Texas affecting 5 records previously coded to cause code *U01.4,"
+"Terrorism involving firearms (homicide). The underlying and multiple cause of death codes for 5 records were corrected in the"
+"2019 data. Underlying and multiple cause of death codes for those 5 records were recoded to Assault (homicide) by other and"
+"unspecified firearm discharge, ICD-10 code X95. The corrected final death records replaces the data released on December 22,"
+"2020."
+"7. Connecticut population estimates for 2022 and later years are reported for 9 planning regions as county equivalent areas,"
+"instead of the former 8 legacy counties in the Vintage 2022 postcensal series released by the Census Bureau on June 22, 2023,"
+"and in the Vintage 2023 postcensal series released by the Census Bureau on June 27, 2024. Populations estimates for the former"
+"counties are not available for 2022 and later years. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-expanded.html#Connecticut-2022."
+"8. After the creation of the final 2023 dataset, North Carolina updated the cause of death information for over 900 death"
+"certificates to include a cause of death code indicating drug overdose (ICD-10 underlying cause-of-death codes: X40-X44,"
+"X60-X64, X85, and Y10-Y14). Jurisdictions can continue to update death certificates after the closing of the mortality file. As"
+"a result, users should consider that the actual death count for drug overdose deaths for North Carolina in 2023 is over 4,400"
+"deaths, with a crude rate of approximately 41.0 per 100,000 population, and an age-adjusted rate of approximately 42.1 per"
+"100,000 population. These deaths will not be updated on the final mortality datasets."
+"9. Changes to cause of death classification affect reporting trends. More information:"
+"http://wonder.cdc.gov/wonder/help/mcd-expanded.html#ICD-10 Changes."

@@ -22,6 +22,16 @@ CREATE TABLE IF NOT EXISTS mortality_agg (
     age_group       TEXT,
     icd10_code      TEXT NOT NULL,      -- X70, Y20, etc.
     icd10_label     TEXT,
+
+    -- What the QUERY restricted to, as opposed to what it grouped by.
+    -- Everything above this line is a grouping dimension; a filter is
+    -- invisible in the output rows and yet changes what they mean. An
+    -- all-ages pooled state row and a 15+ pooled state row are identical
+    -- in every other column, so without this they land in the same group
+    -- and get summed into a number that is not a count of anything.
+    -- 'all ages' when unrestricted, never NULL, so the grouping key is
+    -- never silently absent.
+    age_filter      TEXT NOT NULL DEFAULT 'all ages',
     deaths          INTEGER,
     population      INTEGER,
     crude_rate      REAL,
@@ -31,9 +41,14 @@ CREATE TABLE IF NOT EXISTS mortality_agg (
 );
 
 -- COALESCE'd so upserts still dedupe when year/state/race are NULL.
-CREATE UNIQUE INDEX IF NOT EXISTS idx_mortality_key ON mortality_agg (
+-- Rebuilt rather than IF NOT EXISTS: age_filter was added later, and an
+-- index silently missing a key column is an upsert that overwrites the
+-- wrong row.
+DROP INDEX IF EXISTS idx_mortality_key;
+CREATE UNIQUE INDEX idx_mortality_key ON mortality_agg (
     dataset, COALESCE(year, -1), COALESCE(period, ''), COALESCE(state, ''),
-    COALESCE(race, ''), COALESCE(sex, ''), COALESCE(age_group, ''), icd10_code
+    COALESCE(race, ''), COALESCE(sex, ''), COALESCE(age_group, ''),
+    COALESCE(age_filter, 'all ages'), icd10_code
 );
 
 CREATE INDEX IF NOT EXISTS idx_mortality_lookup
@@ -135,6 +150,7 @@ SELECT
     race,
     sex,
     age_group,
+    age_filter,
     SUM(CASE WHEN icd10_code LIKE 'X70%' AND suppressed = 0 THEN deaths END) AS suicide_hanging,
     SUM(CASE WHEN icd10_code LIKE 'Y20%' AND suppressed = 0 THEN deaths END) AS undetermined_hanging,
     SUM(CASE WHEN icd10_code LIKE 'X91%' AND suppressed = 0 THEN deaths END) AS assault_hanging,
@@ -149,7 +165,7 @@ FROM mortality_agg
 -- has them NULL. The moment a demographic export lands, a GROUP BY that
 -- omitted them would pool men and women into one ratio and report it as
 -- if it were a breakdown.
-GROUP BY year, period, state, race, sex, age_group;
+GROUP BY year, period, state, race, sex, age_group, age_filter;
 
 -- ---------------------------------------------------------------
 -- Layer 1b: how each state structures death investigation.
@@ -200,6 +216,7 @@ DROP VIEW IF EXISTS v_undetermined_by_system;
 CREATE VIEW v_undetermined_by_system AS
 SELECT
     r.state,
+    r.age_filter,
     s.system_type,
     s.me_share,
     s.coroner_share,
