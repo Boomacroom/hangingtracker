@@ -57,28 +57,41 @@ def main():
     meas = [r for r in rows if r["r"] is not None]
     supp = [r for r in rows if r["r"] is None]
 
-    print(f"\n  {'state':<22}{'X70':>7}{'Y20':>7}{'per 100':>10}")
-    print("  " + "-" * 44)
+    natrow = conn.execute("""
+        SELECT SUM(CASE WHEN icd10_code='X70' THEN deaths END),
+               SUM(CASE WHEN icd10_code='Y20' THEN deaths END)
+        FROM mortality_agg WHERE state IS NULL AND year IS NOT NULL
+          AND age_filter = ?
+    """, (AGE,)).fetchone()
+    natrate = natrow[1] / natrow[0] * 100
+    nlo, nhi = stats.rate_ci(natrow[1], natrow[0])
+    print(f"\n  national rate {natrate:.2f} per 100  (95% CI {nlo:.2f}-{nhi:.2f})")
+    print(f"\n  {'state':<20}{'X70':>7}{'Y20':>6}{'per 100':>9}{'95% CI':>15}")
+    print("  " + "-" * 58)
+    sep_states = []
     for r in meas:
-        print(f"  {r['state']:<22}{r['x']:>7}{r['y']:>7}{r['r']*100:>10.2f}")
+        lo, hi = stats.rate_ci(r["y"], r["x"])
+        sepd = lo > natrate or hi < natrate
+        if sepd:
+            sep_states.append(r["state"])
+        band = f"{lo:.2f}-{hi:.2f}"
+        print(f"  {r['state']:<20}{r['x']:>7}{r['y']:>6}{r['r']*100:>9.2f}"
+              f"{band:>15}{'  *' if sepd else ''}")
 
     if meas:
-        hi = meas[0]
-        # A state can have a visible, real zero -- Montana records 0
-        # undetermined against 426 ruled suicide, and that cell is shown,
-        # not suppressed. Dividing by it prints inf and reads as a spread
-        # of infinity, so the fold-difference is quoted against the lowest
-        # NON-zero state and the zero is reported as the finding it is.
-        nonzero = [r for r in meas if r["r"] > 0]
-        print(f"\n  highest: {hi['state']} {hi['r']*100:.2f} per 100")
-        if len(nonzero) > 1:
-            lo_nz = nonzero[-1]
-            print(f"  lowest non-zero: {lo_nz['state']} {lo_nz['r']*100:.2f}"
-                  f"   ({hi['r']/lo_nz['r']:.1f}x)")
-        for z in [r for r in meas if r["r"] == 0]:
-            print(f"  true zero: {z['state']} recorded 0 undetermined against "
-                  f"{z['x']} ruled suicide")
-            print("             (that cell is visible, not suppressed)")
+        print(f"\n  * separates from the national rate: {len(sep_states)} of "
+              f"{len(meas)} measurable states")
+        print(f"    {', '.join(sep_states)}")
+        print("""
+  The other rows overlap the national rate and their order is noise.
+  These are 11 to 34 deaths over seven years; a rank computed on counts
+  that small shows structure the data does not contain. Do not present
+  this as a league table.
+
+  A zero is not a low outlier either. An earlier version of this output
+  called out Montana's 0 against 426 ruled suicide as a finding. Its
+  interval reaches 0.87 and includes the national rate: zero is simply
+  what a small state at the average often looks like.""")
 
     print(f"\n  measurable: {len(meas)} states")
     print(f"  unmeasurable: {len(supp)} states (Y20 under 10 even pooled)")
@@ -148,13 +161,18 @@ def main():
         if not rows:
             return []
         print(f"\n  {label}")
-        print(f"  {'group':<36}{'X70':>7}{'X91':>6}{'Y20':>6}{'Y20/100':>9}")
-        print("  " + "-" * 64)
+        print(f"  {'group':<36}{'X70':>7}{'X91':>6}{'Y20':>6}{'Y20/100':>9}{'95% CI':>15}")
+        print("  " + "-" * 79)
         for r in rows:
             rr = f"{r['r']*100:.2f}" if r["r"] is not None else (
                 "withheld" if r["s"] else "n/a")
             f = lambda v: v if v is not None else "-"  # noqa: E731
-            print(f"  {r['g']:<36}{f(r['x']):>7}{f(r['a']):>6}{f(r['y']):>6}{rr:>9}")
+            band = ""
+            if r["r"] is not None and r["x"]:
+                lo, hi = stats.rate_ci(r["y"], r["x"])
+                band = f"{lo:.2f}-{hi:.2f}"
+            print(f"  {r['g']:<36}{f(r['x']):>7}{f(r['a']):>6}{f(r['y']):>6}"
+                  f"{rr:>9}{band:>15}")
         return rows
 
     axis("race", "BY RACE, ages 15+")

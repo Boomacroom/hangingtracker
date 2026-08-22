@@ -158,12 +158,20 @@ footer{border-top:2px solid var(--ink);padding:1.5rem 0 3rem;margin-top:2rem;
 
 <section>
   <h2>By state, 2018–2024 combined, ages 15+</h2>
-  <p class="sub">Undetermined-intent hangings per 100 ruled suicide, pooled across
-  seven years so more states clear the suppression threshold. The national rate
-  is 0.62 per 100. Note where Mississippi lands: highest of the twenty states
-  that can be measured, which is the opposite of the intuition this analysis
-  started from. Montana, at the other end, recorded a true zero — no
-  undetermined-intent deaths against 426 ruled suicide.</p>
+  <p class="sub">Undetermined-intent deaths per 100 ruled suicide, pooled across
+  seven years so more states clear the suppression threshold. National rate
+  <span class="mono" id="natrate">—</span> per 100. Each state carries an exact
+  95% interval, because these counts are small — 11 to 34 deaths over seven
+  years — and most states cannot be told apart from the national rate or from
+  each other.</p>
+  <div class="callout">
+    <strong>Do not read this as a ranking.</strong> Only
+    <span id="nsep">—</span> of the <span id="nmeas">—</span> measurable states
+    have an interval that clears the national rate. The rest are listed for
+    completeness and their order is mostly noise. Montana's 0 out of 426 is not
+    a low outlier either: its interval runs to 0.87, which includes the national
+    rate. Zero is simply what a small state at the average often looks like.
+  </div>
   <table id="statetable"><caption>Rate of undetermined-intent classification</caption></table>
 </section>
 
@@ -198,7 +206,19 @@ footer{border-top:2px solid var(--ink);padding:1.5rem 0 3rem;margin-top:2rem;
 <section id="demosec" hidden>
   <h2>By race and sex, nationally, ages 15+</h2>
   <p class="sub">National query, no state breakdown, so these are counts rather
-  than floors. Categories are CDC's own labels, shown verbatim.</p>
+  than floors — and the numbers are large enough here that the intervals are
+  tight, unlike the state table. Categories are CDC's own labels, shown
+  verbatim.</p>
+  <div class="callout">
+    <strong>This is the clearest result on the page, and it runs opposite to
+    the assumption behind the project.</strong> Among deaths of Black decedents
+    aged 15+, intent was left undetermined about twice as often as among White
+    decedents — <span class="mono" id="blackrate">—</span> against
+    <span class="mono" id="whiterate">—</span> per 100, intervals that do not
+    overlap. The premise this work started from was that officials reach too
+    readily for "suicide" in these cases. Nationally, for Black decedents, they
+    reach for "undetermined" at roughly double the rate.
+  </div>
   <table id="demotable"><caption>Undetermined-intent rate by group</caption></table>
   <div class="callout">
     <strong>Why 15+, and why this was not published sooner.</strong> On all-ages
@@ -210,6 +230,17 @@ footer{border-top:2px solid var(--ink);padding:1.5rem 0 3rem;margin-top:2rem;
     differs sharply between groups, so roughly half the apparent gap was that and
     not classification practice. The age-filtered figures above are what survives
     the correction, and they are what gets published.
+  </div>
+  <div class="callout">
+    <strong>The first thing to ask about that result.</strong> The mix of deaths
+    behind it is not the same. Assault by strangulation, relative to
+    suicide-hanging, is <span class="mono" id="mixblack">—</span> for Black
+    decedents against <span class="mono" id="mixwhite">—</span> for White
+    decedents. Where more deaths are genuinely violent or ambiguous, more of
+    them may be genuinely hard to classify — so a higher undetermined rate can
+    reflect the circumstances rather than the certifier. This data cannot
+    separate those two explanations, and nobody should claim it does. The
+    direction of the difference holds either way, and it is checkable.
   </div>
   <table id="agetable"><caption>All ages — the table that found the problem</caption></table>
   <p class="sub" style="margin-top:1rem">Restricted to ages 15+ the national rate
@@ -329,24 +360,44 @@ function render(d){
     }).join('') + '</tbody>';
 
   // --- states ---
-  const meas = d.states.filter(s => s.undetermined_ratio !== null);
-  const max = Math.max(...meas.map(s => s.undetermined_ratio));
-  $('#statetable').innerHTML += `<thead><tr>
-    <th>State</th><th style="text-align:right">Suicide</th>
-    <th style="text-align:right">Undetermined</th>
-    <th>Per 100 ruled suicide</th></tr></thead><tbody>` +
-    meas.map(s => {
-      const v = s.undetermined_ratio * 100;
-      return `<tr><td>${esc(s.state)}</td>
+  // Split by whether the interval clears the national rate, rather than
+  // sorted into a league table. Fifteen of twenty states overlap it; an
+  // ordered list of those fifteen shows structure the data does not have.
+  const nat = (d.national_rate || 0) * 100;
+  $('#natrate').textContent = nat.toFixed(2);
+  const measA = d.states.filter(s => s.undetermined_ratio !== null);
+  const sepA = measA.filter(s => s.separates);
+  const ovlA = measA.filter(s => !s.separates);
+  $('#nsep').textContent = sepA.length;
+  $('#nmeas').textContent = measA.length;
+
+  const srow = s => {
+    const v = s.undetermined_ratio * 100;
+    const ci = s.ci_low === null ? '—'
+      : `${s.ci_low.toFixed(2)}–${s.ci_high.toFixed(2)}`;
+    return `<tr><td>${esc(s.state)}</td>
       <td class="num">${s.suicide_hanging.toLocaleString()}</td>
       <td class="num">${s.undetermined_hanging}</td>
-      <td class="bar-cell num"><i style="width:${(s.undetermined_ratio/max*100).toFixed(1)}%"></i>
-      <span>${v.toFixed(2)}</span></td></tr>`;
-    }).join('') +
-    `<tr><td colspan="4" style="background:var(--paper);padding-top:.8rem;font-size:.85rem;color:var(--ink-soft)">
+      <td class="num">${v.toFixed(2)}</td>
+      <td class="num mono" style="color:var(--ink-soft)">${ci}</td></tr>`;
+  };
+  const shead = `<thead><tr><th>State</th>
+    <th style="text-align:right">Suicide</th>
+    <th style="text-align:right">Undet.</th>
+    <th style="text-align:right">Per 100</th>
+    <th style="text-align:right">95% interval</th></tr></thead>`;
+  const sgroup = (title, rows) => rows.length ? `<tr><td colspan="5"
+      style="background:var(--paper);padding-top:1rem;font-weight:600">${title}</td></tr>`
+      + rows.map(srow).join('') : '';
+
+  $('#statetable').innerHTML += shead + '<tbody>' +
+    sgroup(`Distinguishable from the national rate of ${nat.toFixed(2)}`, sepA) +
+    sgroup('Not distinguishable from the national rate — order is noise', ovlA) +
+    `<tr><td colspan="5" style="background:var(--paper);padding-top:.8rem;font-size:.85rem;color:var(--ink-soft)">
       <strong>${d.counts.suppressed_states} states withheld:</strong>
       ${d.states.filter(s=>s.undetermined_ratio===null).map(s=>esc(s.state)).join(', ')}.
-      Withheld means fewer than ten such deaths in seven years, not none.
+      Withheld means fewer than ten such deaths in seven years, not none, and
+      they get no interval — a withheld count is not a zero.
     </td></tr></tbody>`;
 
   // --- certification structure ---
@@ -396,11 +447,24 @@ function render(d){
       <td class="num">${r.undetermined_hanging ?? '—'}</td>
       ${r.undetermined_ratio === null
         ? `<td class="withheld">${r.suppressed_cells ? 'withheld' : 'no denominator'}</td>`
-        : `<td class="num">${(r.undetermined_ratio*100).toFixed(2)}</td>`}</tr>`).join('');
+        : `<td class="num">${(r.undetermined_ratio*100).toFixed(2)}</td>`}
+      <td class="num mono" style="color:var(--ink-soft)">${
+        r.ci_low === null || r.ci_low === undefined ? '—'
+        : r.ci_low.toFixed(2) + '–' + r.ci_high.toFixed(2)}</td></tr>`).join('');
     const head = what => `<thead><tr><th>${what}</th>
       <th style="text-align:right">Suicide</th>
       <th style="text-align:right">Undetermined</th>
-      <th style="text-align:right">Per 100</th></tr></thead>`;
+      <th style="text-align:right">Per 100</th>
+      <th style="text-align:right">95% interval</th></tr></thead>`;
+
+    const pick = (rs, k) => rs.find(r => (r.grp || '').indexOf(k) === 0);
+    const b = pick(dm.race || [], 'Black'), w = pick(dm.race || [], 'White');
+    if (b) $('#blackrate').textContent = (b.undetermined_ratio*100).toFixed(2);
+    if (w) $('#whiterate').textContent = (w.undetermined_ratio*100).toFixed(2);
+    const mix = (d.event_mix || []).reduce((m, r) => (m[r.race] = r, m), {});
+    const pc = r => r && r.x70 ? (r.x91 / r.x70 * 100).toFixed(1) + '%' : '—';
+    $('#mixblack').textContent = pc(mix['Black or African American']);
+    $('#mixwhite').textContent = pc(mix['White']);
 
     $('#demotable').innerHTML += head('Group') +
       '<tbody>' + body(dm.race || []) + body(dm.sex || []) + '</tbody>';
