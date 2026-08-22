@@ -197,8 +197,62 @@ only reason anyone should believe the convenient ones.
   age_group, and the site renders the section the moment rows land.
   Export 4 in the README's refresh table is the one to run.
 
+### 2026-08-22 — item 2 landed, and it broke the headline
+
+Race, sex and age exports loaded (pooled, no state, one axis each, all
+with zeros and suppressed shown). The age export found something that
+changes a published number.
+
+**36% of all Y20 deaths are children under 5, whose X70 count is
+structurally 0.** X70/X91/Y20 are mechanism codes covering hanging *and
+strangulation and suffocation*; under age 5 they are counting infant
+suffocation with undetermined intent, which is a different phenomenon
+with no denominator here. The national baseline drops from **1.16 to 0.62
+per 100 restricted to ages 15+** — the published figure was inflated 1.9x.
+
+README Finding 2 rewritten around this. The site now shows the age table
+with the under-5 rows flagged and the corrected rate in the callout.
+
+**Race and sex are loaded but deliberately not published.** Black or
+African American shows 3.50 per 100 against White 0.98. That is exactly
+the question this project exists to answer honestly, and it cannot be
+answered from this export: infant suffocation mortality differs sharply
+by race, so the group with the highest ratio is also the group with the
+most under-5 deaths in the numerator, and a pooled all-ages export cannot
+separate those. Publishing 3.50 as a statement about how hanging deaths
+get classified would be the overclaim that discredits everything else
+here. `export_site.py` holds them back and says so on stdout.
+
+### Do this next: re-run the exports with an age filter
+
+Same recipe as the README's refresh table, but in Section 3 of the WONDER
+form set **Ten-Year Age Groups** to 15+ (or 5+, and report which). All
+six exports need it, not just the demographic ones -- every state figure
+in the repo is currently all-ages:
+
+1. State + Cause, pooled, ages 15+
+2. Year + Cause, no state, ages 15+
+3. State + Year + Cause, ages 15+ (for the suppression grid)
+4. Single Race 6 + Cause, pooled, no state, ages 15+
+5. Ten-Year Age Groups + Cause, pooled, no state (keep the unfiltered one
+   too -- it is the evidence for the confound)
+6. Sex + Cause, pooled, no state, ages 15+
+
+Load them under new filenames; do not overwrite the all-ages exports.
+Then the race question can be answered properly, the state spread can be
+recomputed clean, and the certification-structure test should be re-run
+against the corrected ratios -- n=29 may change if the age filter pushes
+more states under the suppression threshold, which it probably will.
+
 ### Watch for
 
+- **Filenames from the WONDER UI collide.** The race export arrived as
+  `Multiple Cause of Death, 2018-2024, Single Race.xls`, which is the exact
+  name of the already-loaded State x Year export. Loading it as-is would
+  have overwritten that export's footnotes sidecar, destroying the query
+  parameters for 481 rows, and filed two different queries under one
+  dataset id. Renamed to `mcd_national_{race,sex,age}_pooled_2018_2024.xls`
+  on the way in. Always rename before loading.
 - `v_undetermined_ratio` previously grouped by year/period/state/race only.
   A demographic export would have pooled men and women into one ratio and
   labelled it a breakdown. Views are now dropped and rebuilt on every

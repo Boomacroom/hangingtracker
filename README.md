@@ -11,8 +11,10 @@ Three things came out of this that were not assembled anywhere else:
    pulling state WONDER data on anything uncommon hits this silently.
    Written up separately in [SUPPRESSION.md](SUPPRESSION.md), because it
    has nothing to do with this subject and affects a lot of other work.
-2. **A national baseline**: 1.1 undetermined-intent hangings per 100
-   ruled suicide, stable across 2018-2024.
+2. **A national baseline**: 0.62 undetermined-intent hangings per 100
+   ruled suicide among ages 15+, stable across 2018-2024. The all-ages
+   figure of 1.16 that this project published first is inflated about
+   1.9x by infant suffocation deaths — see Finding 2.
 3. **A sevenfold spread between states** in that rate — and, on testing,
    *not* explained by whether a state elects lay coroners or runs a
    medical examiner system.
@@ -65,8 +67,42 @@ complete:
 | 2022 | 12,247 | 375 | 159 | 1.30 |
 | 2024 | 11,453 | 407 | 131 | 1.14 |
 
-About **1.1 undetermined-intent hangings per 100 ruled suicide**, and
-that ratio is stable across seven years even as the absolute counts fall.
+That is **1.16 undetermined-intent deaths per 100 ruled suicide** across
+all ages, stable across seven years even as the absolute counts fall.
+
+**But the all-ages figure is wrong for this purpose, and the age
+breakdown is how we found out.** Pooled 2018-2024:
+
+| age group | X70 suicide | Y20 undetermined | per 100 |
+|---|---:|---:|---:|
+| < 1 year | **0** | **329** | no denominator |
+| 1-4 years | **0** | 39 | no denominator |
+| 5-14 years | 2,121 | 117 | 5.52 |
+| 15-24 years | 12,917 | 91 | 0.70 |
+| 25-64 years | 65,713 | 387 | ~0.59 |
+| 65+ years | 7,295 | 56 | 0.77 |
+
+**368 of 1,019 undetermined-intent deaths — 36% — are children under 5,
+and their suicide count is structurally zero.** Intentional self-harm is
+not assigned at that age, so a third of the numerator has no denominator
+at all.
+
+These are not hangings. `X70`/`X91`/`Y20` are mechanism codes covering
+hanging **and strangulation and suffocation**, and under age 5 they are
+counting infant suffocation deaths — unsafe sleep, overlay, wedging —
+where intent was left undetermined. A real and serious category of death,
+and not this one.
+
+Restricted to **ages 15+**, where the ratio is between two things that
+can both actually happen:
+
+**X70 85,925 · Y20 534 · 0.62 per 100**
+
+Every state figure in this repository is still all-ages and carries the
+same inflation. Infant suffocation mortality varies by state, so the
+sevenfold spread in Finding 3 is contaminated by it in a proportion this
+export cannot measure. Fixing that means re-running the state exports
+with an age filter, not adjusting after the fact. See [NEXT.md](NEXT.md).
 
 ## Finding 3: a sevenfold state spread
 
@@ -225,7 +261,11 @@ Then take these exports, save under `data/wonder/`, and load each with
 | 5 | Ten-Year Age Groups + Cause, pooled, no state | national breakdown by age | some groups withheld |
 | 6 | Sex + Cause, pooled, no state | national breakdown by sex | none |
 
-Exports 4-6 are the ones to run next and have not been loaded yet.
+Exports 4-6 are loaded. **Every one of them, and exports 1-3, needs
+re-running with an age filter** — see Finding 2. The race and sex tables
+are in the database and are deliberately not published, because the group
+with the highest ratio is also the group with the highest infant
+suffocation mortality and this data cannot separate the two.
 
 **Pooled, not by year, and one axis at a time.** "No suppression at the
 national level" is true of the national *total* and not of a breakdown of

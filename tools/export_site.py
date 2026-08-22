@@ -105,13 +105,31 @@ def main():
     # the one place a race or age breakdown can be reported as counts
     # rather than as a floor. Absent until someone runs the export; the
     # site simply omits the section rather than showing an empty shell.
+    # Age only, deliberately. The race and sex exports are loaded and the
+    # numbers are in the database, but they are not publishable yet and the
+    # age table is the reason why: 36% of all undetermined-intent deaths are
+    # children under 5, whose X70 count is structurally 0, because these are
+    # ICD-10 mechanism codes and under age 5 they are picking up infant
+    # suffocation rather than hanging. Infant suffocation mortality differs
+    # by race, so the group with the highest ratio in the race table is also
+    # the group with the highest infant suffocation mortality, and this
+    # export cannot separate the two. Publishing that ratio as a statement
+    # about how hanging deaths are classified would be exactly the overclaim
+    # this project exists not to make.
+    #
+    # The fix is an age filter on the WONDER exports, not an adjustment here.
+    # When the age-restricted exports land, widen this filter.
     demographics = [dict(r) for r in conn.execute("""
         SELECT year, race, sex, age_group, suicide_hanging, undetermined_hanging,
                assault_hanging, suppressed_cells, undetermined_ratio
         FROM v_undetermined_ratio
-        WHERE state IS NULL
-          AND (race IS NOT NULL OR sex IS NOT NULL OR age_group IS NOT NULL)
-        ORDER BY race, sex, age_group, year
+        WHERE state IS NULL AND age_group IS NOT NULL
+        ORDER BY suicide_hanging DESC
+    """)]
+    held = [r[0] for r in conn.execute("""
+        SELECT DISTINCT CASE WHEN race IS NOT NULL THEN 'race' ELSE 'sex' END
+        FROM v_undetermined_ratio
+        WHERE state IS NULL AND (race IS NOT NULL OR sex IS NOT NULL)
     """)]
 
     # --- the suppression grid: which state-year cells are visible at all ---
@@ -146,6 +164,7 @@ def main():
         "national": national,
         "grid": grid,
         "demographics": demographics,
+        "demographics_held": held,
         "systems": {
             "states": system_rows,
             "joined": systems,
@@ -186,10 +205,13 @@ def main():
         print(f"system-type test: n={e['n']}, elected-share rho={e['rho']:+.3f} "
               f"(p={e['p']:.3f})")
     if demographics:
-        print(f"demographic rows: {len(demographics)}")
+        print(f"demographic rows: {len(demographics)} (age)")
     else:
         print("no national demographic export loaded yet (item 2); "
               "the site omits that section")
+    if held:
+        print(f"HELD BACK from the site: {', '.join(sorted(held))} -- "
+              "confounded by under-5 suffocation deaths, see analyze.py")
     print(f"wrote {OUT / 'tracker.json'} and site/tracker.db")
     return 0
 
